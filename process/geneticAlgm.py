@@ -1,28 +1,100 @@
 from entity import entity
+from process import createEntity
 import sys
+import random
 #遗传算法
-def genetic():
+def genetic(bin_list,gene_num):
     print("genetic Algm")
+    bin_len=len(bin_list)
+    bin_index_list=[]
+    gene_list=[]
+    for i in range(gene_num):
+        res=create_gene(bin_list)
+        gene_list.append(res)
+
+
+#注意消除冲突的问题
+def cross_gene(gene1,gene2):
+    gene_len=len(gene1)
+    cross_start=random.randint(0,gene_len-1)
+    i=cross_start
+    while i< (gene_len-1):
+        tmp=gene1[i]
+        gene1[i]=gene2[i]
+        gene2[i]=tmp
+    #消除冲突
+    list1=[]
+    list2=[]
+    change1=[]
+    change2=[]
+
+    for i in range(gene_len):
+        list1.append(0)
+        list2.append(0)
+    for i in range(gene_len):
+        list1[gene1[i]] = list1[gene1[i]]+1
+        if list1[gene1[i]] == 2:
+            change1.append(gene1[i])
+
+        list2[gene2[i]] = list2[gene2[i]]+1
+        if list2[gene2[i]] == 2:
+            change2.append(gene2[i])
+    for i in range(len(change1)):
+        tmp = gene1[change1[i]]
+        gene1[change1[i]]=gene2[change2[i]]
+        gene2[change2[i]]=tmp
+
+
+#变异过程
+def gene_mutation(gene):
+    gene_len=len(gene)
+    first = random.randint(0,gene_len-1)
+    second = random.randint(0,gene_len-1)
+    while second == first:
+        second = random.randint(0,gene_len-1)
+    tmp=gene[first]
+    gene[first]=gene[second]
+    gene[second]=tmp
+
+
+#产生gene过程
+def create_gene(bin_list):
+    bin_len = len(bin_list)
+    bin_index_list = []
+    res = []
+    for i in range(bin_len):
+        bin_index_list.append(i)
+    i=0
+    while bin_len>0:
+        index=random.randint(0,bin_len-1)
+        gene=bin_index_list[index]
+        res.append(gene)
+        bin_index_list.remove(gene)
+        bin_len=bin_len-1
+
+    return res
 #模拟退火算法
 def simulated_annealing(bins,vehicle):
     T=10000
     a=0.9
 
-#skyline算法
+#skyline算法，缺少组合装入和可装入的检测
 def skyline(vehicle,station):
     bins=station.binList
     station_id=station.id
     vehicle.station_bin[station_id]=[]
     vehicle_length=vehicle.length
     vehicle_width=vehicle.width
+    #lines中的线段按照严格的从左到右的顺序排列
     lines=vehicle.lines
     start=entity.Point(0,0)
     end=entity.Point(0,vehicle_width)
     #line=entity.Line(start,end,vehicle_length,vehicle_length)
     max_height=0
+    #车辆的初始状态
     if len(lines)==0:
         choose = find_max_width(bins)
-        #先放进一个最大的箱子
+        #先放进一个宽度最大的箱子，目前没有发现有箱子的尺寸比车子还大，故此处的if语句恒为True
         if bins[choose].width <= vehicle_width and bins[choose].length <= vehicle_length:
             leftDown=entity.Point(0,0)
             rightDown=entity.Point(bins[choose].width,0)
@@ -35,12 +107,13 @@ def skyline(vehicle,station):
             lines.append(line2)
             vehicle[station_id].append(bins[choose])
             bins.remove(bins[choose])
-            vehicle.weight=vehicle.weight-bins[choose].weight
+            #vehicle.weight=vehicle.weight-bins[choose].weight
+            vehicle.used_weight = vehicle.used_weight + bins[choose].weight
             max_height=bins[choose].length
             vehicle.used_weight = vehicle.used_weight+bins[choose].weight
 
 
-    while max_height<vehicle_length:
+    while max_height<vehicle_length and vehicle.used_weight < vehicle.weight and len(bins)>0:
 
         choose=find_lowest_line(lines)
         choose_bin=find_min_width(bins)
@@ -88,15 +161,15 @@ def skyline(vehicle,station):
 
         vehicle.bin_list.append(bin_list[final_bin])  # add to vehicle
         vehicle[station_id].append(bin_list[final_bin])
+        #更新vehicle.used_weight
         vehicle.used_weight = vehicle.used_weight+bin_list[final_bin].weight
         # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
         delete_bin(bins,bin_list[final_bin])
 
         if score == 12:
-            #lines.remove(line)
             if lines[choose].left_height==lines[choose].right_height:
                 if choose > 0 and choose+1 < len(lines):
-                    lines[choose-1].end=lines[choose+1].end
+                    lines[choose-1].end=entity.Point(lines[choose+1].end.x,lines[choose+1].end.y)
                     lines[choose-1].width = lines[choose-1].width + lines[choose].width + lines[choose+1].width
                     lines[choose-1].right_height=lines[choose+1].right_height
 
@@ -104,6 +177,7 @@ def skyline(vehicle,station):
                     lines.remove(lines[choose])
                 else : #装满了整个车
                     max_height=vehicle_length
+
             elif choose > 0:
                 lines[choose-1].end=entity.Point(line.end.x,line.height+bin_list[final_bin].length)
                 if choose+1 == len(lines):
@@ -114,9 +188,9 @@ def skyline(vehicle,station):
                 lines[choose-1].width=lines[choose-1].width + lines[choose].width
 
                 lines.remove(lines[choose])
+
             elif choose == 0:
                 lines[choose+1].left_height=vehicle_length=lines[choose+1].height
-
                 lines.remove(lines[choose])
 
         elif score == 11:
@@ -158,12 +232,12 @@ def skyline(vehicle,station):
 
             lines[choose].end.x = lines[choose].end.x-bin_list[final_bin].width
             lines[choose+1].start.x = lines[choose+1].start.x + bin_list[final_bin].width
-        elif score == 5 or score == 4 :
+        elif score == 5 or score == 4:
             lines[choose].left_height=bin_list[final_bin].length
             # 多出一条线段
             tmp_start=entity.Point(lines[choose].start.x,lines[choose].start.y+bin_list[final_bin].length)
             tmp_end=entity.Point(tmp_start.x+bin_list[final_bin].width,tmp_start.y)
-            #tmp_left_height=0.0
+
             if tmp_start.y<lines[choose].height:
                 tmp_left_height=lines[choose-1].height-tmp_start.y
             else:
@@ -197,6 +271,11 @@ def skyline(vehicle,station):
     #本站点的货物已经装完
     if len(bins)==0:
         station.isEmpty=True
+    #如果max_height==vehicle.length则说明车厢已经装满，否则说明以下两种情况：
+    # 1.站点的货物已经装载完
+    # 2.车辆超重
+    #这两种情况都可以通过检查车辆的状态来进一步判断，从而确定是否需要向此站点再派车辆，或者将此车辆继续调度
+    return  max_height
 
 
 
@@ -313,7 +392,92 @@ def createBlock(bins):
             length=len(bins)
 
 
+#先分配70%的车辆去拉货，然后更新站点数据，再派出30%的车，然后更新数据，再根据货物
+#分配车辆时三种类型的车先按照1：1：1的比例分配，
+# 分配到具体站点的时候，按如下规则分配：
+# 1.随机选择站点，检测站点的货物重量，和货物需要的总的面积信息，根据此信息分配车辆
+# 2.初始分配站点时，一些作为交通枢纽的站点被选中的可能性更大
 
+#车辆的调度执行如下规则：
+#1.如果一辆车的使用率达到了90%以上，则不再调度它，
+#   或者检测该车辆到达邻居站点需要的time，cost，以及可以装上的货物，是否可以更大的提高使用率，并且消耗不大时，才可以继续调度
+#2.初始的选择点是随机的可能会因为初始点的不同而导致结果有较大的变化
+#   根据随机性原理，多跑几遍数据，选择最优的结果
+#3.尽量结合遗传算法和模拟退火算法，跑出合理的车辆调度路径
+
+
+def schedule_vehicle_first(mst,T,vehicle_list,total_weight,stations):
+    first_weight=total_weight * 0.7
+    avg_weight=0
+    for vehicle in vehicle_list:
+        avg_weight = avg_weight + vehicle.weight
+    avg_weight = avg_weight / len(vehicle_list)
+    vehicle_first_num = first_weight / avg_weight
+
+
+
+    for i in range(vehicle_first_num):
+        choose_station_num=random.randint(1,len(stations))
+        if choose_station_num<10:
+            choose_station_id="S00"+choose_station_num
+        elif choose_station_num<100:
+            choose_station_id="S0"+choose_station_num
+        else:
+            choose_station_id="S"+choose_station_num
+        choose_station=stations[choose_station_id]
+        station_weight = choose_station.weight
+        choose_vehicle_num=choose_vehicle(station_weight,vehicle_list)
+        choose_vehicle = vehicle_list[choose_vehicle_num]
+
+        #vehicle顺着树跑路
+        while True:
+            choose_vehicle.usedTime= choose_vehicle.usedTime + choose_station.loading_time
+            choose_vehicle.path.append(choose_station_id)
+            choose_vehicle.station_bin[choose_station_id]={}
+            max_height=skyline(choose_vehicle,choose_station)
+            #不需要调度的情况
+            if max_height == choose_vehicle.length and len(choose_vehicle.bin_list)>0:
+                break
+            else:#随机选择下一个站点
+                #使用时间范围内，可到达的station
+                enable_stations = []
+                next_stations = mst[choose_station]
+                for s in next_stations:
+                    if choose_vehicle.usedTime + T[choose_station_id][s] <= 600 and stations[s].isEmpty==False:
+                        enable_stations.append(s)
+                if len(next_stations) == 0:#临近节点都不可用,可能需要补充继续调度节点的操作，直到vehicle的使用率达到一定的比率
+                    break
+
+                choose_station_num=random.randint(0,len(enable_stations)-1)
+                j=0
+                for s in enable_stations:
+                    if j== choose_station_num:
+                        choose_station=stations[s]
+                        choose_vehicle.usedTime = choose_vehicle.usedTime + T[choose_station_id][s]
+                        break
+    createEntity.update_stations(stations)
+
+#第二次调度车辆，根据第一次的结果，按照100%的比例分配车辆
+def schedule_vehicle_second(mst,T,vehicle_list,total_weight,stations):
+
+#最后一次调度车辆，根据第二次的结果，计算当前节点的状态，一辆一辆的分配车辆，直到全部收集完所有的货物
+def schedule_vehicle_final(mst,T,vehicle_list,total_weight,stations):
+
+
+def choose_vehicle(weight,vehicle_list):
+    for i in vehicle_list:
+        if vehicle_list[i].weight > weight:
+            return i
+    return find_max_vehicle(vehicle_list)
+
+
+def find_max_vehicle(vehicle_list):
+    max=vehicle_list[0]
+    res=0
+    for i in range(len(vehicle_list)):
+        if max < vehicle_list[i]:
+            res=i
+    return res
 
 
 def gen_block(b1,b2,min_rate):
@@ -343,3 +507,40 @@ def gen_block(b1,b2,min_rate):
 
         return bin,rate
 
+
+
+def cal_cost_and_rate(vehicle,mst):
+    cost=0.0
+    bin_list=vehicle.bin_list
+    total_area=vehicle.length * vehicle.width
+    used_area=0.0
+    path=vehicle.path
+
+    cost=cost + vehicle.startPrice
+    distance=0.0
+    for i in range(len(path)):
+        if i ==0:
+            start= path[i]
+            continue
+        cur=path[i]
+        distance = distance + mst[start][cur]
+        start=cur
+    for bin in bin_list:
+        used_area = used_area + bin.length * bin.width
+
+    rate=used_area / total_area
+    return cost, rate
+
+
+def cal_final_result(vehicle_list,mst):
+    total_cost=0.0
+    total_rate=0.0
+
+    for vehicle in vehicle_list:
+        cost,rate=cal_cost_and_rate(vehicle,mst)
+        total_cost= total_cost+cost
+        total_rate=total_rate + rate
+
+    total_rate = total_rate / len(vehicle_list)
+
+    return total_cost, total_rate

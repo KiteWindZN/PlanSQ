@@ -228,7 +228,10 @@ def cal_station_area_weight(station):
 
 def update_stations(stations):
     for s in stations:
-        cal_station_area_weight(s)
+        cal_station_area_weight(stations[s])
+        if stations[s].weight == 0:
+            stations[s].isEmpty = True
+
 
 
 if __name__ == '__main__':
