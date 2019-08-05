@@ -15,12 +15,12 @@ def createMap(path):
         end=arrival_station_id[i]
         dis=distance[i]
         t=time[i]
-        if t >= 600:
-            #两个站点之间的行驶时间超过10小时(600分钟)，路径无效
-            print(start+" , ",end," , ",t)
-            continue
-        if start == end:
-            continue
+        #if t >= 600:
+        #    #两个站点之间的行驶时间超过10小时(600分钟)，路径无效
+        #    print(start+" , ",end," , ",t)
+        #    continue
+        #if start == end:
+        #    continue
         map[start][end]=dis
         T[start][end]=t
 
@@ -216,6 +216,30 @@ def deleteVehicle(vehicles,maxLimit):
         i = i+1
 
 
+def floyd(mat,T):
+    N=len(mat)
+
+    for k in range(N):
+        id_k=get_station_id(k)
+        for i in range(N):
+            id_i=get_station_id(i)
+            for j in range(N):
+                id_j=get_station_id(j)
+                if mat[id_i][id_j] > mat[id_i][id_k] + mat[id_k][id_j]:
+                    mat[id_i][id_j] = mat[id_i][id_k] + mat[id_k][id_j]
+                    T[id_i][id_j] = T[id_i][id_k] + T[id_k][id_j]
+    return mat,T
+
+def get_station_id(num):
+    station_id="S"
+    if num < 10:
+        station_id = station_id + "00" +num
+    elif num < 100:
+        station_id = station_id + "0" +num
+    else:
+        station_id = station_id + num
+    return station_id
+
 def cal_station_area_weight(station):
     station.area=0
     station.weight=0
@@ -236,7 +260,8 @@ def update_stations(stations):
 
 if __name__ == '__main__':
 
-    path="../dataset/month1/"
+    path="../dataset/month3/"
+
     print("enter")
     map,time=createMap(path+"matrix.json")
     stations,maxLimit=createStation(path+"station.json")

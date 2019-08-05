@@ -5,7 +5,7 @@
 #           "station": "S039"
 import json
 def resolveBinJson(path):
-    file=open(path,"rb")
+    file=open(path,"r")
     fileJson=json.load(file)
     #print(fileJson)
     bins=fileJson["Bin"]
@@ -34,7 +34,7 @@ def resolveBinJson(path):
 #        },
 #
 def resolveStationJson(path):
-    file=open(path,"rb")
+    file=open(path,"r")
     fileJson=json.load(file)
     stations=fileJson["Station"]
     station_id=[]
@@ -50,7 +50,7 @@ def resolveStationJson(path):
 #"Vehicle": [{"vehicle_id": "V001", "vehicle_length": 7.8, "vehicle_width": 2.3, "vehicle_weight": 10000, "flag_down_fare": 888, "distance_fare": 0.004},
 
 def resolveVehicleJson(path):
-    file=open(path,"rb")
+    file=open(path,"r")
     fileJson=json.load(file)
     vehicles=fileJson["Vehicle"]
     vehicle_id=[]
@@ -73,7 +73,7 @@ def resolveVehicleJson(path):
 #
 
 def resolveMatrixJson(path):
-    file=open(path,"rb")
+    file=open(path,"r")
     fileJson=json.load(file)
     matrixes=fileJson["Matrix"]
     departure_station_id=[]
