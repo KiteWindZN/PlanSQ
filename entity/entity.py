@@ -100,7 +100,7 @@ class Line:
     def __init__(self,start,end,left_height,right_height):
         self.start=start
         self.end=end
-        self.width=end.x-start.x
+        self.width=round(end.x-start.x,5)
         self.height=start.y
         self.left_height=left_height
         self.right_height=right_height
