@@ -170,7 +170,7 @@ def skyline(vehicle,station):
 
 
         line=lines[choose]
-        print(i,"  ",score)
+
         if score == 0:
             # 选择下一个line
             #choose a bin and put it on the line
@@ -202,24 +202,24 @@ def skyline(vehicle,station):
             lines[choose].end=entity.Point(leftDown.x,leftDown.y)
             lines[choose].right_height = bin_list[final_bin].length
             lines[choose].width=round(lines[choose].width - bin_list[final_bin].width,5)
-            lines[choose].height = round(lines[choose].height + bin_list[final_bin].width,5)
+            lines[choose].height = round(lines[choose].height + bin_list[final_bin].length,5)
 
             #tmp_start=entity.Point(leftDown.x,leftUp.y)
             #tmp_end=entity.Point(rightDown.x,rightUp.y)
-            tmp_start=entity.Point(left_start_x,left_start_y)
-            tmp_end=entity.Point(left_start_x+bin_list[final_bin].width,left_start_y)
+            tmp_start=entity.Point(left_start_x,left_start_y+bin_list[final_bin].length)
+            tmp_end=entity.Point(left_start_x+bin_list[final_bin].width,left_start_y+bin_list[final_bin].length)
 
-            tmp_left_height=vehicle_length - tmp_end.y
+            tmp_left_height=round(vehicle_length - tmp_end.y,5)
             if choose+1 < len(lines) and lines[choose+1].height-tmp_end.y > 0:
                 tmp_right_height=round(lines[choose+1].height-tmp_end.y,5)
             else:
-                tmp_right_height=vehicle_length-rightUp.y
+                tmp_right_height=round(vehicle_length-rightUp.y,5)
             tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
             if choose+1 < len(lines):
                 lines.insert(choose+1,tmp_line)
             else:
                 lines.append(tmp_line)
-
+            print(bin_list[final_bin].id, "  ", score)
             #line.is_able = False
             continue
         # 更新 max_height
@@ -261,6 +261,7 @@ def skyline(vehicle,station):
         # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
         delete_bin(bins,bin_list[final_bin])
 
+        print(bin_list[final_bin].id, "  ", score)
         if score == 12:
             if lines[choose].left_height==lines[choose].right_height:
                 if choose > 0 and choose+1 < len(lines):
@@ -298,23 +299,22 @@ def skyline(vehicle,station):
 
         elif score == 10 or score == 9:
 
-            lines[choose].start.y=round(lines[choose].start.y+bin_list[final_bin].length,6)
+            lines[choose].start.y=round(lines[choose].start.y+bin_list[final_bin].length,5)
             lines[choose].end.y=lines[choose].start.y
             lines[choose].height=lines[choose].start.y
             if lines[choose].height < lines[choose-1].height:
-                lines[choose].height = round(lines[choose-1].height - lines[choose].height,5)
+                lines[choose].left_height = round(lines[choose-1].height - lines[choose].height,5)
             else:
-                lines[choose].left_height=vehicle_length
+                lines[choose].left_height= round(vehicle_length-lines[choose].height,5)
 
             if choose+1 == len(lines):
-                lines[choose].right_height  = vehicle_length - lines[choose].height
+                lines[choose].right_height = round(vehicle_length - lines[choose].height,5)
                 continue
-
 
             if lines[choose].height < lines[choose+1].height:
                 lines[choose].right_height=round(lines[choose+1].height - lines[choose].height,5)
             else:
-                lines[choose].right_height=vehicle_length
+                lines[choose].right_height=round(vehicle_length-lines[choose].height,5)
                 lines[choose+1].left_height=round(lines[choose].height - lines[choose+1].height,5)
 
         elif score == 8:
@@ -326,16 +326,25 @@ def skyline(vehicle,station):
                 lines[choose].left_height = round(vehicle_length-lines[choose].height,5)
             else:
                 lines[choose].left_height = round(lines[choose-1].height - lines[choose].height,5)
+            if choose+1 == len(lines) or lines[choose+1].height < lines[choose].height:
+                lines[choose].right_height = vehicle_length - lines[choose].height
+            else:lines[choose].right_height = lines[choose+1].width - lines[choose].width
 
         elif score == 7 :
 
             lines[choose].start.x =round(lines[choose].start.x + bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+            if choose >0:
+                lines[choose-1].end.x= round(lines[choose-1].end.x+bin_list[final_bin].width,5)
+                lines[choose-1].width = round(lines[choose-1].width + bin_list[final_bin].width,5)
 
-            lines[choose-1].end.x= round(lines[choose-1].end.x+bin_list[final_bin].width,5)
         elif score == 6:
 
             lines[choose].end.x = round(lines[choose].end.x-bin_list[final_bin].width,5)
-            lines[choose+1].start.x = round(lines[choose+1].start.x + bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+            if choose+1 < len(lines):
+                lines[choose+1].start.x = round(lines[choose+1].start.x + bin_list[final_bin].width,5)
+                lines[choose+1].width = round(lines[choose+1].width + bin_list[final_bin].width,5)
         elif score == 5 or score == 4:
             lines[choose].left_height=bin_list[final_bin].length
 
@@ -346,7 +355,7 @@ def skyline(vehicle,station):
             if tmp_start.y<lines[choose-1].height:
                 tmp_left_height=round( lines[choose-1].height-tmp_start.y,5)
             else:
-                tmp_left_height=vehicle_length-tmp_start.y
+                tmp_left_height=round(vehicle_length-tmp_start.y,5)
                 lines[choose-1].right_height = round(tmp_start.y - lines[choose-1].height,5)
             tmp_right_height=vehicle_length-tmp_start.y
 
@@ -356,28 +365,36 @@ def skyline(vehicle,station):
             lines.insert(choose,tmp_line)
 
         elif score == 3:
-            lines[choose].end.x =round( lines[choose].end.x - bin_list[final_bin].width,5)
+            lines[choose].end.x = round(lines[choose].end.x - bin_list[final_bin].width,5)
             lines[choose].right_height = round(bin_list[final_bin].length,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
 
-            tmp_start=entity.Point(lines[choose].end.x,lines[choose].end.y)
+            tmp_start=entity.Point(lines[choose].end.x,lines[choose].end.y+bin_list[final_bin].length)
             tmp_end=entity.Point(tmp_start.x+bin_list[final_bin].width,tmp_start.y)
 
-            tmp_left_height=vehicle_length
+            tmp_left_height = vehicle_length- tmp_start.y
             if choose+1 == len(lines):
                 tmp_right_height = vehicle_length - tmp_start.y
             elif tmp_start.y < lines[choose+1].height:
                 tmp_right_height = lines[choose+1].height - tmp_start.y
             else:
-                tmp_right_height = vehicle_length -  tmp_start.y
+                tmp_right_height = vehicle_length - tmp_start.y
             tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
             lines.insert(choose+1,tmp_line)
 
         elif score == 2:
-            lines[choose-1].end.x=round( lines[choose-1].end.x + bin_list[final_bin].width,5)
-            lines[choose].start.x=round(lines[choose].start.x - bin_list[final_bin].width,5)
+            if choose > 0:
+                lines[choose-1].end.x=round(lines[choose-1].end.x + bin_list[final_bin].width,5)
+                lines[choose - 1].width = round(lines[choose - 1].width + bin_list[final_bin].width, 5)
+            lines[choose].start.x=round(lines[choose].start.x + bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width-bin_list[final_bin].width,5)
         elif score == 1:
-            lines[choose+1].start.x =round( lines[choose+1].start.x-bin_list[final_bin].width)
-            lines[choose].end.x = round( lines[choose].end.x + bin_list[final_bin].width)
+            if choose+1 < len(lines):
+                lines[choose+1].start.x =round(lines[choose+1].start.x-bin_list[final_bin].width)
+                lines[choose+1].width = round(lines[choose+1].width + bin_list[final_bin].width,5)
+            lines[choose].end.x = round(lines[choose].end.x + bin_list[final_bin].width)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+
     #本站点的货物已经装完
     if len(bins)==0:
         station.isEmpty=True
@@ -491,7 +508,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].width = round(lines[i-1].width + lines[i].width,5)
                         lines[i-1].height = lines[i-1].start.y
                         lines[i-1].right_height = round(vehicle.length -lines[i-1].height,5)
-                        lines.rmeove(lines[i])
+                        lines.remove(lines[i])
                     #else:
                     #    print("TODO")
                 else:
@@ -546,7 +563,7 @@ def gene_score(line,bin):
 
     l=bin.length
     w=bin.width
-    a=0.3
+    a=0.4
 
     if w==line.width and l==line.left_height:
         score=12
@@ -556,7 +573,7 @@ def gene_score(line,bin):
         score = 10
     elif w==line.width and l >= (1+a)*line.left_height:
         score=9
-    elif w==line.width and (1-a) * line.right_height <= l and (1+a)*line.right_height:
+    elif w==line.width and (1-a) * line.right_height <= l < (1+a)*line.right_height:
         score=8
     elif line.width*(1-a) < w < line.width and l==line.left_height:
         score=7
@@ -564,7 +581,7 @@ def gene_score(line,bin):
         score=6
     elif line.width*(1-a) < w < line.width and line.left_height*(1-a) < l < line.left_height*(1+a):
         score=5
-    elif line.width*(1-a) < w < line.width and l < line.left_height*(1+a):
+    elif line.width*(1-a) < w < line.width and l >= line.left_height*(1+a):
         score=4
     elif line.width * (1-a) < w < line.width and line.right_height*(1-a) < l < line.right_height*(1+a):
         score=3
@@ -857,6 +874,5 @@ if __name__ == '__main__':
 
     tmp_area=0.0
     for b in vehicles[2].bin_list:
-        tmp_area =  round(tmp_area+b.length*b.width,5)
+        tmp_area = round(tmp_area+b.length*b.width,5)
     print(tmp_area," ",round(vehicles[2].length*vehicles[2].width,5))
-
