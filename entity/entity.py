@@ -91,8 +91,8 @@ class Point:
     y = 0.0
 
     def __init__(self,x,y):
-        self.x=x
-        self.y=y
+        self.x=round(x,5)
+        self.y=round(y,5)
 
 
 class Line:
@@ -101,9 +101,9 @@ class Line:
         self.start=start
         self.end=end
         self.width=round(end.x-start.x,5)
-        self.height=start.y
-        self.left_height=left_height
-        self.right_height=right_height
+        self.height=round(start.y,5)
+        self.left_height=round(left_height,5)
+        self.right_height=round(right_height,5)
         self.is_able=True
 
 
@@ -120,9 +120,9 @@ class Area:
         self.pointList.append(rightUp)
         self.pointList.append(leftUp)
 
-        self.length=righhtDown.x -leftDown.x
-        self.width=leftUp.y - leftDown.y
-        self.area= self.length * self.width
+        self.length=round(righhtDown.x -leftDown.x,5)
+        self.width=round(leftUp.y - leftDown.y,5)
+        self.area= round(self.length * self.width,5)
         self.isEmpty=False
 
     def check_empty(self):

@@ -75,7 +75,7 @@ def createBin(path,stations):
         Bins.append(b)
         #stations[s].binList.append(b)
         stations[s].binList=binInsert(stations[s],b)
-        stations[s].area = stations[s].area + b.length+b.width
+        stations[s].area = stations[s].area + b.length*b.width
         stations[s].weight = stations[s].weight + b.weight
 
         #stations[s].binList.append(b)
