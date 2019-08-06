@@ -246,8 +246,8 @@ def cal_station_area_weight(station):
 
     bin_list=station.binList
     for b in bin_list:
-        station.area = station.area + b.length*b.width
-        station.weight =station.weight + b.weight
+        station.area = round(station.area + b.length*b.width,5)
+        station.weight = round(station.weight + b.weight,5)
 
 
 def update_stations(stations):
