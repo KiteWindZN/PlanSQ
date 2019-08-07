@@ -350,6 +350,7 @@ def skyline(vehicle,station):
                     lines[choose-1].right_height =  round(lines[choose].height - lines[choose-1].height)
                 else:
                     lines[choose].left_height = round(lines[choose-1].height - lines[choose].height, 5)
+                    lines[choose-1].righ_height = round(vehicle_length - lines[choose-1].height,5)
             if choose + 1 < len(lines):
                 if lines[choose+1].height > lines[choose].height:
                     lines[choose].right_height = lines[choose+1].height - lines[choose].height
@@ -874,6 +875,119 @@ def cal_final_result(vehicle_list,mst):
 
     return total_cost, total_rate
 
+
+def add_bin(lines,choose_line,bin,vehicle):
+    vehicle_length=vehicle.length
+    line=lines[choose_line]
+
+    if bin.width == line.width:
+        leftDown = entity.Point(line.start.x,line.start.y)
+
+        line.start.y = line.start.y + bin.length
+        line.end.y = line.start.y
+        line.height = line.start.y
+        if choose_line != len(lines)-1:
+            if choose_line+1 < len(lines) and line.height < lines[choose_line+1].height:
+                line.right_height = lines[choose_line+1].height - line.height
+                lines[choose_line+1].left_height = vehicle_length - lines[choose_line+1].height
+            elif choose_line+1 < len(lines) and line.height > lines[choose_line+1].height:
+                line.right_height = vehicle_length - line.height
+                lines[choose_line + 1].left_height = line.height - lines[choose_line + 1].height
+        if choose_line != 0:
+            if lines[choose_line - 1].height < lines[choose_line].height:
+                lines[choose_line].left_height = round(vehicle_length - lines[choose_line].height, 5)
+                lines[choose_line - 1].right_height = round(lines[choose_line].height - lines[choose_line - 1].height)
+            else:
+                lines[choose_line].left_height = round(lines[choose_line - 1].height - lines[choose_line].height, 5)
+                lines[choose_line - 1].righ_height = round(vehicle_length - lines[choose_line - 1].height,5)
+
+        if choose_line == 0:
+            line.left_height = vehicle_length - line.height
+
+        if choose_line+1 < len(lines):
+            line.right_height = vehicle_length -line.height
+
+    else:
+        if line.right_height == bin.length: #right
+            leftDown = entity.Point(line.end.x-bin.width,line.end.y)
+
+            lines.end.x = line.end.x - bin.width
+            line.height = line.start.y
+            line.width = line.width - bin.width
+            line.right_height = bin.length
+            if choose_line < len(lines)-1:
+                lines[choose_line+1].start.x = line.end.x
+                lines[choose_line+1].width = lines[choose_line+1].width + bin.width
+
+            if choose_line != len(lines) - 1:
+                if choose_line + 1 < len(lines) and line.height < lines[choose_line + 1].height:
+                    line.right_height = lines[choose_line + 1].height - line.height
+                    lines[choose_line + 1].left_height = vehicle_length - lines[choose_line + 1].height
+                elif choose_line + 1 < len(lines) and line.height > lines[choose_line + 1].height:
+                    line.right_height = vehicle_length - line.height
+                    lines[choose_line + 1].left_height = line.height - lines[choose_line + 1].height
+            if choose_line != 0:
+                if lines[choose_line - 1].height < lines[choose_line].height:
+                    lines[choose_line].left_height = round(vehicle_length - lines[choose_line].height, 5)
+                    lines[choose_line - 1].right_height = round(
+                        lines[choose_line].height - lines[choose_line - 1].height)
+                else:
+                    lines[choose_line].left_height = round(lines[choose_line - 1].height - lines[choose_line].height, 5)
+                    lines[choose_line - 1].righ_height = round(vehicle_length - lines[choose_line - 1].height, 5)
+
+            if choose_line == 0:
+                line.left_height = vehicle_length - line.height
+            if choose_line + 1 < len(lines):
+                line.right_height = vehicle_length - line.height
+
+        else:#left
+            leftDown = entity.Point(line.start.x, line.start.y)
+            if bin.length == line.left_height:
+                if choose_line > 0:
+                    lines[choose_line - 1].end.x = lines[choose_line-1].end.x + bin.width
+                    lines[choose_line - 1].width = lines[choose_line - 1].width + bin.width
+                line.start.x= line.start.x + bin.width
+                line.width =line.width - bin.width
+            else:
+
+                tmp_start = entity.Point(line.start.x,line.start.y+bin.length)
+                tmp_end = entity.Point(tmp_start.x+bin.width,tmp_start.y)
+                tmp_right = vehicle_length - tmp_start.y
+                if bin.length > line.left_height:
+                    tmp_left = line.left_height - bin.length
+                else:
+                    tmp_left = vehicle_length - bin.length
+                tmp_line = entity.Line(tmp_start,tmp_end,tmp_left,tmp_right)
+                line.start.x = line.start.x + bin.width
+                line.width = line.width - bin.width
+                line.left_height=bin.length
+
+                lines.insert(choose_line,tmp_line)
+
+    bin.set_pointList(entity.Point(leftDown.x, leftDown.y),
+                      entity.Point(leftDown.x + bin.width, leftDown.y),
+                      entity.Point(leftDown.x + bin.width, leftDown.y + bin.length),
+                      entity.Point(leftDown.x, leftDown.y + bin.length))
+    merge_line_add(lines) # merge adjacent lines with the same height
+
+
+def merge_line_add(lines):
+    N=len(lines)
+    i=0
+    while i < N-1:
+        line_1=lines[i]
+        line_2=lines[i+1]
+
+        if line_1.height == line_2.height:#merge
+            line_1.end.x=line_2.end.x
+            line_1.width = line_1.width +line_2.width
+            line_1.right_height = line_2.right_height
+
+            lines.remove(line_2)
+            i=i-1
+
+        i = i+1
+        N=len(lines)
 
 def test(vehicle,station):
     max_height=skyline(vehicle,station)
