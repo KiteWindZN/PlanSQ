@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from process import createEntity
 import datetime
 
@@ -7,7 +8,8 @@ def createFileJson():
     return path
 
 def createJson(json_path,vehicle_list):
-    with open(json_path,"w+",encoding="utf-8") as f:
+    #with open(json_path,"w+",encoding="utf-8") as f:
+    with open(json_path, "w+") as f:
         f.write("{\n")
 
         for j in range(len(vehicle_list)):

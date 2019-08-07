@@ -1,6 +1,12 @@
+# -*- coding:utf-8 -*-
 from process import ReadJson
 from entity import entity
 import sys
+import datetime
+import matplotlib.pyplot as plt
+import random
+import matplotlib.patches as patches
+#plt.use('Qt5Agg')
 
 #根据json构建全联接地图,经过研究数据发现map是非对称的
 def createMap(path):
@@ -256,7 +262,32 @@ def update_stations(stations):
         if stations[s].weight == 0:
             stations[s].isEmpty = True
 
+def draw_rect(vehicle,used_area):
+    colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple']
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    bin_list = vehicle.bin_list
+    plt.xlim(0, round(vehicle.width+0.1,5))
+    plt.ylim(0, round(vehicle.length+0.1,5))
 
+    for bin in bin_list:
+        point_list= bin.pointList
+        start1=point_list[0].x
+        end1=point_list[0].y
+        width=round(point_list[1].x - point_list[0].x,5)
+        height=round(point_list[2].y - point_list[1].y,5)
+        print (start1,end1, width,height)
+        color_index=random.randint(1,100)
+        plt.gca().add_patch(plt.Rectangle((start1, end1), width, height,facecolor=colors[color_index%7]))
+    used_rate = round(used_area/(vehicle.length* vehicle.width),5)
+    plt.suptitle("used_rate: "+str(used_rate))
+    date = datetime.datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
+    pic_name = '../pic/rect_' + str(date) + '.png'
+    plt.savefig(pic_name)
+    plt.show()
+
+
+    #fig.savefig("rect1.png", dpi=90, bbox_inches='tight')
 
 if __name__ == '__main__':
 

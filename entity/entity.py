@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 class Station():
     id=""
     vehicle_limit=0
