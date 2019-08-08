@@ -1,0 +1,718 @@
+# -*- coding:utf-8 -*-
+
+from entity import entity
+import sys
+
+#skyline算法，缺少组合装入和可装入的检测
+def skyline(vehicle,station):
+    if vehicle.id == u"V998" and station.id==u"S212":
+        print  "11111"
+
+    vehicle.path.append(station.id)
+    bins=station.binList
+    station_id=station.id
+    vehicle.station_bin[station_id]=[]
+    vehicle_length=vehicle.length
+    vehicle_width=vehicle.width
+    #lines中的线段按照严格的从左到右的顺序排列
+    lines=vehicle.lines
+    start=entity.Point(0,0)
+    end=entity.Point(vehicle_width,0)
+    #line=entity.Line(start,end,vehicle_length,vehicle_length)
+    for l in lines:
+        l.is_able=True
+    max_height=vehicle.max_height
+    #车辆的初始状态
+    if len(lines)==0:
+        choose = find_max_width_2(bins,vehicle_width)
+        #先放进一个宽度最大的箱子，目前没有发现有箱子的尺寸比车子还大，故此处的if语句恒为True
+        if bins[choose].width <= vehicle_width and bins[choose].length <= vehicle_length:
+            #left_start_x=0
+            #left_start_y=0
+            leftDown=entity.Point(0,0)
+            rightDown=entity.Point(bins[choose].width,0)
+            rightUp=entity.Point(bins[choose].width,bins[choose].length)
+            leftUp=entity.Point(0,bins[choose].length)
+            #bins[choose].set_pointList(leftDown,rightDown,rightUp,leftUp)
+            bins[choose].set_pointList(entity.Point(0,0), entity.Point(bins[choose].width,0),
+                                       entity.Point(bins[choose].width, bins[choose].length),
+                                       entity.Point(0,bins[choose].length))
+            line1=entity.Line(leftUp,rightUp,vehicle_length-rightUp.y,vehicle_length-rightUp.y)
+            line2=entity.Line(rightDown,end,leftUp.y,vehicle_length)
+            lines.append(line1)
+            lines.append(line2)
+            vehicle.station_bin[station_id].append(bins[choose])
+            vehicle.bin_list.append(bins[choose])
+            #vehicle.weight=vehicle.weight-bins[choose].weight
+            vehicle.used_weight = vehicle.used_weight + bins[choose].weight
+            max_height=bins[choose].length
+            bins.remove(bins[choose])
+
+
+
+    while max_height<=vehicle_length and vehicle.used_weight <= vehicle.weight and len(bins)>0:
+
+        #merge line fragment
+        index=find_min_width(bins,vehicle)
+        min_width=min(bins[index].width,bins[index].length)
+        merge_line(lines,min_width,vehicle)
+
+        choose=find_lowest_line(lines)
+        if choose == -1:
+            print vehicle.id , station.id , choose
+            break
+        choose_bin=find_min_width(bins,vehicle)
+        #print(lines[choose].width)
+        #print(bins[choose_bin].width)
+
+        while lines[choose].width < bins[choose_bin].width:
+            lines[choose].is_able=False
+            choose=find_lowest_line(lines)
+            if choose == -1:
+                break;
+
+        if choose == -1:
+            break
+        bin_list=[]
+        for i in range(len(bins)):
+            b=bins[i]
+            if (b.weight + vehicle.used_weight) > vehicle.weight:
+                continue
+            if b.width <= lines[choose].width and b.length + lines[choose].height <= vehicle_length:
+                bin_list.append(b)
+            elif b.length <= lines[choose].width and b.width + lines[choose].height <= vehicle_length:
+                b.rotate_bin()
+                bin_list.append(b)
+        score=0
+        final_bin=0
+        for i in range(len(bin_list)):
+            if bin_list[final_bin].length+lines[choose].height > vehicle_length or bin_list[final_bin].width > lines[choose].width:
+                tmp_score1=-1
+            else:
+                tmp_score1=gene_score(lines[choose],bin_list[i])
+            if bin_list[final_bin].width+lines[choose].height > vehicle_length or bin_list[final_bin].length > lines[choose].width:
+                tmp_score2=-1
+            else:
+                bin_list[i].rotate_bin()
+                tmp_score2=gene_score(lines[choose],bin_list[i])
+
+            if tmp_score1 > tmp_score2 and tmp_score2 != -1: #再旋转回来
+                bin_list[i].rotate_bin()
+            tmp_score=max(tmp_score1,tmp_score2)
+            if score<tmp_score:
+                score = tmp_score
+                final_bin=i
+        #print(final_bin,",",len(bin_list))
+        if len(bin_list) == 0:
+            lines[choose].is_able=False
+            continue
+
+        line=lines[choose]
+
+        if score == 0:
+            # 选择下一个line
+            #choose a bin and put it on the line
+            # if we can merge two lines when their |height1-height2| < a
+            final_bin=find_max_width_2(bin_list,line.width)
+            if bin_list[final_bin].id == u"B14179":
+                print 2222
+
+            if bin_list[final_bin].length + line.height > max_height:
+                max_height = bin_list[final_bin].length + line.height
+            leftDown = entity.Point(lines[choose].end.x - bin_list[final_bin].width, lines[choose].height)
+            #rightDown = entity.Point(leftDown.x + bin_list[final_bin].width, leftDown.y)
+            #rightUp = entity.Point(leftDown.x + bin_list[final_bin].width,
+            #                      leftDown.y + bin_list[final_bin].length)
+            #leftUp = entity.Point(leftDown.x, leftDown.y + bin_list[final_bin].length)
+
+            left_start_x=lines[choose].end.x - bin_list[final_bin].width
+            left_start_y=lines[choose].height
+
+            if lines[choose].end.x- bin_list[final_bin].width< 0:
+                print 44444
+
+
+            bin_list[final_bin].set_pointList(entity.Point(lines[choose].end.x - bin_list[final_bin].width, lines[choose].height)
+                                              , entity.Point(leftDown.x + bin_list[final_bin].width, leftDown.y)
+                                              , entity.Point(leftDown.x + bin_list[final_bin].width, leftDown.y + bin_list[final_bin].length),
+                                              entity.Point(leftDown.x, leftDown.y + bin_list[final_bin].length))
+
+            vehicle.bin_list.append(bin_list[final_bin])  # add to vehicle
+            vehicle.station_bin[station_id].append(bin_list[final_bin])
+            # 更新vehicle.used_weight
+            vehicle.used_weight = vehicle.used_weight + bin_list[final_bin].weight
+            # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
+            delete_bin(bins, bin_list[final_bin])
+
+            lines[choose].end=entity.Point(leftDown.x,leftDown.y)
+            lines[choose].right_height = bin_list[final_bin].length
+            lines[choose].width=round(lines[choose].width - bin_list[final_bin].width,5)
+            lines[choose].height = round(lines[choose].height,5)
+
+            #tmp_start=entity.Point(leftDown.x,leftUp.y)
+            #tmp_end=entity.Point(rightDown.x,rightUp.y)
+            tmp_start=entity.Point(left_start_x,left_start_y+bin_list[final_bin].length)
+            tmp_end=entity.Point(left_start_x+bin_list[final_bin].width,left_start_y+bin_list[final_bin].length)
+
+            tmp_left_height=round(vehicle_length - tmp_end.y,5)
+            if choose+1 < len(lines) and lines[choose+1].height-tmp_end.y > 0:
+                tmp_right_height=round(lines[choose+1].height-tmp_end.y,5)
+            else:
+                tmp_right_height=round(vehicle_length-tmp_end.y,5)
+            tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
+            if choose+1 < len(lines):
+                lines.insert(choose+1,tmp_line)
+            else:
+                lines.append(tmp_line)
+            print(bin_list[final_bin].id, "  ", score)
+            #line.is_able = False
+            continue
+        # 更新 max_height
+        if bin_list[final_bin].length + line.height > max_height:
+            max_height = round(bin_list[final_bin].length + line.height,5)
+        # 把bin装入，计算四个点的坐标
+        if score !=6 and score != 3 and score !=1:
+            #left_start_x = lines[choose].end.x
+            #left_start_y = lines[choose].start.y
+
+            leftDown_1 = entity.Point(lines[choose].start.x, lines[choose].start.y)
+            bin_list[final_bin].set_pointList(entity.Point(lines[choose].start.x, lines[choose].start.y),
+                                              entity.Point(lines[choose].start.x + bin_list[final_bin].width, lines[choose].start.y)
+                                              , entity.Point(lines[choose].start.x + bin_list[final_bin].width, lines[choose].start.y + bin_list[final_bin].length),
+                                              entity.Point(lines[choose].start.x, lines[choose].start.y + bin_list[final_bin].length))
+        else:
+            leftDown_1 = entity.Point(lines[choose].end.x-bin_list[final_bin].width,lines[choose].height)
+
+            bin_list[final_bin].set_pointList(entity.Point(lines[choose].end.x-bin_list[final_bin].width,lines[choose].height),
+                                          entity.Point(leftDown_1.x + bin_list[final_bin].width, leftDown_1.y)
+                                          , entity.Point(leftDown_1.x + bin_list[final_bin].width,
+                                                         leftDown_1.y + bin_list[final_bin].length),
+                                          entity.Point(leftDown_1.x, leftDown_1.y + bin_list[final_bin].length))
+
+        vehicle.bin_list.append(bin_list[final_bin])  # add to vehicle
+        vehicle.station_bin[station_id].append(bin_list[final_bin])
+        #更新vehicle.used_weight
+        vehicle.used_weight = round(vehicle.used_weight+bin_list[final_bin].weight,5)
+        # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
+        delete_bin(bins,bin_list[final_bin])
+
+        print(bin_list[final_bin].id, "  ", score)
+        if score == 12:
+            if lines[choose].left_height==lines[choose].right_height:
+                if choose > 0 and choose+1 < len(lines):
+                    lines[choose-1].end=entity.Point(lines[choose+1].end.x,lines[choose+1].end.y)
+                    lines[choose-1].width = round(lines[choose-1].width + lines[choose].width + lines[choose+1].width,5)
+                    lines[choose-1].right_height=lines[choose+1].right_height
+
+                    lines.remove(lines[choose])
+                    lines.remove(lines[choose])
+                else : #装满了整个车
+                    max_height=vehicle_length
+                    break
+
+            elif choose > 0:
+                lines[choose-1].end=entity.Point(line.end.x,line.height+bin_list[final_bin].length)
+                if choose+1 < len(lines):
+                    lines[choose + 1].left_height = lines[choose].height - lines[choose + 1].height
+
+                lines[choose-1].height=lines[choose-1].width + lines[choose].width
+                lines[choose-1].end.x=lines[choose].end.x
+                lines[choose-1].width=lines[choose-1].width + lines[choose].width
+
+                lines.remove(lines[choose])
+
+            elif choose == 0:
+                lines[choose+1].left_height=vehicle_length=lines[choose+1].height
+                lines.remove(lines[choose])
+
+        elif score == 11:
+            if choose+1 < len(lines):
+                lines[choose+1].start.x=lines[choose].start.x
+                lines[choose+1].width=round(lines[choose].width + lines[choose+1].width,5)
+                if choose>0:
+                    if lines[choose-1].height > lines[choose+1].height:
+                        lines[choose+1].left_height=round(lines[choose-1].height-lines[choose+1].height,5)
+                    else:
+                        lines[choose + 1].left_height = round(vehicle_length - lines[choose + 1].height, 5)
+                else:
+                    lines[choose + 1].left_height = round(vehicle_length - lines[choose + 1].height, 5)
+
+            lines.remove(lines[choose])
+
+        elif score == 10 or score == 9:
+
+            lines[choose].start.y=round(lines[choose].start.y+bin_list[final_bin].length,5)
+            lines[choose].end.y=lines[choose].start.y
+            lines[choose].height=lines[choose].start.y
+
+            if choose == 0:
+                lines[choose].left_height = vehicle_length - lines[choose].height
+                if choose+1 < len(lines):
+                    if lines[choose].height < lines[choose+1].height:
+                        lines[choose].right_height=round(lines[choose+1].height - lines[choose].height,5)
+                        lines[choose+1].left_height = round(vehicle_length - lines[choose+1].height,5)
+                    else:
+                        lines[choose].right_height=round(vehicle_length-lines[choose].height,5)
+                        lines[choose+1].left_height=round(lines[choose].height - lines[choose+1].height,5)
+                else:
+                    lines[choose].right_height = vehicle_length - lines[choose].height
+
+            elif choose > 0 and choose + 1 < len(lines):
+                if lines[choose].height < lines[choose-1].height:
+                    lines[choose].left_height = round(lines[choose-1].height - lines[choose].height,5)
+                    lines[choose-1].right_height = round(vehicle_length - lines[choose-1].height,5)
+                else:
+                    lines[choose].left_height = round(vehicle_length-lines[choose].height,5)
+                    lines[choose-1].right_height = round(lines[choose].height - lines[choose-1].height,5)
+
+                if lines[choose].height < lines[choose+1].height:
+                    lines[choose].right_height=round(lines[choose+1].height - lines[choose].height,5)
+                    lines[choose+1].left_height = round(vehicle_length - lines[choose+1].height,5)
+                else:
+                    lines[choose].right_height=round(vehicle_length-lines[choose].height,5)
+                    lines[choose+1].left_height=round(lines[choose].height - lines[choose+1].height,5)
+
+            elif choose+1 == len(lines):
+                lines[choose].right_height = round(vehicle_length - lines[choose].height,5)
+
+                if lines[choose].height < lines[choose-1].height:
+                    lines[choose].left_height = round(lines[choose-1].height - lines[choose].height,5)
+                    lines[choose-1].right_height = round(vehicle_length - lines[choose-1].height,5)
+                else:
+                    lines[choose].left_height= round(vehicle_length-lines[choose].height,5)
+                    lines[choose-1].right = round(lines[choose].height - lines[choose-1].height,5)
+
+        elif score == 8:
+
+            lines[choose].start.y = round(lines[choose].start.y + bin_list[final_bin].length,5)
+            lines[choose].end.y = lines[choose].start.y
+            lines[choose].height = lines[choose].start.y
+            if choose ==0:
+                lines[choose].left_height = round(vehicle_length - lines[choose].height, 5)
+            if choose > 0:
+                if lines[choose-1].height < lines[choose].height:
+                    lines[choose].left_height = round(vehicle_length - lines[choose].height, 5)
+                    lines[choose-1].right_height =  round(lines[choose].height - lines[choose-1].height,5)
+                else:
+                    lines[choose].left_height = round(lines[choose-1].height - lines[choose].height, 5)
+                    lines[choose-1].righ_height = round(vehicle_length - lines[choose-1].height,5)
+            if choose + 1 < len(lines):
+                if lines[choose+1].height > lines[choose].height:
+                    lines[choose].right_height = lines[choose+1].height - lines[choose].height
+                    lines[choose+1].left_height = vehicle_length - lines[choose+1].height
+                else:
+                    lines[choose].right_height = vehicle_length - lines[choose].height
+                    lines[choose+1].left_height = lines[choose].height - lines[choose+1].height
+            if choose + 1 == len(lines):
+                lines[choose].right_height = vehicle_length - lines[choose].height
+
+
+        elif score == 7 :
+
+            lines[choose].start.x =round(lines[choose].start.x + bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+            if choose >0:
+                lines[choose-1].end.x= round(lines[choose-1].end.x+bin_list[final_bin].width,5)
+                lines[choose-1].width = round(lines[choose-1].width + bin_list[final_bin].width,5)
+
+        elif score == 6:
+
+            lines[choose].end.x = round(lines[choose].end.x-bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+            if choose+1 < len(lines):
+                lines[choose+1].start.x = round(lines[choose+1].start.x - bin_list[final_bin].width,5)
+                lines[choose+1].width = round(lines[choose+1].width + bin_list[final_bin].width,5)
+        elif score == 5 or score == 4:
+            lines[choose].left_height=bin_list[final_bin].length
+
+            # 多出一条线段
+            tmp_start=entity.Point(lines[choose].start.x,lines[choose].start.y+bin_list[final_bin].length)
+            tmp_end=entity.Point(tmp_start.x+bin_list[final_bin].width,tmp_start.y)
+
+            if tmp_start.y<lines[choose-1].height:
+                tmp_left_height=round( lines[choose-1].height-tmp_start.y,5)
+            else:
+                tmp_left_height=round(vehicle_length-tmp_start.y,5)
+                lines[choose-1].right_height = round(tmp_start.y - lines[choose-1].height,5)
+            tmp_right_height=vehicle_length-tmp_start.y
+
+            tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
+            lines[choose].start.x = round(lines[choose].start.x + bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width-bin_list[final_bin].width,5)
+            lines.insert(choose,tmp_line)
+
+        elif score == 3:
+            lines[choose].end.x = round(lines[choose].end.x - bin_list[final_bin].width,5)
+            lines[choose].right_height = round(bin_list[final_bin].length,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+
+            tmp_start=entity.Point(lines[choose].end.x,lines[choose].end.y+bin_list[final_bin].length)
+            tmp_end=entity.Point(tmp_start.x+bin_list[final_bin].width,tmp_start.y)
+
+            tmp_left_height = vehicle_length- tmp_start.y
+            if choose+1 == len(lines):
+                tmp_right_height = vehicle_length - tmp_start.y
+            elif tmp_start.y < lines[choose+1].height:
+                tmp_right_height = lines[choose+1].height - tmp_start.y
+            else:
+                tmp_right_height = vehicle_length - tmp_start.y
+            tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
+            lines.insert(choose+1,tmp_line)
+
+        elif score == 2:
+            if choose > 0:
+                lines[choose-1].end.x=round(lines[choose-1].end.x + bin_list[final_bin].width,5)
+                lines[choose - 1].width = round(lines[choose - 1].width + bin_list[final_bin].width, 5)
+            lines[choose].start.x=round(lines[choose].start.x + bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width-bin_list[final_bin].width,5)
+        elif score == 1:
+            if choose+1 < len(lines):
+                lines[choose+1].start.x =round(lines[choose+1].start.x-bin_list[final_bin].width,5)
+                lines[choose+1].width = round(lines[choose+1].width + bin_list[final_bin].width,5)
+            lines[choose].end.x = round(lines[choose].end.x - bin_list[final_bin].width,5)
+            lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
+
+    #本站点的货物已经装完
+    if len(bins)==0:
+        station.isEmpty=True
+    #如果max_height==vehicle.length则说明车厢已经装满，否则说明以下两种情况：
+    # 1.站点的货物已经装载完
+    # 2.车辆超重
+    #这两种情况都可以通过检查车辆的状态来进一步判断，从而确定是否需要向此站点再派车辆，或者将此车辆继续调度
+    vehicle.max_height=max_height
+    return max_height
+
+
+#根据bin的id在list中删除b
+def delete_bin(bins,b):
+    for i in range(len(bins)):
+        if b.id == bins[i].id:
+            bins.remove(bins[i])
+            break;
+
+def find_lowest_line(lines):
+    h=sys.maxsize
+    res=-1
+    for i in range(len(lines)):
+        if h > lines[i].height and lines[i].is_able==True:
+            h=lines[i].height
+            res=i
+    return res
+
+
+def find_max_width_2(bins,width):
+    max=0
+    res=-1
+    for i in range(len(bins)):
+        b=bins[i]
+        if b.width<width:
+            if max < b.width:
+                max = b.width
+                res=i
+        if b.length < width:
+            if max < b.length:
+                max=b.length
+                b.rotate_bin()
+                res=i
+    return res
+
+def find_max_width(bins):
+    max_width=bins[0].width
+    res=0
+    for i in range(len(bins)):
+        if max_width<bins[i].width:
+            max_width=bins[i].width
+            res=i
+    return res
+
+
+def find_min_width(bins,vehicle):
+    min_width=bins[0].width
+    res=0
+
+    for i in range(len(bins)):
+        if min_width>bins[i].width and (bins[i].weight + vehicle.used_weight) <= vehicle.weight:
+            min_width=bins[i].width
+            res=i
+        if min_width>bins[i].length and (bins[i].weight + vehicle.used_weight) <= vehicle.weight:
+            min_width=bins[i].length
+            res=i
+            bins[i].rotate_bin()
+    return res
+
+# merge line fragment
+def merge_line(lines,min_width,vehicle):
+    N=len(lines)
+    if N <= 1:
+        return
+    i=0
+
+    while i < N:
+        if N==1:
+
+            break
+        total=0
+        for l in lines:
+            total = total + l.width
+        tmp= round(total - vehicle.width,5)
+        #if tmp > 0 :
+        #   print 333333
+        cur_width=lines[i].width
+        if cur_width < min_width: #merge
+            if i == 0:
+                if lines[i].height < lines[i+1].height:
+                    lines[i+1].start.x=round(lines[i].start.x,5)
+                    lines[i+1].left_height = vehicle.length-lines[i+1].height
+                    lines[i+1].width = round(lines[i].width+lines[i+1].width,5)
+                    lines[i+1].is_able=True
+                    lines.remove(lines[i])
+
+                else:
+                    lines[i].end.x=round(lines[i+1].end.x,5)
+                    lines[i].width = round(lines[i].width + lines[i + 1].width, 5)
+                    lines[i].is_able = True
+
+                    if i+2<len(lines):
+                        if lines[i+2].height>lines[i].height:
+                            lines[i].right_height = round(lines[i+2].height - lines[i].height, 5)
+                            lines[i+2].left_height = round(vehicle.length - lines[i+2].height, 5)
+                        elif lines[i+2].height<lines[i].height:
+                            lines[i].right_height = round(vehicle.length - lines[i].height, 5)
+                            lines[i + 2].left_height = round(lines[i].height - lines[i + 2].height, 5)
+                        else:
+                            lines[i].end.x=lines[i+2].end.x
+                            lines[i].width = round(lines[i].width + lines[i + 2].width, 5)
+                            lines[i].right_height = lines[i+2].right_height
+                            lines.remove(lines[i + 2])
+                            i=i-1
+                        lines.remove(lines[i + 1])
+                    else:
+                        lines[i].right_height = round(vehicle.length - lines[i].height, 5)
+                        lines.remove(lines[i+1]) #####
+
+            elif i == N-1:
+
+                if lines[i].height>lines[i-1].height:
+                    #if lines[i-1].width < min_width:#merge
+                        lines[i-1].start.y = lines[i].start.y
+                        lines[i-1].end.y= lines[i].start.y
+                        lines[i-1].end.x = lines[i].end.x
+                        lines[i-1].width = round(lines[i-1].width + lines[i].width,5)
+                        lines[i-1].height = lines[i-1].start.y
+                        lines[i-1].right_height = lines[i].right_height
+                        lines[i-1].is_able = True
+                        lines.remove(lines[i])
+                    #else:
+                    #    print("TODO")
+                else:
+                    lines[i-1].end.x = lines[i].end.x
+                    lines[i-1].width = round(lines[i-1].width + lines[i].width,5)
+                    lines[i-1].right_height = round(vehicle.length-lines[i-1].height,5)
+                    lines[i-1].is_able = True
+                    lines.remove(lines[i])
+
+            else:
+                if lines[i-1].height < lines[i+1].height:
+                    if lines[i-1].height > lines[i].height:
+                        lines[i-1].width = round(lines[i-1].width + lines[i].width,5)
+                        lines[i-1].end.x=lines[i].end.x
+                        lines[i-1].right_height = round(lines[i+1].height - lines[i-1].height,5)
+                        lines[i+1].left_height = round(vehicle.length - lines[i+1].height,5)
+                        lines[i-1].is_able = True
+                        lines.remove(lines[i])
+
+                    else:
+                        lines[i].start.x =lines[i-1].start.x
+                        if i-1 == 0:
+                            lines[i].left_height = vehicle.length - lines[i].height
+                        else:
+                            if lines[i-2].height < lines[i].height:
+                                lines[i].left_height = vehicle.length - lines[i].height
+                                lines[i-2].right_height = lines[i].height - lines[i-2].height
+                            elif lines[i-2].height > lines[i].height:
+                                lines[i].left_height = lines[i-2].height - lines[i].height
+                                lines[i - 2].right_height = vehicle.length - lines[i - 2].height
+                            else:
+                                lines[i].left_height = lines[i-2].left_height
+                                lines[i].width = round(lines[i - 2].width + lines[i].width, 5)
+                                lines[i].start.x= lines[i-2].start.x
+                                lines.remove(lines[i-2])
+                                i=i-1
+
+                        lines[i].width = round(lines[i - 1].width + lines[i].width, 5)
+                        lines[i].is_able = True
+                        lines.remove(lines[i-1])
+
+                elif lines[i-1].height == lines[i+1].height:
+                    lines[i-1].width = round(lines[i-1].width + lines[i].width + lines[i+1].width,5)
+                    lines[i-1].end.x = lines[i+1].end.x
+                    lines[i-1].right_height = lines[i+1].right_height
+                    lines[i-1].is_able=True
+                    lines.remove(lines[i])
+                    lines.remove(lines[i])
+                    i=i-1
+
+                else:
+                    if lines[i].height< lines[i+1].height:
+                        lines[i+1].start.x = lines[i].start.x
+                        lines[i+1].width = round(lines[i].width+lines[i+1].width,5)
+
+                        lines[i-1].right_height = round(vehicle.length - lines[i-1].height,5)
+                        lines[i+1].left_height = round(lines[i-1].height - lines[i+1].height,5)
+                        lines.remove(lines[i])
+
+                    else:
+                        lines[i].end.x = lines[i+1].end.x
+                        lines[i].width = round(lines[i].width+lines[i+1].width,5)
+                        lines[i].right_height = lines[i+1].right_height
+                        lines[i].is_able=True
+                        lines.remove(lines[i+1])
+            i=i-1
+
+        i=i+1
+        N=len(lines)
+
+    for line in lines:
+        line.width= line.end.x - line.start.x
+        if line.width ==0:
+            lines.remove(line)
+
+#对一种情况下，放入某一个货物bin进行打分
+def gene_score(line,bin):
+
+    l=bin.length
+    w=bin.width
+    a=0.4
+
+    if w==line.width and l==line.left_height:
+        score=12
+    elif w==line.width and l==line.right_height:
+        score=11
+    elif w==line.width and (1-a) * line.left_height <= l < (1+a)*line.left_height :
+        score = 10
+    elif w==line.width and l >= (1+a)*line.left_height:
+        score=9
+    elif w==line.width and (1-a) * line.right_height <= l < (1+a)*line.right_height:
+        score=8
+    elif line.width*(1-a) < w < line.width and l==line.left_height:
+        score=7
+    elif line.width*(1-a) < w < line.width and l==line.right_height:
+        score=6
+    elif line.width*(1-a) < w < line.width and line.left_height*(1-a) < l < line.left_height*(1+a):
+        score=5
+    elif line.width*(1-a) < w < line.width and l >= line.left_height*(1+a):
+        score=4
+    elif line.width * (1-a) < w < line.width and line.right_height*(1-a) < l < line.right_height*(1+a):
+        score=3
+    elif w<=line.width * (1-a) and l == line.left_height:
+        score=2
+    elif w<=line.width * (1-a) and l == line.right_height:
+        score=1
+    else:
+        score = 0
+
+    return score
+
+
+def add_bin(lines,choose_line,bin,vehicle):
+    vehicle_length=vehicle.length
+    line=lines[choose_line]
+
+    if bin.width == line.width:
+        leftDown = entity.Point(line.start.x,line.start.y)
+
+        line.start.y = line.start.y + bin.length
+        line.end.y = line.start.y
+        line.height = line.start.y
+        if choose_line != len(lines)-1:
+            if choose_line+1 < len(lines) and line.height < lines[choose_line+1].height:
+                line.right_height = lines[choose_line+1].height - line.height
+                lines[choose_line+1].left_height = vehicle_length - lines[choose_line+1].height
+            elif choose_line+1 < len(lines) and line.height > lines[choose_line+1].height:
+                line.right_height = vehicle_length - line.height
+                lines[choose_line + 1].left_height = line.height - lines[choose_line + 1].height
+        if choose_line != 0:
+            if lines[choose_line - 1].height < lines[choose_line].height:
+                lines[choose_line].left_height = round(vehicle_length - lines[choose_line].height, 5)
+                lines[choose_line - 1].right_height = round(lines[choose_line].height - lines[choose_line - 1].height,5)
+            else:
+                lines[choose_line].left_height = round(lines[choose_line - 1].height - lines[choose_line].height, 5)
+                lines[choose_line - 1].righ_height = round(vehicle_length - lines[choose_line - 1].height,5)
+
+        if choose_line == 0:
+            line.left_height = vehicle_length - line.height
+
+        if choose_line+1 < len(lines):
+            line.right_height = vehicle_length -line.height
+
+    else:
+        if line.right_height == bin.length: #right
+            leftDown = entity.Point(line.end.x-bin.width,line.end.y)
+
+            lines.end.x = line.end.x - bin.width
+            line.height = line.start.y
+            line.width = line.width - bin.width
+            line.right_height = bin.length
+            if choose_line < len(lines)-1:
+                lines[choose_line+1].start.x = line.end.x
+                lines[choose_line+1].width = lines[choose_line+1].width + bin.width
+
+        else:#left
+            leftDown = entity.Point(line.start.x, line.start.y)
+            if bin.length == line.left_height:
+                if choose_line > 0:
+                    lines[choose_line - 1].end.x = lines[choose_line-1].end.x + bin.width
+                    lines[choose_line - 1].width = lines[choose_line - 1].width + bin.width
+                line.start.x= line.start.x + bin.width
+                line.width =line.width - bin.width
+            else:
+
+                tmp_start = entity.Point(line.start.x,line.start.y+bin.length)
+                tmp_end = entity.Point(tmp_start.x+bin.width,tmp_start.y)
+                tmp_right = vehicle_length - tmp_start.y
+                if bin.length < line.left_height:
+                    tmp_left = line.left_height - bin.length
+                else:
+                    tmp_left = vehicle_length - bin.length
+                    if choose_line >0:
+                        lines[choose_line-1] = tmp_start.y - lines[choose_line-1].height
+                tmp_line = entity.Line(tmp_start,tmp_end,tmp_left,tmp_right)
+                line.start.x = line.start.x + bin.width
+                line.width = line.width - bin.width
+                line.left_height=bin.length
+
+                lines.insert(choose_line,tmp_line)
+
+    bin.set_pointList(entity.Point(leftDown.x, leftDown.y),
+                      entity.Point(leftDown.x + bin.width, leftDown.y),
+                      entity.Point(leftDown.x + bin.width, leftDown.y + bin.length),
+                      entity.Point(leftDown.x, leftDown.y + bin.length))
+    merge_line_add(lines) # merge adjacent lines with the same height
+
+
+def merge_line_add(lines):
+    N=len(lines)
+    i=0
+    while i < N-1:
+
+        line_1=lines[i]
+        line_2=lines[i+1]
+        if line_1.width == 0:
+            lines.remove(line_1)
+            break
+        if line_2.width == 0:
+            lines.remove(line_2)
+            break
+        if line_1.height == line_2.height:#merge
+            line_1.end.x=line_2.end.x
+            line_1.width = line_1.width +line_2.width
+            line_1.right_height = line_2.right_height
+
+            lines.remove(line_2)
+            i=i-1
+
+        i = i+1
+        N=len(lines)
+    line = lines[len(lines)-1]
+    if line.width ==0:
+        lines.remove(line)

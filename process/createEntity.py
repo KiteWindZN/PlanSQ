@@ -81,8 +81,8 @@ def createBin(path,stations):
         Bins.append(b)
         #stations[s].binList.append(b)
         stations[s].binList=binInsert(stations[s],b)
-        stations[s].area = stations[s].area + b.length*b.width
-        stations[s].weight = stations[s].weight + b.weight
+        stations[s].area = round( stations[s].area + b.length*b.width,5)
+        stations[s].weight = round(stations[s].weight + b.weight,5)
 
         #stations[s].binList.append(b)
         stations[s].isEmpty=False
@@ -288,6 +288,8 @@ def draw_rect(vehicle,used_area):
 
 
     #fig.savefig("rect1.png", dpi=90, bbox_inches='tight')
+
+
 
 if __name__ == '__main__':
 

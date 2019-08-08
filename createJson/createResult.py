@@ -36,7 +36,7 @@ def createJson(json_path,vehicle_list):
                     point_list=tmp_bin.pointList
                     for g in range(len(point_list)):
                         if (g+1) < len(point_list):
-                            f.write("["+str(point_list[g].x)+", "+str(point_list[g].y)+"],")
+                            f.write("["+str(point_list[g].x)+", "+str(point_list[g].y)+"], ")
                         else:
                             f.write("[" + str(point_list[g].x) + ", " + str(point_list[g].y) + "]")
                     if (h+1)<len(bin_list):
