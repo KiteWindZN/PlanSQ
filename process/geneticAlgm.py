@@ -517,7 +517,6 @@ if __name__ == '__main__':
     #max_height=skyLine.skyline(vehicles[998],stations["S045"])
 
 
-
     #print()
     #print(max_height)
 
