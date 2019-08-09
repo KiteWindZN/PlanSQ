@@ -7,15 +7,69 @@ import random
 from createJson import createResult
 
 #遗传算法
-def genetic(bin_list,gene_num):
+def genetic(vehicles,stations,map,time,gene_num):
     print("genetic Algm")
-    bin_len=len(bin_list)
-    bin_index_list=[]
+
+    final_cost=sys.maxsize
+    final_rate = 0
+    final_gene=[]
+
     gene_list=[]
     for i in range(gene_num):
-        res=create_gene_bin(bin_list)
+        res=create_gene_station(stations)
         gene_list.append(res)
 
+    N = 100
+
+    res_cost=[]
+    res_rate=[]
+    res_gene=[]
+
+    for i in range(N):
+        for j in range(len(gene_list)):
+            vehicle_list = schedule_gene(gene_list[j],vehicles,stations,time)
+            cost,rate = cal_final_result(vehicle_list,map)
+            res_cost.append(cost)
+            res_rate.append(rate)
+            if final_cost > cost:
+                final_cost = cost
+                final_rate = rate
+                final_gene = copy_gene(gene_list[j])
+
+        #choose 200 gene
+        for h in range(100):
+            min_cost = sys.maxsize
+            for k in range(10):
+                choose_index=0
+                index= random.randint(0,gene_num-1)
+                if res_cost[index]< min_cost:
+                    choose_index = index
+                    min_cost = res_cost[index]
+            res_gene.append(gene_list[choose_index])
+        #cross
+        cross_rate = 0.5
+        mutation_rate = 0.2
+
+        for h in range(len(res_gene)):
+            index1 = random.randint(0,len(res_gene))
+            rate1=random.random()
+            if rate1<= mutation_rate:
+                gene_mutation(res_gene[index1])
+            rate1=random.random()
+            if rate1 <= cross_rate:
+                index2=random.randint(0,len(res_gene))
+                gene_cross(res_gene[index1],res_gene[index2])
+
+        gene_list = res_gene
+
+    return final_gene,final_cost,final_rate
+
+
+def copy_gene(gene):
+    res_gene=[]
+    for g in gene:
+        res_gene.append(g)
+    return res_gene
 
 #注意消除冲突的问题
 def gene_cross(gene1,gene2):
@@ -26,13 +80,14 @@ def gene_cross(gene1,gene2):
         tmp=gene1[i]
         gene1[i]=gene2[i]
         gene2[i]=tmp
+        i=i+1
     #消除冲突
     list1=[]
     list2=[]
     change1=[]
     change2=[]
 
-    for i in range(gene_len):
+    for i in gene1:
         list1.append(0)
         list2.append(0)
     for i in range(gene_len):
@@ -126,24 +181,27 @@ def find_min_width(bins,vehicle):
 def schedule_gene(gene,vehicles,stations,T):
     res_vehicle_list=[]
     flag = 0
-    list = [332, 331, 330,329,328,998,997]
+    list = [664]
     index=0
+    for vehicle in vehicles:
+        vehicle.is_available = True
     for i in range(len(gene)):
         g=gene[i]
-        print i , g
+        #print(i , g)
         choose_station = stations[g]
         if flag == 0:
             weight = choose_station.weight
             choose_vehicle_num = choose_vehicle_index(weight, vehicles,choose_station)
             #choose_vehicle_num=list[index]
-            index= index+1
+            #index= index+1
             choose_vehicle = create_new_vehicle(vehicles[choose_vehicle_num])
-            vehicles.remove(vehicles[choose_vehicle_num])
+            #vehicles.remove(vehicles[choose_vehicle_num])
+            vehicles[choose_vehicle_num].is_available=False
             res_vehicle_list.append(choose_vehicle)
         choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
 
         while choose_station.weight != 0:
-            print "aaa"
+            #print "aaa"
             max_height = skyLine.skyline(choose_vehicle,choose_station)
             createEntity.cal_station_area_weight(choose_station)
             if choose_station.weight == 0:
@@ -151,19 +209,25 @@ def schedule_gene(gene,vehicles,stations,T):
                 if max_height < choose_vehicle.length:
                     if i < len(gene)-1 and choose_vehicle.usedTime + T[str(g)][str(gene[i+1])] + stations[str(gene[i+1])].loading_time <= 600 \
                             and choose_vehicle.length <= stations[str(gene[i+1])].vehicle_limit:
+                        if choose_vehicle.length > stations[str(gene[i+1])].vehicle_limit:
+                            print("aaaaaa")
                         choose_vehicle.usedTime = choose_vehicle.usedTime + T[g][gene[i+1]]
                         flag=1
+                    else:
+                        flag=0
                 else:
                     flag=0
             else:
                 weight = choose_station.weight
                 choose_vehicle_num = choose_vehicle_index(weight, vehicles, choose_station)
                 #choose_vehicle_num = list[index]
-                index = index + 1
+                #index = index + 1
                 choose_vehicle = create_new_vehicle(vehicles[choose_vehicle_num])
-                vehicles.remove(vehicles[choose_vehicle_num])
+                #vehicles.remove(vehicles[choose_vehicle_num])
+                vehicles[choose_vehicle_num].is_available = False
                 res_vehicle_list.append(choose_vehicle)
                 choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
+                flag=0
 
     return res_vehicle_list
 
@@ -179,9 +243,20 @@ def check_vehicle(vehicle):
             path.remove(s)
             station_bin.pop(s)
 
+
 def check_vehicle_list(vehicle_list):
     for vehicle in vehicle_list:
         check_vehicle(vehicle)
+
+def check_vehicle_limit(vehicle_list,stations):
+    for vehicle in vehicle_list:
+        vehicle_length = vehicle.length
+        path = vehicle.path
+        for s in path:
+            station_limit = stations[s].vehicle_limit
+            if station_limit < vehicle_length:
+                print(station_limit, vehicle_length)
+
 
 #前向搜索树算法
 def forward_tree(bins,vehicle):
@@ -343,7 +418,7 @@ def create_new_vehicle(vehicle):
 def choose_vehicle_index(weight,vehicle_list,station):
     i=len(vehicle_list)-1
     while i>0:
-        if vehicle_list[i].length <= station.vehicle_limit:
+        if vehicle_list[i].length <= station.vehicle_limit and vehicle_list[i].is_available == True:
             return i
         i = i-1
 
@@ -466,24 +541,25 @@ if __name__ == '__main__':
 
     #  createEntity.draw_rect(vehicles[2],tmp_area)
 
-    gene=create_gene_station(stations)
-    #gene=["S122","S141","S212"]
+    #gene=create_gene_station(stations)
+    #gene=["S171","S164", "S104","S087","S008","S200","S003","S188","S099","S167", "S038","S132","S035","S127","S066","S076","S010","S169","S027","S170","S079"]
     #gene=["S163"]
     #print gene
     #print len(gene)
 
+    gene = genetic(vehicles,stations,map,time,200)
     vehicle_list=schedule_gene(gene,vehicles,stations,time)
-    total_cost,total_rate=cal_final_result(vehicle_list,map)
+    #total_cost,total_rate=cal_final_result(vehicle_list,map)
 
-    print total_cost , total_rate
-    path = createResult.createFileJson()
+    #print (total_cost , total_rate)
+    #path = createResult.createFileJson()
 
     status=is_finashed(stations)
-    print status
+    print(status)
 
-    for i in range(len(gene)):
-        if i+1 < len(gene):
-            print time[str(gene[i])][str(gene[i+1])]
+    #for i in range(len(gene)):
+    #    if i+1 < len(gene):
+    #        print(time[str(gene[i])][str(gene[i+1])])
 
     len_1=len(bins)
     len_2=0
@@ -491,6 +567,8 @@ if __name__ == '__main__':
         len_2 = len_2 + len(v.bin_list)
 
 
-    print "len_1 : ", len_1, "len_2 : ",len_2
+    print( "len_1 : ", len_1, "len_2 : ",len_2)
 
     createResult.createJson(path, vehicle_list)
+
+    check_vehicle_limit(vehicle_list,stations)
