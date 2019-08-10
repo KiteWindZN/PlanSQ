@@ -93,11 +93,11 @@ def gene_cross(gene1,gene2):
     for i in range(gene_len):
         list1[gene1[i]] = list1[gene1[i]]+1
         if list1[gene1[i]] == 2:
-            change1.append(gene1[i])
+            change1.append(i)
 
         list2[gene2[i]] = list2[gene2[i]]+1
         if list2[gene2[i]] == 2:
-            change2.append(gene2[i])
+            change2.append(i)
     for i in range(len(change1)):
         tmp = gene1[change1[i]]
         gene1[change1[i]]=gene2[change2[i]]
@@ -235,7 +235,8 @@ def schedule_gene(gene,vehicles,stations,T):
                 res_vehicle_list.append(choose_vehicle)
                 choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
                 flag=0
-
+    path="../dataset/month3/"
+    createEntity.createBin(path + "bin.json", stations) #add bins to stations again
     return res_vehicle_list
 
 
@@ -559,7 +560,7 @@ if __name__ == '__main__':
     #print gene
     #print len(gene)
 
-    gene = genetic(vehicles,stations,map,time,200)
+    gene = genetic(vehicles,stations,map,time,100)
     vehicle_list=schedule_gene(gene,vehicles,stations,time)
     #total_cost,total_rate=cal_final_result(vehicle_list,map)
 

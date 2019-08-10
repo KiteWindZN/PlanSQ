@@ -447,17 +447,13 @@ def merge_line(lines,min_width,vehicle):
         line.width = round(line.end.x - line.start.x, 5)
         if line.width == 0:
             lines.remove(line)
-
+    N=len(lines)
+    if N <= 1:
+        return
     while i < N:
         if N==1:
-
             break
-        total=0
-        #for l in lines:
-        #    total = total + l.width
-        #tmp= round(total - vehicle.width,5)
-        #if tmp > 0 :
-        #   print 333333
+
         cur_width=lines[i].width
         if cur_width < min_width: #merge
             if i == 0:
@@ -467,7 +463,7 @@ def merge_line(lines,min_width,vehicle):
                     lines[i+1].width = round(lines[i].width+lines[i+1].width,5)
                     lines[i+1].is_able=True
                     lines.remove(lines[i])
-
+                    i = i - 1
                 else:
                     lines[i].end.x=round(lines[i+1].end.x,5)
                     lines[i].width = round(lines[i].width + lines[i + 1].width, 5)
@@ -485,11 +481,13 @@ def merge_line(lines,min_width,vehicle):
                             lines[i].width = round(lines[i].width + lines[i + 2].width, 5)
                             lines[i].right_height = lines[i+2].right_height
                             lines.remove(lines[i + 2])
-                            i=i-1
+
                         lines.remove(lines[i + 1])
+
                     else:
                         lines[i].right_height = round(vehicle.length - lines[i].height, 5)
                         lines.remove(lines[i+1]) #####
+
 
             elif i == N-1:
 
@@ -503,6 +501,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].right_height = lines[i].right_height
                         lines[i-1].is_able = True
                         lines.remove(lines[i])
+                        i=i-1
                     #else:
                     #    print("TODO")
                 else:
@@ -511,7 +510,7 @@ def merge_line(lines,min_width,vehicle):
                     lines[i-1].right_height = round(vehicle.length-lines[i-1].height,5)
                     lines[i-1].is_able = True
                     lines.remove(lines[i])
-
+                    i=i-1
             else:
                 if lines[i-1].height < lines[i+1].height:
                     if lines[i-1].height > lines[i].height:
@@ -521,12 +520,14 @@ def merge_line(lines,min_width,vehicle):
                         lines[i+1].left_height = round(vehicle.length - lines[i+1].height,5)
                         lines[i-1].is_able = True
                         lines.remove(lines[i])
-
+                        i=i-1
                     else:
                         lines[i].start.x =lines[i-1].start.x
+                        flag=0
                         if i-1 == 0:
                             lines[i].left_height = round(vehicle.length - lines[i].height,5)
                         else:
+                            flag=0
                             if lines[i-2].height < lines[i].height:
                                 lines[i].left_height = round(vehicle.length - lines[i].height,5)
                                 lines[i-2].right_height = round(lines[i].height - lines[i-2].height,5)
@@ -538,12 +539,14 @@ def merge_line(lines,min_width,vehicle):
                                 lines[i].width = round(lines[i - 2].width + lines[i].width, 5)
                                 lines[i].start.x= lines[i-2].start.x
                                 lines.remove(lines[i-2])
-                                i=i-1
+                                flag=1
 
                         lines[i].width = round(lines[i - 1].width + lines[i].width, 5)
                         lines[i].is_able = True
                         lines.remove(lines[i-1])
-
+                        i=i-1
+                        if flag == 1:
+                            i=i-1
                 elif lines[i-1].height == lines[i+1].height:
                     lines[i-1].width = round(lines[i-1].width + lines[i].width + lines[i+1].width,5)
                     lines[i-1].end.x = lines[i+1].end.x
@@ -551,7 +554,7 @@ def merge_line(lines,min_width,vehicle):
                     lines[i-1].is_able=True
                     lines.remove(lines[i])
                     lines.remove(lines[i])
-                    i=i-1
+                    i=i-2
 
                 else:
                     if lines[i].height< lines[i+1].height:
@@ -561,14 +564,13 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].right_height = round(vehicle.length - lines[i-1].height,5)
                         lines[i+1].left_height = round(lines[i-1].height - lines[i+1].height,5)
                         lines.remove(lines[i])
-
+                        i=i-1
                     else:
                         lines[i].end.x = lines[i+1].end.x
                         lines[i].width = round(lines[i].width+lines[i+1].width,5)
                         lines[i].right_height = lines[i+1].right_height
                         lines[i].is_able=True
                         lines.remove(lines[i+1])
-            i=i-1
 
         i=i+1
         N=len(lines)
