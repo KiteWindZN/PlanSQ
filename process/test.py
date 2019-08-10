@@ -7,6 +7,7 @@ if __name__=='__main__':
     if(c == d):
         print("bbbb")
     print(c)
+<<<<<<< Updated upstream
     print("aaaa")
 
 
@@ -109,3 +110,6 @@ def merge_line(vehicle,lines,min_width):
 
 
     scan_lines(lines,vehicle)
+=======
+    print("aaaa")
+>>>>>>> Stashed changes
