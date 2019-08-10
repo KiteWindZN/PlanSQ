@@ -288,11 +288,7 @@ def draw_rect(vehicle,used_area):
 
 
     #fig.savefig("rect1.png", dpi=90, bbox_inches='tight')
-<<<<<<< Updated upstream
 
-
-=======
->>>>>>> Stashed changes
 
 if __name__ == '__main__':
 
