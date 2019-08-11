@@ -22,7 +22,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
         res_vehicle_list.append(choose_vehicle)
-        choose_vehicle.path.append(s_id)
+        #choose_vehicle.path.append(s_id)
         choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
         vehicles[choose_vehicle_num].is_available = False
 
@@ -32,7 +32,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
             res_vehicle_list.append(choose_vehicle)
-            choose_vehicle.path.append(s_id)
+            #choose_vehicle.path.append(s_id)
             choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
             vehicles[choose_vehicle_num].is_available = False
 
@@ -45,7 +45,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 tmp_dis=sys.maxsize
                 next_s_id ="-1"
                 for n_s in nobor_list:
-                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and choose_vehicle.usedTime+T[s_id][n_s]<=600:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and choose_vehicle.usedTime+T[s_id][n_s]<=600:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -60,7 +60,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
         res_vehicle_list.append(choose_vehicle)
-        choose_vehicle.path.append(s_id)
+        #choose_vehicle.path.append(s_id)
         vehicles[choose_vehicle_num].is_available = False
 
         max_height = skyLine.skyline(choose_vehicle,choose_station)
@@ -69,7 +69,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
             res_vehicle_list.append(choose_vehicle)
-            choose_vehicle.path.append(s_id)
+            #choose_vehicle.path.append(s_id)
             vehicles[choose_vehicle_num].is_available = False
 
             max_height = skyLine.skyline(choose_vehicle, choose_station)
@@ -84,7 +84,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
-                if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     skyLine.skyline(choose_vehicle,stations[next_s_id])
                     choose_vehicle.path.append(next_s_id)
 
@@ -95,7 +95,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
         res_vehicle_list.append(choose_vehicle)
-        choose_vehicle.path.append(s_id)
+        #choose_vehicle.path.append(s_id)
         vehicles[choose_vehicle_num].is_available = False
 
         max_height = skyLine.skyline(choose_vehicle,choose_station)
@@ -104,7 +104,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
             res_vehicle_list.append(choose_vehicle)
-            choose_vehicle.path.append(s_id)
+            #choose_vehicle.path.append(s_id)
             vehicles[choose_vehicle_num].is_available = False
 
             max_height = skyLine.skyline(choose_vehicle, choose_station)
@@ -119,7 +119,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
-                if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     skyLine.skyline(choose_vehicle,stations[next_s_id])
                     choose_vehicle.path.append(next_s_id)
     return res_vehicle_list
