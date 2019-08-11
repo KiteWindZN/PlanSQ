@@ -226,10 +226,13 @@ def floyd(mat,T):
     N=len(mat)
 
     for k in range(N):
+        k=k+1
         id_k=get_station_id(k)
         for i in range(N):
+            i=i+1
             id_i=get_station_id(i)
             for j in range(N):
+                j=j+1
                 id_j=get_station_id(j)
                 if mat[id_i][id_j] > mat[id_i][id_k] + mat[id_k][id_j]:
                     mat[id_i][id_j] = mat[id_i][id_k] + mat[id_k][id_j]
@@ -239,11 +242,11 @@ def floyd(mat,T):
 def get_station_id(num):
     station_id="S"
     if num < 10:
-        station_id = station_id + "00" +num
+        station_id = station_id + "00" +str(num)
     elif num < 100:
-        station_id = station_id + "0" +num
+        station_id = station_id + "0" +str(num)
     else:
-        station_id = station_id + num
+        station_id = station_id + str(num)
     return station_id
 
 def cal_station_area_weight(station):
@@ -287,7 +290,22 @@ def draw_rect(vehicle,used_area):
     plt.show()
 
 
+
     #fig.savefig("rect1.png", dpi=90, bbox_inches='tight')
+
+def divide_stations(stations):
+    station_id_list1=[]
+    station_id_list2=[]
+    station_id_list3=[]
+
+    for s in stations:
+        if stations[s].vehicle_limit >= 17.5:
+            station_id_list3.append(s)
+        elif stations[s].vehicle_limit >= 9.6:
+            station_id_list2.append(s)
+        else:
+            station_id_list1.append(s)
+    return station_id_list1,station_id_list2,station_id_list3
 
 
 if __name__ == '__main__':
