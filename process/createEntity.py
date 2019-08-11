@@ -137,7 +137,7 @@ def createMST(map,T):
     lastStations.remove(lastStations[0])
 
     N=len(lastStations)
-    for i in range(N-1):
+    for i in range(N):
         minDis = sys.maxsize
         choooseS = ""
         startS = ""
