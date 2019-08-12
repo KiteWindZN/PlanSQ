@@ -50,7 +50,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         next_s_id = n_s
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     skyLine.skyline(choose_vehicle,stations[next_s_id])
-                    choose_vehicle.path.append(next_s_id)
+                    #choose_vehicle.path.append(next_s_id)
                     choose_vehicle.usedTime = choose_vehicle.usedTime + T[s_id][n_s] + choose_station.loading_time
 
     for s_id in station_list2:
@@ -86,7 +86,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         next_s_id = n_s
                 if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     skyLine.skyline(choose_vehicle,stations[next_s_id])
-                    choose_vehicle.path.append(next_s_id)
+                    #choose_vehicle.path.append(next_s_id)
 
     for s_id in station_list3:
         choose_station=stations[s_id]
@@ -121,7 +121,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         next_s_id = n_s
                 if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     skyLine.skyline(choose_vehicle,stations[next_s_id])
-                    choose_vehicle.path.append(next_s_id)
+                    #choose_vehicle.path.append(next_s_id)
     return res_vehicle_list
 
 

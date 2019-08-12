@@ -19,7 +19,7 @@ def genetic(vehicles,stations,map,time,gene_num):
         res=create_gene_station(stations)
         gene_list.append(res)
 
-    N = 10
+    N = 100
 
     res_cost=[]
     res_rate=[]
@@ -27,7 +27,7 @@ def genetic(vehicles,stations,map,time,gene_num):
 
     for i in range(N):
         for j in range(len(gene_list)):
-            vehicle_list = schedule_gene(gene_list[j],vehicles,stations,time)
+            vehicle_list = schedule_gene(gene_list[j],vehicles,stations,map,time)
             cost,rate = cal_final_result(vehicle_list,map)
             res_cost.append(cost)
             res_rate.append(rate)
@@ -35,29 +35,30 @@ def genetic(vehicles,stations,map,time,gene_num):
                 final_cost = cost
                 final_rate = rate
                 final_gene = copy_gene(gene_list[j])
+        print(i," : ",final_cost,final_rate," , ",final_gene)
         #return final_gene, final_cost, final_rate
         #choose 200 gene
-        for h in range(50):
+        for h in range(200):
             min_cost = sys.maxsize
             for k in range(10):
                 choose_index=0
-                index= random.randint(0,gene_num-1)
+                index= random.randint(0,len(gene_list)-1)
                 if res_cost[index]< min_cost:
                     choose_index = index
                     min_cost = res_cost[index]
             res_gene.append(gene_list[choose_index])
         #cross
-        cross_rate = 0.5
-        mutation_rate = 0.2
+        cross_rate = 0.7
+        mutation_rate = 0.3
 
         for h in range(len(res_gene)):
-            index1 = random.randint(0,len(res_gene))
+            index1 = random.randint(0,len(res_gene)-1)
             rate1=random.random()
             if rate1<= mutation_rate:
                 gene_mutation(res_gene[index1])
             rate1=random.random()
             if rate1 <= cross_rate:
-                index2=random.randint(0,len(res_gene))
+                index2=random.randint(0,len(res_gene)-1)
                 gene_cross(res_gene[index1],res_gene[index2])
 
         gene_list = res_gene
@@ -74,6 +75,17 @@ def copy_gene(gene):
 #注意消除冲突的问题
 def gene_cross(gene1,gene2):
     gene_len=len(gene1)
+
+    # 消除冲突
+    list1 = {}
+    list2 = {}
+    change1 = []
+    change2 = []
+
+    for i in gene1:
+        list1[i] = 0
+        list2[i] = 0
+
     cross_start=random.randint(0,gene_len-1)
     i=cross_start
     while i< (gene_len-1):
@@ -81,15 +93,7 @@ def gene_cross(gene1,gene2):
         gene1[i]=gene2[i]
         gene2[i]=tmp
         i=i+1
-    #消除冲突
-    list1=[]
-    list2=[]
-    change1=[]
-    change2=[]
 
-    for i in gene1:
-        list1.append(0)
-        list2.append(0)
     for i in range(gene_len):
         list1[gene1[i]] = list1[gene1[i]]+1
         if list1[gene1[i]] == 2:
@@ -140,6 +144,22 @@ def simulated_annealing(bins,vehicle):
 
 
 def create_gene_station(stations):
+    station_id_list=[]
+
+    res=[]
+    for s in stations:
+        station_id_list.append(s)
+    station_len = len(station_id_list)
+    while station_len > 0:
+        index=random.randint(0,station_len-1)
+        gene = station_id_list[index]
+        res.append(gene)
+        station_id_list.remove(gene)
+        station_len = len(station_id_list)
+    return res
+
+
+def create_gene_station1(stations):
     station_id_list1,station_id_list2,station_id_list3=createEntity.divide_stations(stations)
     station_len = len(station_id_list1)
 
@@ -617,13 +637,22 @@ if __name__ == '__main__':
 
     #  createEntity.draw_rect(vehicles[2],tmp_area)
 
-    gene=create_gene_station(stations)
+    #gene1=create_gene_station(stations)
+    #gene2 = create_gene_station(stations)
+    #gene_cross(gene1,gene2)
     #gene=["S171","S164", "S104","S087","S008","S200","S003","S188","S099","S167", "S038","S132","S035","S127","S066","S076","S010","S169","S027","S170","S079"]
     #gene=["S163"]
     #print gene
     #print len(gene)
 
-    #gene,cost,rate = genetic(vehicles,stations,map,time,200)
+    #list1={}
+    #list2={}
+    #for g in gene1:
+    #    list1[g]=0
+    #for g in gene2:
+    #    list2[g]=0
+
+    gene,cost,rate = genetic(vehicles,stations,map,time,2000)
     vehicle_list=schedule_gene(gene,vehicles,stations,map,time)
     total_cost,total_rate=cal_final_result(vehicle_list,map)
     print(total_cost,total_rate)

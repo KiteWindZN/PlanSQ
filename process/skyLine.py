@@ -5,8 +5,8 @@ import sys
 
 #skyline算法，缺少组合装入和可装入的检测
 def skyline(vehicle,station):
-    if vehicle.id == u"V976" and station.id==u"S079":
-        print ( "11111")
+    #if vehicle.id == u"V976" and station.id==u"S079":
+    #    print ( "11111")
 
     vehicle.path.append(station.id)
     bins=station.binList
@@ -59,7 +59,7 @@ def skyline(vehicle,station):
 
         choose=find_lowest_line(lines)
         if choose == -1:
-            print (vehicle.id , station.id , choose)
+            #print (vehicle.id , station.id , choose)
             break
         choose_bin=find_min_width(bins,vehicle)
 
@@ -112,8 +112,8 @@ def skyline(vehicle,station):
             #choose a bin and put it on the line
             # if we can merge two lines when their |height1-height2| < a
             final_bin=find_max_width_2(bin_list,line.width,vehicle_length-line.height)
-            if bin_list[final_bin].id == u"B13019":
-                print (2222)
+            #if bin_list[final_bin].id == u"B13019":
+            #    print (2222)
 
             if bin_list[final_bin].length + line.height > max_height:
                 max_height = bin_list[final_bin].length + line.height
@@ -123,8 +123,8 @@ def skyline(vehicle,station):
             left_start_x=round(lines[choose].end.x - bin_list[final_bin].width,5)
             left_start_y=lines[choose].height
 
-            if lines[choose].end.x- bin_list[final_bin].width< 0:
-                print(44444)
+            #if lines[choose].end.x- bin_list[final_bin].width< 0:
+            #    print(44444)
 
 
             bin_list[final_bin].set_pointList(entity.Point(lines[choose].end.x - bin_list[final_bin].width, lines[choose].height)
@@ -160,8 +160,8 @@ def skyline(vehicle,station):
 
             #line.is_able = False
             continue
-        if bin_list[final_bin].id == u"B13019":
-            print(2222)
+        #if bin_list[final_bin].id == u"B13019":
+        #    print(2222)
         # 更新 max_height
         if bin_list[final_bin].length + line.height > max_height:
             max_height = round(bin_list[final_bin].length + line.height,5)
