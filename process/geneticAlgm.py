@@ -231,6 +231,8 @@ def schedule_gene(gene,vehicles,stations,map,T):
         g=gene[i]
         #print(i , g)
         choose_station = stations[g]
+        if choose_station.isEmpty == True:
+            continue
         if flag == 0:
             weight = choose_station.weight
             choose_vehicle_num = choose_vehicle_index(vehicles,choose_station,stations,gene,i)
@@ -249,14 +251,21 @@ def schedule_gene(gene,vehicles,stations,map,T):
             createEntity.cal_station_area_weight(choose_station)
             if choose_station.weight == 0:
                 choose_station.isEmpty = True
-                if max_height < choose_vehicle.length:
+                if max_height < choose_vehicle.length * 0.8:
                     if i < len(gene)-1:
                         if map[str(g)][str(gene[i+1])] * choose_vehicle.perPrice >= choose_vehicle.startPrice :
-                            choose_vehicle_num = choose_vehicle_index(vehicles, choose_station, stations, gene, i)
-                            choose_vehicle = create_new_vehicle(vehicles[choose_vehicle_num])
-                            vehicles[choose_vehicle_num].is_available = False
-                            res_vehicle_list.append(choose_vehicle)
-                            choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
+                            #choose_vehicle_num = choose_vehicle_index(vehicles, choose_station, stations, gene, i)
+                            #choose_vehicle = create_new_vehicle(vehicles[choose_vehicle_num])
+                            #vehicles[choose_vehicle_num].is_available = False
+                            #res_vehicle_list.append(choose_vehicle)
+                            #choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
+
+                            next_index = find_next_ok_station(choose_vehicle, stations, gene, i, choose_station,map, T)
+                            if next_index != -1:
+                                #choose_vehicle.path.append(gene[next_index])
+                                skyLine.skyline(choose_vehicle, stations[gene[next_index]])
+                                createEntity.cal_station_area_weight(stations[gene[next_index]])
+
                             flag = 0
                             continue
                     if i < len(gene)-1 and choose_vehicle.usedTime + T[str(g)][str(gene[i+1])] + stations[str(gene[i+1])].loading_time <= 600 \
@@ -268,10 +277,10 @@ def schedule_gene(gene,vehicles,stations,map,T):
                     else:
 
                         flag=0
-                        if max_height < choose_vehicle.length * 0.6:
-                            next_index=find_next_ok_station(choose_vehicle, stations, gene, i, choose_station, T)
+                        if max_height < choose_vehicle.length:
+                            next_index=find_next_ok_station(choose_vehicle, stations, gene, i, choose_station,map, T)
                             if next_index != -1:
-                                choose_vehicle.path.append(gene[next_index])
+                                #choose_vehicle.path.append(gene[next_index])
                                 skyLine.skyline(choose_vehicle,stations[gene[next_index]])
                                 createEntity.cal_station_area_weight(stations[gene[next_index]])
                 else:
@@ -280,29 +289,29 @@ def schedule_gene(gene,vehicles,stations,map,T):
                 #weight = choose_station.weight
                 choose_vehicle_num = choose_vehicle_index(vehicles, choose_station,stations,gene,i)
 
-                #choose_vehicle_num = list[index]
-                #index = index + 1
                 choose_vehicle = create_new_vehicle(vehicles[choose_vehicle_num])
-                #vehicles.remove(vehicles[choose_vehicle_num])
                 vehicles[choose_vehicle_num].is_available = False
                 res_vehicle_list.append(choose_vehicle)
                 choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
-                flag=0
+                flag=1
     path="../dataset/month3/"
     createEntity.createBin(path + "bin.json", stations) #add bins to stations again
     return res_vehicle_list
 
 
-def find_next_ok_station(vehicle,stations,gene,i,start_station,T):
+def find_next_ok_station(vehicle,stations,gene,i,start_station,map,T):
     if i+1 == len(gene):
         return -1
     res = -1
+    tmp_dis=sys.maxsize
     while i+1 < len(gene):
         i=i+1
         limit=stations[gene[i]].vehicle_limit
-        if T[start_station.id][gene[i]] + vehicle.usedTime <= 600 and limit >= vehicle.length:
-            return i
-    return -1
+        if T[start_station.id][gene[i]] + vehicle.usedTime <= 600 and limit >= vehicle.length and map[start_station.id][gene[i]] * vehicle.perPrice < vehicle.startPrice:
+            if tmp_dis > map[start_station.id][gene[i]]:
+                res = i
+                tmp_dis = map[start_station.id][gene[i]]
+    return res
 
 
 
@@ -310,6 +319,8 @@ def check_vehicle(vehicle):
     path= vehicle.path
     station_bin = vehicle.station_bin
     for s in path:
+        if s not in station_bin:
+            print("aaa")
         if len(station_bin[s])==0:
             path.remove(s)
             station_bin.pop(s)
@@ -400,8 +411,8 @@ def schedule_vehicle(mst,T,vehicle_list,total_weight,stations,rate,res_vehicle_l
         #vehicle顺着树跑路
         while True:
             choose_vehicle.usedTime= choose_vehicle.usedTime + choose_station.loading_time
-            choose_vehicle.path.append(choose_station_id)
-            choose_vehicle.station_bin[choose_station_id]={}
+            #choose_vehicle.path.append(choose_station_id)
+            #choose_vehicle.station_bin[choose_station_id]={}
             max_height=skyLine(choose_vehicle, choose_station)
             #不需要调度的情况
             if max_height == choose_vehicle.length and len(choose_station.binList)>0:
@@ -441,8 +452,8 @@ def schedule_vehicle_final(mst,T,vehicle_list,stations,res_vehicle_list):
         max_height=0
         while True:
             choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
-            choose_vehicle.path.append(s)
-            choose_vehicle.station_bin[s] = {}
+            #choose_vehicle.path.append(s)
+            #choose_vehicle.station_bin[s] = {}
             max_height=skyLine(choose_vehicle, choose_station)
             if max_height == choose_vehicle.length and len(choose_station.binList) > 0:
                 if is_finashed(stations) == True:
@@ -489,13 +500,19 @@ def create_new_vehicle(vehicle):
 
 def choose_vehicle_index(vehicle_list,station,stations,gene,gene_index):
 
-    flag=0
+    if station.id == "S194":
+        print("bbbb")
+    flag=1
     if gene_index+1 == len(gene):
         flag=1
-    if gene_index+1 <len(gene):
-        tmp_s=stations[gene[gene_index+1]]
-        if tmp_s.vehicle_limit < station.vehicle_limit:
-            flag = 1
+
+    i=gene_index+1
+    while i<len(gene):
+        tmp_s=stations[gene[i]]
+        if tmp_s.vehicle_limit >= station.vehicle_limit:
+            flag = 0
+            break
+        i=i+1
 
     weight=station.weight
     area=station.area
@@ -503,7 +520,7 @@ def choose_vehicle_index(vehicle_list,station,stations,gene,gene_index):
     if flag==1:
         for i in range(len(vehicle_list)):
             vehicle_area = vehicle_list[i].length * vehicle_list[i].width
-            if vehicle_list[i].length <= station.vehicle_limit and vehicle_list[i].is_available == True and weight < vehicle_list[i].weight*0.7 and area < vehicle_area*0.7:
+            if vehicle_list[i].length <= station.vehicle_limit and vehicle_list[i].is_available == True and weight < vehicle_list[i].weight*0.8 and area < vehicle_area*0.8:
                 return i
 
 
@@ -637,7 +654,7 @@ if __name__ == '__main__':
 
     #  createEntity.draw_rect(vehicles[2],tmp_area)
 
-    #gene1=create_gene_station(stations)
+    #gene=create_gene_station(stations)
     #gene2 = create_gene_station(stations)
     #gene_cross(gene1,gene2)
     #gene=["S171","S164", "S104","S087","S008","S200","S003","S188","S099","S167", "S038","S132","S035","S127","S066","S076","S010","S169","S027","S170","S079"]
@@ -652,8 +669,10 @@ if __name__ == '__main__':
     #for g in gene2:
     #    list2[g]=0
 
-    gene,cost,rate = genetic(vehicles,stations,map,time,2000)
+    gene,cost,rate = genetic(vehicles,stations,map,time,1000)
+    #gene=['S152', 'S209', 'S009', 'S144', 'S098', 'S061', 'S159', 'S163', 'S148', 'S072', 'S211', 'S024', 'S090', 'S172', 'S141', 'S118', 'S170', 'S124', 'S010', 'S044', 'S078', 'S086', 'S075', 'S197', 'S036', 'S122', 'S129', 'S045', 'S160', 'S114', 'S117', 'S115', 'S183', 'S094', 'S033', 'S027', 'S058', 'S203', 'S079', 'S029', 'S005', 'S016', 'S165', 'S088', 'S113', 'S167', 'S212', 'S187', 'S202', 'S133', 'S076', 'S089', 'S096', 'S178', 'S080', 'S207', 'S215', 'S128', 'S155', 'S099', 'S132', 'S018', 'S021', 'S180', 'S173', 'S192', 'S052', 'S151', 'S181', 'S057', 'S164', 'S034', 'S119', 'S140', 'S053', 'S071', 'S109', 'S166', 'S073', 'S006', 'S050', 'S026', 'S111', 'S110', 'S068', 'S014', 'S134', 'S136', 'S013', 'S048', 'S120', 'S116', 'S070', 'S121', 'S054', 'S175', 'S047', 'S008', 'S214', 'S138', 'S001', 'S056', 'S142', 'S156', 'S038', 'S198', 'S082', 'S103', 'S196', 'S060', 'S205', 'S150', 'S022', 'S158', 'S059', 'S064', 'S042', 'S123', 'S139', 'S145', 'S146', 'S025', 'S074', 'S104', 'S051', 'S077', 'S171', 'S101', 'S153', 'S161', 'S062', 'S177', 'S095', 'S210', 'S201', 'S066', 'S179', 'S032', 'S102', 'S204', 'S097', 'S084', 'S135', 'S125', 'S184', 'S182', 'S093', 'S092', 'S067', 'S147', 'S063', 'S168', 'S069', 'S200', 'S169', 'S043', 'S213', 'S185', 'S004', 'S162', 'S041', 'S206', 'S143', 'S188', 'S017', 'S126', 'S193', 'S105', 'S127', 'S083', 'S208', 'S028', 'S003', 'S040', 'S174', 'S130', 'S195', 'S049', 'S191', 'S065', 'S030', 'S081', 'S199', 'S015', 'S108', 'S107', 'S154', 'S011', 'S035', 'S157', 'S002', 'S176', 'S100', 'S137', 'S007', 'S019', 'S023', 'S020', 'S087', 'S046', 'S149', 'S190', 'S112', 'S091', 'S055', 'S085', 'S131', 'S037', 'S189', 'S039', 'S106', 'S194', 'S012', 'S031', 'S186']
     vehicle_list=schedule_gene(gene,vehicles,stations,map,time)
+    check_vehicle_list(vehicle_list)
     total_cost,total_rate=cal_final_result(vehicle_list,map)
     print(total_cost,total_rate)
     #print (total_cost , total_rate)
