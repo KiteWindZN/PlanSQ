@@ -24,7 +24,7 @@ def choose_vehicle_index(vehicle_list,station):
         i = i-1
     return  res
 
-def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst,T,map,time):
+def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
     res_vehicle_list=[]
     for s_id in station_list1:
         choose_station=stations[s_id]
@@ -53,7 +53,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
         if choose_station.weight == 0:
 
-            if max_height < choose_vehicle.length:
+            if max_height < choose_vehicle.length*0.8:
                 #tmp_dis = sys.maxsize
                 #next_s_id = "-1"
                 #for ss in stations:
@@ -123,7 +123,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             createEntity.cal_station_area_weight(choose_station)
 
         if choose_station.weight == 0:
-            if max_height < choose_vehicle.length:
+            if max_height < choose_vehicle.length*0.8:
 
                 nobor_list = mst[s_id]
                 tmp_dis = sys.maxsize
@@ -133,7 +133,11 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
                 if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
-                    skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id=next_s_id
+                else:
+                    break
+                '''
                 if next_s_id == "-1":
                     print("aaaa")
                     choose_n = "-1"
@@ -155,7 +159,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         choose_vehicle.usedTime = choose_vehicle.usedTime + T[s_id][choose_n] + T[choose_n][choose_nn] + \
                                                   stations[choose_nn].loading_time
 
-
+                '''
 
     for s_id in station_list3:
         choose_station=stations[s_id]
@@ -181,7 +185,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             createEntity.cal_station_area_weight(choose_station)
 
         if choose_station.weight == 0:
-            if max_height < choose_vehicle.length:
+            while max_height < choose_vehicle.length*0.85:
                 nobor_list = mst[s_id]
                 tmp_dis = sys.maxsize
                 next_s_id = "-1"
@@ -189,8 +193,12 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
-                if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
-                    skyLine.skyline(choose_vehicle, stations[next_s_id])
+                if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice and choose_vehicle.usedTime + T[s_id][next_s_id] + stations[next_s_id].loading_time <= 600:
+                    max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    #s_id=next_s_id
+                else:
+                    break
+                '''
                 if next_s_id == "-1":
                     print("aaaa")
                     choose_n = "-1"
@@ -211,6 +219,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         createEntity.cal_station_area_weight(stations[choose_nn])
                         choose_vehicle.usedTime = choose_vehicle.usedTime + T[s_id][choose_n] + T[choose_n][choose_nn] + \
                                                   stations[choose_nn].loading_time
+                '''
 
     return res_vehicle_list
 
@@ -264,7 +273,7 @@ def myTest():
 
     # print len(gene)
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
-    vehicle_list = schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst,T,map,time)
+    vehicle_list = schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,map,time)
     geneticAlgm.check_vehicle_list(vehicle_list)
     # gene,cost,rate = genetic(vehicles,stations,map,time,200)
     #vehicle_list = geneticAlgm.schedule_gene(gene, vehicles, stations, map, time)
