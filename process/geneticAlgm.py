@@ -28,6 +28,7 @@ def genetic(vehicles,stations,map,time,gene_num):
     for i in range(N):
         for j in range(len(gene_list)):
             vehicle_list = schedule_gene(gene_list[j],vehicles,stations,map,time)
+            check_vehicle_list(vehicle_list)
             cost,rate = cal_final_result(vehicle_list,map)
             res_cost.append(cost)
             res_rate.append(rate)
@@ -48,8 +49,8 @@ def genetic(vehicles,stations,map,time,gene_num):
                     min_cost = res_cost[index]
             res_gene.append(gene_list[choose_index])
         #cross
-        cross_rate = 0.7
-        mutation_rate = 0.3
+        cross_rate = 0.8
+        mutation_rate = 0.5
 
         for h in range(len(res_gene)):
             index1 = random.randint(0,len(res_gene)-1)
@@ -62,6 +63,9 @@ def genetic(vehicles,stations,map,time,gene_num):
                 gene_cross(res_gene[index1],res_gene[index2])
 
         gene_list = res_gene
+        res_cost=[]
+        res_rate=[]
+        res_gene=[]
 
     return final_gene,final_cost,final_rate
 

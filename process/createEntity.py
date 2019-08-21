@@ -270,8 +270,8 @@ def draw_rect(vehicle,used_area):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     bin_list = vehicle.bin_list
-    plt.xlim(0, round(vehicle.width+0.1,5))
-    plt.ylim(0, round(vehicle.length+0.1,5))
+    plt.xlim(0, round(vehicle.length,5))
+    plt.ylim(0, round(vehicle.length,5))
 
     for bin in bin_list:
         point_list= bin.pointList
@@ -279,7 +279,7 @@ def draw_rect(vehicle,used_area):
         end1=point_list[0].y
         width=round(point_list[1].x - point_list[0].x,5)
         height=round(point_list[2].y - point_list[1].y,5)
-        print (start1,end1, width,height)
+        #print (start1,end1, width,height)
         color_index=random.randint(1,100)
         plt.gca().add_patch(plt.Rectangle((start1, end1), width, height,facecolor=colors[color_index%7]))
     used_rate = round(used_area/(vehicle.length* vehicle.width),5)

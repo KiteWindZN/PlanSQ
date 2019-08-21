@@ -579,6 +579,19 @@ def merge_line(lines,min_width,vehicle):
         line.width= round(line.end.x - line.start.x,5)
         if line.width ==0:
             lines.remove(line)
+    lines[0].left_height = round(vehicle.length - lines[0].height,5)
+
+    i=1
+    while i < len(lines):
+        if lines[i-1].height>lines[i].height:
+            lines[i-1].right_height =round(vehicle.length - lines[i-1].height,5)
+            lines[i].left_height = round(lines[i-1].height - lines[i].height,5)
+        else:
+            lines[i - 1].right_height = round(lines[i].height - lines[i - 1].height,5)
+            lines[i].left_height = round(vehicle.length - lines[i].height,5)
+        i = i+1
+    i=len(lines)
+    lines[i-1].right=round(vehicle.length - lines[i-1].height,5)
 
 #对一种情况下，放入某一个货物bin进行打分
 def gene_score(line,bin):
