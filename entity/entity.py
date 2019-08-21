@@ -69,13 +69,15 @@ class Bin:
     width=0.0
     weight=0.0
     pointList=[]
+    local_station=""
 
-    def __init__(self,id,length,width,weight):
+    def __init__(self,id,length,width,weight,s):
         self.id=id
         self.length=length
         self.width=width
         self.weight=weight
         self.pointList=[]
+        self.local_station = s
 
     def set_pointList(self,leftDown,righhtDown,rightUp,leftUp):
         self.pointList.append(leftDown)

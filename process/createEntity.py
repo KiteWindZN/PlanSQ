@@ -77,7 +77,7 @@ def createBin(path,stations):
         width=bin_width[i]
         weight=bin_weight[i]
         s=station[i]
-        b=entity.Bin(id,length,width,weight)
+        b=entity.Bin(id,length,width,weight,s)
         Bins.append(b)
         #stations[s].binList.append(b)
         stations[s].binList=binInsert(stations[s],b)
@@ -283,7 +283,7 @@ def draw_rect(vehicle,used_area):
         color_index=random.randint(1,100)
         plt.gca().add_patch(plt.Rectangle((start1, end1), width, height,facecolor=colors[color_index%7]))
     used_rate = round(used_area/(vehicle.length* vehicle.width),5)
-    plt.suptitle("used_rate: "+str(used_rate))
+    plt.suptitle(vehicle.id+":used_rate: "+str(used_rate))
     date = datetime.datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
     pic_name = '../pic/rect_' + str(date) + '.png'
     plt.savefig(pic_name)

@@ -26,6 +26,8 @@ def skyline(vehicle,station):
     if len(lines)==0:
         choose = find_max_width_2(bins,vehicle_width,vehicle_length)
         #先放进一个宽度最大的箱子，目前没有发现有箱子的尺寸比车子还大，故此处的if语句恒为True
+        if choose == -1:
+            print "dddd"
         if bins[choose].width <= vehicle_width and bins[choose].length <= vehicle_length:
             #left_start_x=0
             #left_start_y=0
@@ -117,17 +119,18 @@ def skyline(vehicle,station):
 
             if bin_list[final_bin].length + line.height > max_height:
                 max_height = bin_list[final_bin].length + line.height
-            leftDown = entity.Point(lines[choose].end.x - bin_list[final_bin].width, lines[choose].height)
+            #leftDown = entity.Point(lines[choose].end.x - bin_list[final_bin].width, lines[choose].height)
+            leftDown = entity.Point(lines[choose].start.x,lines[choose].height)
 
-
-            left_start_x=round(lines[choose].end.x - bin_list[final_bin].width,5)
+            #left_start_x = round(lines[choose].end.x - bin_list[final_bin].width, 5)
+            left_start_x=round(lines[choose].end.x ,5)
             left_start_y=lines[choose].height
-
+            tmp_r_height = lines[choose].right_height
             #if lines[choose].end.x- bin_list[final_bin].width< 0:
             #    print(44444)
 
 
-            bin_list[final_bin].set_pointList(entity.Point(lines[choose].end.x - bin_list[final_bin].width, lines[choose].height)
+            bin_list[final_bin].set_pointList(entity.Point(leftDown.x, leftDown.y)
                                               , entity.Point(leftDown.x + bin_list[final_bin].width, leftDown.y)
                                               , entity.Point(leftDown.x + bin_list[final_bin].width, leftDown.y + bin_list[final_bin].length),
                                               entity.Point(leftDown.x, leftDown.y + bin_list[final_bin].length))
@@ -139,6 +142,17 @@ def skyline(vehicle,station):
             # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
             delete_bin(bins, bin_list[final_bin])
 
+            lines[choose].start=entity.Point(leftDown.x,leftDown.y+bin_list[final_bin].length)
+            lines[choose].end = entity.Point(leftDown.x+bin_list[final_bin].width, leftDown.y + bin_list[final_bin].length)
+            lines[choose].height = round(lines[choose].start.y, 5)
+            lines[choose].width = round(bin_list[final_bin].width, 5)
+
+            tmp_start = entity.Point(lines[choose].end.x, left_start_y)
+            tmp_end = entity.Point(left_start_x, left_start_y)
+
+            tmp_left_height = round(bin_list[final_bin].length, 5)
+            tmp_right_height = tmp_r_height
+            '''
             lines[choose].end=entity.Point(leftDown.x,leftDown.y)
             lines[choose].right_height = bin_list[final_bin].length
             lines[choose].width=round(lines[choose].width - bin_list[final_bin].width,5)
@@ -152,6 +166,7 @@ def skyline(vehicle,station):
                 tmp_right_height=round(lines[choose+1].height-tmp_end.y,5)
             else:
                 tmp_right_height=round(vehicle_length-tmp_end.y,5)
+            '''
             tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
             if choose+1 < len(lines):
                 lines.insert(choose+1,tmp_line)
@@ -278,7 +293,7 @@ def skyline(vehicle,station):
                     lines[choose].left_height= round(vehicle_length-lines[choose].height,5)
                     lines[choose-1].right = round(lines[choose].height - lines[choose-1].height,5)
 
-        elif score == 8:
+        elif score == 8 or score==5.5:
 
             lines[choose].start.y = round(lines[choose].start.y + bin_list[final_bin].length,5)
             lines[choose].end.y = lines[choose].start.y
@@ -450,7 +465,16 @@ def merge_line(lines,min_width,vehicle):
     N=len(lines)
     if N <= 1:
         return
+
+    res=-1
+    tmp_len=sys.maxsize
+    for i in range(N):
+        if tmp_len > lines[i].height:
+            tmp_len = lines[i].height
+            res=i
+    i=0
     while i < N:
+    #if i==res:
         if N==1:
             break
 
@@ -465,6 +489,9 @@ def merge_line(lines,min_width,vehicle):
                     lines.remove(lines[i])
                     i = i - 1
                 else:
+                    if lines[i].height - lines[i+1].height >0.5:
+                        i=i+1
+                        continue
                     lines[i].end.x=round(lines[i+1].end.x,5)
                     lines[i].width = round(lines[i].width + lines[i + 1].width, 5)
                     lines[i].is_able = True
@@ -492,6 +519,10 @@ def merge_line(lines,min_width,vehicle):
             elif i == N-1:
 
                 if lines[i].height>lines[i-1].height:
+                    if lines[i].height - lines[i-1].height >0.5:
+                        i=i+1
+                        continue
+                    else:
                     #if lines[i-1].width < min_width:#merge
                         lines[i-1].start.y = lines[i].start.y
                         lines[i-1].end.y= lines[i].start.y
@@ -614,6 +645,8 @@ def gene_score(line,bin):
         score=7
     elif line.width*(1-a) < w < line.width and l==line.right_height:
         score=6
+    elif w==line.width:
+        score = 5.5
     elif line.width*(1-a) < w < line.width and line.left_height*(1-a) < l < line.left_height*(1+a):
         score=5
     elif line.width*(1-a) < w < line.width and l >= line.left_height*(1+a):
