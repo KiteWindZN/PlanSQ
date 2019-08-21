@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/process/skyLine.py" line="458" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1985cb90-4b8c-4eaa-9e44-fddb5a2e585f" name="Default" comment="" />
+    <list default="true" id="1985cb90-4b8c-4eaa-9e44-fddb5a2e585f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PlanSQ.iml" afterPath="$PROJECT_DIR$/.idea/PlanSQ.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process/createEntity.py" afterPath="$PROJECT_DIR$/process/createEntity.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process/geneticAlgm.py" afterPath="$PROJECT_DIR$/process/geneticAlgm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testZn.py" afterPath="$PROJECT_DIR$/test/testZn.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,29 +18,21 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/PlanSQ$test.coverage" NAME="test Coverage Results" MODIFIED="1564998794386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process" />
+    <SUITE FILE_PATH="coverage/PlanSQ$geneticAlgm__1_.coverage" NAME="geneticAlgm (1) Coverage Results" MODIFIED="1566299765049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PlanSQ$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1565143207576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/PlanSQ$geneticAlgm.coverage" NAME="geneticAlgm Coverage Results" MODIFIED="1565339130932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process" />
+    <SUITE FILE_PATH="coverage/PlanSQ$geneticAlgm.coverage" NAME="geneticAlgm Coverage Results" MODIFIED="1566300475956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process" />
     <SUITE FILE_PATH="coverage/PlanSQ$createEntity.coverage" NAME="createEntity Coverage Results" MODIFIED="1565228500215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process" />
     <SUITE FILE_PATH="coverage/PlanSQ$createResult.coverage" NAME="createResult Coverage Results" MODIFIED="1564742269378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/createJson" />
+    <SUITE FILE_PATH="coverage/PlanSQ$testZn.coverage" NAME="testZn Coverage Results" MODIFIED="1566348325400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/PlanSQ$ReadJson.coverage" NAME="ReadJson Coverage Results" MODIFIED="1564058878164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/process" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReadJson.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process/ReadJson.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="geneticAlgm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process/geneticAlgm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="517" column="0" lean-forward="true" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="13" />
               <folding>
                 <element signature="e#23#48#0" expanded="true" />
               </folding>
@@ -44,64 +40,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process/test.py">
+      <file leaf-file-name="geneticAlgm2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process/geneticAlgm2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/entity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vehicle.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/month3/vehicle.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="matrix.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/month3/matrix.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="0" column="2917" lean-forward="false" selection-start-line="0" selection-start-column="2909" selection-end-line="0" selection-end-column="2917" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="skyLine.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/process/skyLine.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5040">
-              <caret line="280" column="18" lean-forward="false" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="18" />
+            <state relative-caret-position="308">
+              <caret line="305" column="35" lean-forward="false" selection-start-line="305" selection-start-column="35" selection-end-line="305" selection-end-column="35" />
               <folding>
-                <element signature="e#24#49#0" expanded="true" />
+                <element signature="e#23#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019-08-09-15:25:01-result.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:25:01-result.json">
+      <file leaf-file-name="ReadJson.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process/ReadJson.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1593">
-              <caret line="22463" column="74" lean-forward="false" selection-start-line="22463" selection-start-column="72" selection-end-line="22463" selection-end-column="74" />
+            <state relative-caret-position="371">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testZn.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/testZn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="306" column="25" lean-forward="true" selection-start-line="306" selection-start-column="25" selection-end-line="306" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,10 +77,22 @@
       <file leaf-file-name="createEntity.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process/createEntity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="279" column="35" lean-forward="true" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="35" />
+            <state relative-caret-position="200">
+              <caret line="267" column="4" lean-forward="false" selection-start-line="267" selection-start-column="4" selection-end-line="267" selection-end-column="4" />
               <folding>
                 <element signature="e#23#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skyLine.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process/skyLine.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7776">
+              <caret line="432" column="0" lean-forward="false" selection-start-line="432" selection-start-column="0" selection-end-line="432" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,19 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>5.76</find>
-      <find>7.16</find>
-      <find>B00120</find>
-      <find>14003</find>
-      <find>04058</find>
-      <find>14917</find>
-      <find>6245</find>
-      <find>0931</find>
-      <find>6165</find>
-      <find>6183</find>
-      <find>score</find>
-      <find>gene</find>
-      <find>find_max_width</find>
       <find>update</find>
       <find>V</find>
       <find>S090</find>
@@ -157,8 +124,21 @@
       <find>round</find>
       <find>44</find>
       <find>18.</find>
-      <find>find_max_width_2</find>
       <find>664</find>
+      <find>329</find>
+      <find>667</find>
+      <find>find_max_width_2</find>
+      <find>001</find>
+      <find>v999</find>
+      <find>v001</find>
+      <find>108</find>
+      <find>S108</find>
+      <find>S081</find>
+      <find>[]</find>
+      <find>S186</find>
+      <find>choose_vehicle.path</find>
+      <find>S194</find>
+      <find>bbb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,13 +148,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/process/skyline.py" />
-        <option value="$PROJECT_DIR$/process/createEntity.py" />
         <option value="$PROJECT_DIR$/createJson/createResult.py" />
         <option value="$PROJECT_DIR$/result/2019-08-09-15:05:18-result.json" />
-        <option value="$PROJECT_DIR$/process/skyLine.py" />
         <option value="$PROJECT_DIR$/entity/entity.py" />
         <option value="$PROJECT_DIR$/process/test.py" />
+        <option value="$PROJECT_DIR$/process/skyLine.py" />
+        <option value="$PROJECT_DIR$/process/createEntity.py" />
+        <option value="$PROJECT_DIR$/geneticAlgm.py" />
         <option value="$PROJECT_DIR$/process/geneticAlgm.py" />
+        <option value="$PROJECT_DIR$/test/testZn.py" />
       </list>
     </option>
   </component>
@@ -206,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,21 +198,47 @@
             <path>
               <item name="PlanSQ" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlanSQ" type="462c0819:PsiDirectoryNode" />
-              <item name="createJson" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlanSQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlanSQ" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="month3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlanSQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlanSQ" type="462c0819:PsiDirectoryNode" />
+              <item name="problem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlanSQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlanSQ" type="462c0819:PsiDirectoryNode" />
+              <item name="process" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlanSQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlanSQ" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/process" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/result" />
       <recent name="$PROJECT_DIR$/dataset" />
     </key>
@@ -248,7 +255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.geneticAlgm">
+  <component name="RunManager" selected="Python.testZn">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -390,27 +397,27 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="geneticAlgm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="testZn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PlanSQ" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process/geneticAlgm.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testZn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.geneticAlgm" />
+        <item index="0" class="java.lang.String" itemvalue="Python.testZn" />
       </list>
     </recent_temporary>
   </component>
@@ -436,14 +443,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1859375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36707452" sideWeight="0.52708334" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27030033" sideWeight="0.3546875" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36707452" sideWeight="0.47291666" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27030033" sideWeight="0.6453125" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35817575" sideWeight="0.47708333" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35817575" sideWeight="0.44791666" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
@@ -458,19 +465,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
-          <line>156</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/process/skyLine.py</url>
-          <line>578</line>
+          <line>580</line>
           <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
-          <line>257</line>
-          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/process/skyLine.py</url>
@@ -483,9 +480,59 @@
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/process/skyLine.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>294</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>656</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>669</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>320</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>501</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/geneticAlgm.py</url>
+          <line>693</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/testZn.py</url>
+          <line>277</line>
+          <option name="timeStamp" value="149" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -495,188 +542,244 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="121" />
+      <option name="time" value="150" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-13:52:09-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-07-15:39:50-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-14:29:27-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-10:15:25-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-14:32:41-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-14:43:42-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-11:03:40-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/ans_726month2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="0" column="21440" lean-forward="false" selection-start-line="0" selection-start-column="21439" selection-end-line="0" selection-end-column="21440" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/month3/station.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="448" column="25" lean-forward="false" selection-start-line="448" selection-start-column="21" selection-end-line="448" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:00:43-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:23:59-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:40:19-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:40:55-result.json" />
-    <entry file="file://$PROJECT_DIR$/createJson/createResult.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:45:18-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:55:59-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-16:07:42-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-18:35:50-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:58:32-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-17:58:16-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-15:28:40-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-18:12:30-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:16:44-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:18:13-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:19:48-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:29:18-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:20:45-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:30:18-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:27:09-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:31:48-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:33:24-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-19:31:16-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-20:55:53-result.json" />
     <entry file="file://$PROJECT_DIR$/result/2019-08-08-20:55:11-result.json" />
     <entry file="file://$PROJECT_DIR$/result/2019-08-08-20:57:23-result.json" />
     <entry file="file://$PROJECT_DIR$/result/2019-08-08-21:00:27-result.json" />
-    <entry file="file://$PROJECT_DIR$/result/2019-08-08-21:17:01-result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="99" column="79" lean-forward="true" selection-start-line="99" selection-start-column="79" selection-end-line="99" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-08-21:17:01-result.json" />
     <entry file="file://$PROJECT_DIR$/dataset/month3/bin.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="92067" column="29" lean-forward="false" selection-start-line="92067" selection-start-column="23" selection-end-line="92067" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-09-09:16:43-result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="554" column="19" lean-forward="false" selection-start-line="554" selection-start-column="13" selection-end-line="554" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:13:59-result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="2000" column="7" lean-forward="false" selection-start-line="2000" selection-start-column="5" selection-end-line="2000" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:05:18-result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="2051" column="17" lean-forward="true" selection-start-line="2051" selection-start-column="13" selection-end-line="2051" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:24:30-result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="32" column="79" lean-forward="true" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-09-09:16:43-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:13:59-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:05:18-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:24:30-result.json" />
     <entry file="file://$PROJECT_DIR$/process/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="882">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:25:01-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-10-21:49:12-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-10-22:29:08-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-11-19:28:35-result.json" />
+    <entry file="file://$PROJECT_DIR$/entity/entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/month3/vehicle.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="54">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/ReadJson.py">
+    <entry file="file://$PROJECT_DIR$/result/2019-08-11-21:00:28-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-11-21:16:29-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-12-08:22:06-result.json" />
+    <entry file="file:///usr/lib64/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset1/vehicle.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <caret line="0" column="574" lean-forward="false" selection-start-line="0" selection-start-column="571" selection-end-line="0" selection-end-column="574" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="131" column="11" lean-forward="true" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-15:49:22-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-16:08:34-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-12-08:45:35-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-16:49:23-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-16:59:21-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-17:19:13-result.json" />
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-17:14:50-result.json" />
+    <entry file="file://$PROJECT_DIR$/dataset1/station.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9684">
+          <caret line="538" column="31" lean-forward="false" selection-start-line="538" selection-start-column="27" selection-end-line="538" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result/2019-08-09-15:25:01-result.json">
+    <entry file="file://$PROJECT_DIR$/dataset1/matrix.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="22463" column="74" lean-forward="false" selection-start-line="22463" selection-start-column="72" selection-end-line="22463" selection-end-column="74" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-17:38:07-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="19499" column="9" lean-forward="true" selection-start-line="19499" selection-start-column="9" selection-end-line="19499" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-17:56:57-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="22150" column="5" lean-forward="true" selection-start-line="22150" selection-start-column="5" selection-end-line="22150" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-17:22:43-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="21862" column="19" lean-forward="false" selection-start-line="21862" selection-start-column="17" selection-end-line="21862" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-17:29:59-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="19049" column="8" lean-forward="true" selection-start-line="19049" selection-start-column="8" selection-end-line="19049" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataset/month3/matrix.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="0" column="2917" lean-forward="false" selection-start-line="0" selection-start-column="2909" selection-end-line="0" selection-end-column="2917" />
+        <state relative-caret-position="0">
+          <caret line="0" column="3923817" lean-forward="false" selection-start-line="0" selection-start-column="3923817" selection-end-line="0" selection-end-column="3923817" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-18:07:50-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="22131" column="23" lean-forward="false" selection-start-line="22131" selection-start-column="19" selection-end-line="22131" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-18:09:06-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1749">
+          <caret line="21649" column="20" lean-forward="true" selection-start-line="21649" selection-start-column="20" selection-end-line="21649" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-13-18:20:48-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="21389" column="75" lean-forward="true" selection-start-line="21389" selection-start-column="75" selection-end-line="21389" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/2019-08-16-14:53:43-result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="22408" column="1" lean-forward="true" selection-start-line="22408" selection-start-column="1" selection-end-line="22408" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createJson/createResult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/skyLine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7776">
+          <caret line="432" column="0" lean-forward="false" selection-start-line="432" selection-start-column="0" selection-end-line="432" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/ReadJson.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process/createEntity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="279" column="35" lean-forward="true" selection-start-line="279" selection-start-column="35" selection-end-line="279" selection-end-column="35" />
+        <state relative-caret-position="200">
+          <caret line="267" column="4" lean-forward="false" selection-start-line="267" selection-start-column="4" selection-end-line="267" selection-end-column="4" />
           <folding>
             <element signature="e#23#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/process/geneticAlgm2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="305" column="35" lean-forward="false" selection-start-line="305" selection-start-column="35" selection-end-line="305" selection-end-column="35" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/process/geneticAlgm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="517" column="0" lean-forward="true" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="13" />
           <folding>
             <element signature="e#23#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/skyLine.py">
+    <entry file="file://$PROJECT_DIR$/pic/rect_2019-08-21-08:45:46.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic/rect_2019-08-21-08:45:44.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic/rect_2019-08-21-08:45:37.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic/rect_2019-08-21-08:45:29.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testZn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5040">
-          <caret line="280" column="18" lean-forward="false" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="18" />
+        <state relative-caret-position="348">
+          <caret line="306" column="25" lean-forward="true" selection-start-line="306" selection-start-column="25" selection-end-line="306" selection-end-column="25" />
           <folding>
-            <element signature="e#24#49#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

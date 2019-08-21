@@ -3,7 +3,7 @@ from entity import entity
 from process import createEntity
 from process import skyLine
 from createJson import createResult
-import  sys
+import sys
 
 def choose_vehicle_index(vehicle_list,station):
     weight=station.weight
@@ -75,8 +75,10 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
                 if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
-                    skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
                     # choose_vehicle.path.append(next_s_id)
+                    s_id=next_s_id
+                '''
                 if next_s_id == "-1":
                     print("aaaa")
                     choose_n = "-1"
@@ -97,7 +99,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         createEntity.cal_station_area_weight(stations[choose_nn])
                         choose_vehicle.usedTime = choose_vehicle.usedTime + T[s_id][choose_n] + T[choose_n][choose_nn] + \
                                                   stations[choose_nn].loading_time
-
+                '''
 
     for s_id in station_list2:
         choose_station=stations[s_id]
@@ -123,7 +125,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             createEntity.cal_station_area_weight(choose_station)
 
         if choose_station.weight == 0:
-            if max_height < choose_vehicle.length*0.8:
+            while max_height < choose_vehicle.length*0.9:
 
                 nobor_list = mst[s_id]
                 tmp_dis = sys.maxsize
@@ -195,7 +197,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                         next_s_id = n_s
                 if next_s_id != "-1" and n_s != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice and choose_vehicle.usedTime + T[s_id][next_s_id] + stations[next_s_id].loading_time <= 600:
                     max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
-                    #s_id=next_s_id
+                    s_id=next_s_id
                 else:
                     break
                 '''
@@ -273,6 +275,7 @@ def myTest():
 
     # print len(gene)
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
+    print(len(station_list1),len(station_list2),len(station_list3))
     vehicle_list = schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,map,time)
     geneticAlgm.check_vehicle_list(vehicle_list)
     # gene,cost,rate = genetic(vehicles,stations,map,time,200)
@@ -298,11 +301,15 @@ def myTest():
 
     createResult.createJson(path, vehicle_list)
 
-    # tmp_area=0.0
-    # for b in vehicles[2].bin_list:
-    #    tmp_area = round(tmp_area+b.length*b.width,5)
-    # print(tmp_area," ",round(vehicles[2].length*vehicles[2].width,5))
 
-# createEntity.draw_rect(vehicles[2],tmp_area)
+    for i in range(len(vehicle_list)):
+        tmp_area = 0.0
+        v=vehicle_list[i]
+        for b in v.bin_list:
+            tmp_area = round(tmp_area+b.length*b.width,5)
+        if tmp_area/(v.length*v.width) <0.7:
+            print(tmp_area," ",round(v.length*v.width,5))
+
+            createEntity.draw_rect(v,tmp_area)
 
 myTest()
