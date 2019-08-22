@@ -53,6 +53,22 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             max_height = skyLine.skyline(choose_vehicle, choose_station)
             createEntity.cal_station_area_weight(choose_station)
+            if max_height == 5.6:
+                print ("aaaa")
+            while max_height < choose_vehicle.length*0.85:
+
+                nobor_list = mst[s_id]
+                tmp_dis = sys.maxsize
+                next_s_id = "-1"
+                for n_s in nobor_list:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
+                        tmp_dis = mst[s_id][n_s]
+                        next_s_id = n_s
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id=next_s_id
+                else:
+                    break
 
         if choose_station.weight == 0:
 
@@ -74,7 +90,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 tmp_dis = sys.maxsize
                 next_s_id = "-1"
                 for n_s in nobor_list:
-                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
                 dis_cost = tmp_dis * choose_vehicle.perPrice
@@ -144,13 +160,28 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             max_height = skyLine.skyline(choose_vehicle, choose_station)
             createEntity.cal_station_area_weight(choose_station)
 
+            while max_height < choose_vehicle.length*0.9:
+
+                nobor_list = mst[s_id]
+                tmp_dis = sys.maxsize
+                next_s_id = "-1"
+                for n_s in nobor_list:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
+                        tmp_dis = mst[s_id][n_s]
+                        next_s_id = n_s
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id=next_s_id
+                else:
+                    break
+
         if choose_station.weight == 0:
 
             nobor_list = mst[s_id]
             tmp_dis = sys.maxsize
             next_s_id = "-1"
             for n_s in nobor_list:
-                if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id:
+                if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
                     tmp_dis = mst[s_id][n_s]
                     next_s_id = n_s
             dis_cost = tmp_dis * choose_vehicle.perPrice
@@ -158,13 +189,13 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             if next_s_id == "-1" or dis_cost > choose_vehicle.startPrice:
                 continue
 
-            while max_height < choose_vehicle.length*0.85:
+            while max_height < choose_vehicle.length*0.9:
 
                 nobor_list = mst[s_id]
                 tmp_dis = sys.maxsize
                 next_s_id = "-1"
                 for n_s in nobor_list:
-                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit >= choose_vehicle.length:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -230,13 +261,29 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             max_height = skyLine.skyline(choose_vehicle, choose_station)
             createEntity.cal_station_area_weight(choose_station)
 
+            while max_height < choose_vehicle.length*0.9:
+
+                nobor_list = mst[s_id]
+                tmp_dis = sys.maxsize
+                next_s_id = "-1"
+                for n_s in nobor_list:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
+                        tmp_dis = mst[s_id][n_s]
+                        next_s_id = n_s
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id=next_s_id
+                else:
+                    break
+
+
         if choose_station.weight == 0:
 
             nobor_list = mst[s_id]
             tmp_dis = sys.maxsize
             next_s_id = "-1"
             for n_s in nobor_list:
-                if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id:
+                if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
                     tmp_dis = mst[s_id][n_s]
                     next_s_id = n_s
             dis_cost = tmp_dis * choose_vehicle.perPrice
@@ -249,12 +296,12 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 tmp_dis = sys.maxsize
                 next_s_id = "-1"
                 for n_s in nobor_list:
-                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False:
+                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit >= choose_vehicle.length:
                         tmp_dis = mst[s_id][n_s]
                         next_s_id = n_s
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice and choose_vehicle.usedTime + T[s_id][next_s_id] + stations[next_s_id].loading_time <= 600:
                     max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
-                    #s_id=next_s_id
+                    s_id=next_s_id
                 else:
                     break
                 avg_h = avg_height(choose_vehicle.lines)
@@ -470,7 +517,7 @@ def myTest():
     #vehicle_list = schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,map,time)
     #vehicle_list = schedule(stations,vehicles,map,time)
     #geneticAlgm.check_vehicle_list(vehicle_list)
-    vehicle_list1=schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,map,time)
+    vehicle_list1=schedule_mst(stations,vehicles,station_list3,station_list1,station_list2,map,time)
     #gene,cost,rate = genetic(vehicles,stations,map,time,200)
     #vehicle_list = geneticAlgm.schedule_gene(gene, vehicles, stations, map, time)
     #total_cost, total_rate = geneticAlgm.cal_final_result(vehicle_list, map)
