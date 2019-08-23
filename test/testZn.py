@@ -466,12 +466,11 @@ def pick_bins(vehicle_list,stations,map,time):
                     station = stations[s_id]
                     tmp_vehicle = entity.Vehicle(v1.id, v1.length, v1.width, v1.weight, v1.startPrice, v1.perPrice)
                     tmp_station=entity.Station(s_id,station.vehicle_limit,station.loading_time)
-                    for b in v.bin_list:
-                        tmp_station.station_bin[b.local_station]=[]
+
                     for b in v.bin_list:
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
                         tmp_station.binList.append(tmp_bin)
-                        tmp_station.station_bin[b.local_station].append(tmp_bin)
+                        tmp_vehicle.station_bin[b.local_station]=[]
                         tmp_station.isEmpty=False
                     for b in v1.bin_list:
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
@@ -481,8 +480,8 @@ def pick_bins(vehicle_list,stations,map,time):
                         tmp_bin.pointList.append(b.pointList[3])
                         tmp_vehicle.bin_list.append(tmp_bin)
                     for l in v1.lines:
-                        tmp_line = entity.Line(entity.Point(l.start.x,l.start.y),entity.Point(l.end.x, l.end.y),l.left_height,l.right_height)
-                        tmp_vehicle.lines.append(tmp_line)
+                        #tmp_line = entity.Line(entity.Point(l.start.x,l.start.y),entity.Point(l.end.x, l.end.y),l.left_height,l.right_height)
+                        tmp_vehicle.lines.append(entity.Line(entity.Point(l.start.x,l.start.y),entity.Point(l.end.x, l.end.y),l.left_height,l.right_height))
                     skyLine.skyline(tmp_vehicle,tmp_station)
                     if tmp_station.isEmpty ==True:
                         vehicle_list.remove(v)
