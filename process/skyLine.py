@@ -631,7 +631,7 @@ def gene_score(line,bin):
 
     l=bin.length
     w=bin.width
-    a=0.4
+    a=0.1
 
     if w==line.width and l==line.left_height:
         score=12
