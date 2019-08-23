@@ -10,8 +10,10 @@ def skyline(vehicle,station):
 
     vehicle.path.append(station.id)
     bins=station.binList
+    for b in bins:
+        vehicle.station_bin[b.local_station] = []
     station_id=station.id
-    vehicle.station_bin[station_id]=[]
+
     vehicle_length=vehicle.length
     vehicle_width=vehicle.width
     #lines中的线段按照严格的从左到右的顺序排列
@@ -43,7 +45,7 @@ def skyline(vehicle,station):
             line2=entity.Line(rightDown,end,leftUp.y,vehicle_length)
             lines.append(line1)
             lines.append(line2)
-            vehicle.station_bin[station_id].append(bins[choose])
+            vehicle.station_bin[bins[choose].local_station].append(bins[choose])
             vehicle.bin_list.append(bins[choose])
             #vehicle.weight=vehicle.weight-bins[choose].weight
             vehicle.used_weight = vehicle.used_weight + bins[choose].weight
@@ -136,7 +138,7 @@ def skyline(vehicle,station):
                                               entity.Point(leftDown.x, leftDown.y + bin_list[final_bin].length))
 
             vehicle.bin_list.append(bin_list[final_bin])  # add to vehicle
-            vehicle.station_bin[station_id].append(bin_list[final_bin])
+            vehicle.station_bin[bin_list[final_bin].local_station].append(bin_list[final_bin])
             # 更新vehicle.used_weight
             vehicle.used_weight = vehicle.used_weight + bin_list[final_bin].weight
             # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
@@ -201,7 +203,7 @@ def skyline(vehicle,station):
                                           entity.Point(leftDown_1.x, leftDown_1.y + bin_list[final_bin].length))
 
         vehicle.bin_list.append(bin_list[final_bin])  # add to vehicle
-        vehicle.station_bin[station_id].append(bin_list[final_bin])
+        vehicle.station_bin[bin_list[final_bin].local_station].append(bin_list[final_bin])
         #更新vehicle.used_weight
         vehicle.used_weight = round(vehicle.used_weight+bin_list[final_bin].weight,5)
         # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
