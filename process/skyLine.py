@@ -11,8 +11,9 @@ def skyline(vehicle,station):
     vehicle.path.append(station.id)
     bins=station.binList
     for b in bins:
-        vehicle.station_bin[b.local_station] = []
-    station_id=station.id
+        if b.local_station not in vehicle.station_bin:
+            vehicle.station_bin[b.local_station] = []
+    #station_id=station.id
 
     vehicle_length=vehicle.length
     vehicle_width=vehicle.width

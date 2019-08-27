@@ -47,15 +47,12 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
             res_vehicle_list.append(choose_vehicle)
-            #choose_vehicle.path.append(s_id)
             choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
             vehicles[choose_vehicle_num].is_available = False
             #skyLine.make_new_binList(choose_station,0.7)
             max_height = skyLine.skyline(choose_vehicle, choose_station)
 
-
             createEntity.cal_station_area_weight(choose_station)
-
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
 
@@ -525,6 +522,50 @@ def change_vehicle(vehicle_list,vehicles):
                         i=i-1
                         print("--------")
                         break
+
+
+def add_bin2waste(vehicle,station):
+    s_id=station.id
+    if s_id not in vehicle.station_bin:
+        vehicle.station_bin[s_id]=[]
+    waste_rect = vehicle.waste_area
+
+    for rect in waste_rect:
+        index=choose_for_waste(rect,station.binList)
+        if index == -1:
+            continue
+        else:
+            width=station.binList[index].width
+            length=station.binList[index].length
+
+            station.binList[index].pointList.append(entity.Point(rect.start.x,rect.start.y))
+            station.binList[index].pointList.append(entity.Point(rect.start.x+width, rect.start.y))
+            station.binList[index].pointList.append(entity.Point(rect.start.x + width, rect.start.y+length))
+            station.binList[index].pointList.append(entity.Point(rect.start.x, rect.start.y+length))
+
+            vehicle.bin_list.append(station.binList[index])
+            vehicle.station_bin[s_id].append(station.binList[index])
+            skyLine.delete_bin(station.binList,station.binList[index])
+
+def choose_for_waste(rect,bins):
+    bin_list=[]
+    width=rect.end.x-rect.start.x
+    length=rect.left_height
+
+    for b in bins:
+        if b.width <= width and b.length<=length:
+            bin_list.append(b)
+        elif b.length<=width and b.width<=length:
+            b.rotate_bin()
+            bin_list.append(b)
+    tmp_area=0
+    index=-1
+    for i in range(len(bin_list)):
+        if b.width*b.length>tmp_area:
+            index=i
+            tmp_area=b.width*b.length
+    return index
+
 
 def random_list(list):
     res_list=[]
