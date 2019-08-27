@@ -34,6 +34,7 @@ class Vehicle:
     used_weight=0.0
     station_bin={}
     is_available=True
+    waste_area=[]
 
     def __init__(self,id,length,width,weight,sp,pp):
         self.id=id
@@ -50,6 +51,7 @@ class Vehicle:
         self.used_weight=0.0
         self.station_bin={}
         self.is_available = True
+        self.waste_area=[]
         #self.init_lines()
 
     def add_path(self,station):

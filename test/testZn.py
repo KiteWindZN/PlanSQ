@@ -50,21 +50,15 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             #choose_vehicle.path.append(s_id)
             choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
             vehicles[choose_vehicle_num].is_available = False
-
+            #skyLine.make_new_binList(choose_station,0.7)
             max_height = skyLine.skyline(choose_vehicle, choose_station)
 
 
             createEntity.cal_station_area_weight(choose_station)
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
-                nobor_list = mst[s_id]
-                tmp_dis = sys.maxsize
-                next_s_id = "-1"
-                for n_s in nobor_list:
-                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
-                        tmp_dis = mst[s_id][n_s]
-                        next_s_id = n_s
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
                     s_id=next_s_id
@@ -87,17 +81,9 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
 
-                nobor_list = mst[s_id]
-                tmp_dis = sys.maxsize
-                next_s_id = "-1"
-                for n_s in nobor_list:
-                    if mst[s_id][n_s] < tmp_dis and stations[n_s].isEmpty == False and n_s != s_id and stations[n_s].vehicle_limit >= choose_vehicle.length:
-                        tmp_dis = mst[s_id][n_s]
-                        next_s_id = n_s
                 dis_cost = tmp_dis * choose_vehicle.perPrice
                 if next_s_id != "-1" and next_s_id!= s_id and dis_cost < choose_vehicle.startPrice:
                     max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
-                    # choose_vehicle.path.append(next_s_id)
                     s_id=next_s_id
                 else:
                     break
@@ -147,7 +133,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         res_vehicle_list.append(choose_vehicle)
         #choose_vehicle.path.append(s_id)
         vehicles[choose_vehicle_num].is_available = False
-
+        #skyLine.make_new_binList(choose_station, 0.7)
         max_height = skyLine.skyline(choose_vehicle,choose_station)
         createEntity.cal_station_area_weight(choose_station)
         while choose_station.weight!=0:
@@ -162,6 +148,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             createEntity.cal_station_area_weight(choose_station)
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -171,6 +158,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     break
 
         if choose_station.weight == 0:
+
 
             nobor_list = mst[s_id]
             tmp_dis = sys.maxsize
@@ -234,7 +222,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
         res_vehicle_list.append(choose_vehicle)
         vehicles[choose_vehicle_num].is_available = False
-
+        #skyLine.make_new_binList(choose_station, 0.7)
         max_height = skyLine.skyline(choose_vehicle,choose_station)
         createEntity.cal_station_area_weight(choose_station)
         while choose_station.weight!=0:
@@ -308,17 +296,31 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             '''
     return res_vehicle_list
 
-
+# a-greedy
 def next_station(vehicle,s_id,stations,map,time):
     nobor_list = map[s_id]
     tmp_dis = sys.maxsize
     next_s_id = "-1"
+    next_list = []
+    next_dis = []
     for n_s in nobor_list:
         if map[s_id][n_s] < tmp_dis and n_s != s_id and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit >= vehicle.length\
                 and vehicle.usedTime+time[s_id][n_s] + stations[n_s].loading_time <= 600:
             tmp_dis = map[s_id][n_s]
             next_s_id = n_s
-    return next_s_id,tmp_dis
+            next_list.append(n_s)
+            next_dis.append(tmp_dis)
+    return next_s_id, tmp_dis
+    if next_s_id == "-1" or random.random() < 0.9 or len(next_dis) < 3:
+        return next_s_id,tmp_dis
+    data = [(dis, id) for dis, id in zip(next_dis,next_list)]
+    data.sort()
+    data.reverse()
+    next_list = [id for dis, id in data]
+    next_dis = [dis for dis, id in data]
+    index= random.randint(0,2)
+    return next_list[index],next_dis[index]
+
 
 
 def schedule(stations,vehicles,map,time):
@@ -564,6 +566,29 @@ def myTest():
     #vehicle_list = schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,map,time)
     #vehicle_list = schedule(stations,vehicles,map,time)
     #geneticAlgm.check_vehicle_list(vehicle_list)
+
+    station_list1=[u'S057', u'S122', u'S160', u'S215', u'S176', u'S129', u'S033', u'S078', u'S175', u'S021', u'S059', u'S103',
+     u'S208', u'S190', u'S178', u'S036', u'S100', u'S072', u'S002', u'S094', u'S028', u'S127', u'S051', u'S012',
+     u'S069', u'S108']
+    station_list2=[u'S166', u'S105', u'S019', u'S115', u'S086', u'S159', u'S053', u'S149', u'S067', u'S135', u'S187', u'S040',
+     u'S118', u'S107', u'S198', u'S186', u'S032', u'S034', u'S210', u'S188', u'S096', u'S148', u'S112', u'S164',
+     u'S052', u'S204', u'S014', u'S125', u'S044', u'S015', u'S123', u'S144', u'S195', u'S119', u'S055', u'S043',
+     u'S134', u'S063', u'S031', u'S167', u'S037', u'S095', u'S003', u'S152', u'S081', u'S068', u'S161', u'S191',
+     u'S158', u'S076', u'S070', u'S074', u'S042', u'S173', u'S143', u'S177', u'S087', u'S136', u'S091', u'S133',
+     u'S165']
+    station_list3=[u'S151', u'S200', u'S090', u'S085', u'S027', u'S110', u'S049', u'S162', u'S139', u'S061', u'S111', u'S030',
+     u'S029', u'S009', u'S007', u'S010', u'S131', u'S150', u'S120', u'S048', u'S101', u'S006', u'S156', u'S047',
+     u'S013', u'S172', u'S106', u'S214', u'S023', u'S147', u'S004', u'S140', u'S024', u'S092', u'S185', u'S104',
+     u'S182', u'S054', u'S205', u'S138', u'S026', u'S001', u'S088', u'S056', u'S005', u'S089', u'S066', u'S045',
+     u'S192', u'S153', u'S126', u'S171', u'S179', u'S109', u'S181', u'S083', u'S211', u'S084', u'S114', u'S206',
+     u'S098', u'S025', u'S213', u'S018', u'S064', u'S201', u'S174', u'S169', u'S117', u'S184', u'S197', u'S209',
+     u'S008', u'S102', u'S065', u'S075', u'S142', u'S128', u'S060', u'S132', u'S022', u'S168', u'S196', u'S077',
+     u'S193', u'S071', u'S113', u'S202', u'S141', u'S079', u'S183', u'S145', u'S137', u'S011', u'S046', u'S035',
+     u'S082', u'S093', u'S124', u'S163', u'S146', u'S207', u'S039', u'S116', u'S020', u'S062', u'S203', u'S194',
+     u'S038', u'S080', u'S050', u'S189', u'S073', u'S199', u'S058', u'S154', u'S017', u'S041', u'S099', u'S155',
+     u'S130', u'S097', u'S170', u'S121', u'S212', u'S157', u'S180', u'S016']
+
+
     vehicle_list1=schedule_mst(stations,vehicles,station_list3,station_list1,station_list2,map,time)
 
     pick_bins(vehicle_list1,stations,map,time)
@@ -600,7 +625,7 @@ def myTest():
         v=vehicle_list1[i]
         for b in v.bin_list:
             tmp_area = round(tmp_area+b.length*b.width,5)
-        if tmp_area/(v.length*v.width) < 0.7:
+        if tmp_area/(v.length*v.width) <0.7:
             print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
             #createEntity.draw_rect(v,tmp_area)

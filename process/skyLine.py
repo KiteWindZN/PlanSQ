@@ -2,7 +2,7 @@
 
 from entity import entity
 import sys
-
+import random
 #skyline算法，缺少组合装入和可装入的检测
 def skyline(vehicle,station):
     if vehicle.id == u"V548":
@@ -60,6 +60,7 @@ def skyline(vehicle,station):
         index=find_min_width(bins,vehicle)
         min_width=min(bins[index].width,bins[index].length)
         merge_line(lines,min_width,vehicle)
+        #cal_lines(vehicle,lines)
 
         choose=find_lowest_line(lines)
         if choose == -1:
@@ -68,6 +69,7 @@ def skyline(vehicle,station):
         choose_bin=find_min_width(bins,vehicle)
 
         while lines[choose].width < bins[choose_bin].width:
+            #merge_lowest_line(vehicle,lines,choose)
             lines[choose].is_able=False
             choose=find_lowest_line(lines)
             if choose == -1:
@@ -494,13 +496,16 @@ def merge_line(lines,min_width,vehicle):
 
         cur_width=lines[i].width
         if cur_width < min_width: #merge
+
             if i == 0:
                 if lines[i].height < lines[i+1].height:
                     lines[i+1].start.x=round(lines[i].start.x,5)
-                    lines[i+1].left_height =round( vehicle.length-lines[i+1].height,5)
+                    #lines[i+1].left_height =round( vehicle.length-lines[i+1].height,5)
                     lines[i+1].width = round(lines[i].width+lines[i+1].width,5)
                     lines[i+1].is_able=True
+                    cal_waste_area(vehicle, lines[i])
                     lines.remove(lines[i])
+
                     i = i - 1
                 else:
                     if lines[i].height - lines[i+1].height >0.5:
@@ -522,12 +527,14 @@ def merge_line(lines,min_width,vehicle):
                             lines[i].width = round(lines[i].width + lines[i + 2].width, 5)
                             lines[i].right_height = lines[i+2].right_height
                             lines.remove(lines[i + 2])
-
+                        cal_waste_area(vehicle, lines[i+1])
                         lines.remove(lines[i + 1])
 
                     else:
                         lines[i].right_height = round(vehicle.length - lines[i].height, 5)
+                        cal_waste_area(vehicle, lines[i + 1])
                         lines.remove(lines[i+1]) #####
+
 
 
             elif i == N-1:
@@ -538,6 +545,7 @@ def merge_line(lines,min_width,vehicle):
                         continue
                     else:
                     #if lines[i-1].width < min_width:#merge
+                        cal_waste_area(vehicle, lines[i - 1])
                         lines[i-1].start.y = lines[i].start.y
                         lines[i-1].end.y= lines[i].start.y
                         lines[i-1].end.x = lines[i].end.x
@@ -546,6 +554,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].right_height = lines[i].right_height
                         lines[i-1].is_able = True
                         lines.remove(lines[i])
+
                         i=i-1
                     #else:
                     #    print("TODO")
@@ -554,7 +563,9 @@ def merge_line(lines,min_width,vehicle):
                     lines[i-1].width = round(lines[i-1].width + lines[i].width,5)
                     lines[i-1].right_height = round(vehicle.length-lines[i-1].height,5)
                     lines[i-1].is_able = True
+                    cal_waste_area(vehicle, lines[i])
                     lines.remove(lines[i])
+
                     i=i-1
             else:
                 if lines[i-1].height < lines[i+1].height:
@@ -564,10 +575,12 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].right_height = round(lines[i+1].height - lines[i-1].height,5)
                         lines[i+1].left_height = round(vehicle.length - lines[i+1].height,5)
                         lines[i-1].is_able = True
+                        cal_waste_area(vehicle, lines[i])
                         lines.remove(lines[i])
                         i=i-1
                     else:
-                        lines[i].start.x =lines[i-1].start.x
+                        lines[i].start.x = lines[i-1].start.x
+                        cal_waste_area(vehicle, lines[i-1])
                         flag=0
                         if i-1 == 0:
                             lines[i].left_height = round(vehicle.length - lines[i].height,5)
@@ -593,13 +606,15 @@ def merge_line(lines,min_width,vehicle):
                         if flag == 1:
                             i=i-1
                 elif lines[i-1].height == lines[i+1].height:
-                    lines[i-1].width = round(lines[i-1].width + lines[i].width + lines[i+1].width,5)
-                    lines[i-1].end.x = lines[i+1].end.x
-                    lines[i-1].right_height = lines[i+1].right_height
-                    lines[i-1].is_able=True
-                    lines.remove(lines[i])
-                    lines.remove(lines[i])
-                    i=i-2
+                    if lines[i].height < lines[i-1].height:
+                        lines[i-1].width = round(lines[i-1].width + lines[i].width + lines[i+1].width,5)
+                        lines[i-1].end.x = lines[i+1].end.x
+                        lines[i-1].right_height = lines[i+1].right_height
+                        lines[i-1].is_able=True
+                        cal_waste_area(vehicle, lines[i])
+                        lines.remove(lines[i])
+                        lines.remove(lines[i])
+                        i=i-2
 
                 else:
                     if lines[i].height< lines[i+1].height:
@@ -608,6 +623,7 @@ def merge_line(lines,min_width,vehicle):
 
                         lines[i-1].right_height = round(vehicle.length - lines[i-1].height,5)
                         lines[i+1].left_height = round(lines[i-1].height - lines[i+1].height,5)
+                        cal_waste_area(vehicle, lines[i])
                         lines.remove(lines[i])
                         i=i-1
                     else:
@@ -615,6 +631,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i].width = round(lines[i].width+lines[i+1].width,5)
                         lines[i].right_height = lines[i+1].right_height
                         lines[i].is_able=True
+                        cal_waste_area(vehicle, lines[i+1])
                         lines.remove(lines[i+1])
 
         i=i+1
@@ -638,11 +655,87 @@ def merge_line(lines,min_width,vehicle):
     i=len(lines)
     lines[i-1].right=round(vehicle.length - lines[i-1].height,5)
 
+
+def cal_lines(vehicle,lines):
+    for line in lines:
+        line.width= round(line.end.x - line.start.x,5)
+        if line.width ==0:
+            lines.remove(line)
+    lines[0].left_height = round(vehicle.length - lines[0].height,5)
+
+    i=1
+    while i < len(lines):
+        if lines[i-1].height>lines[i].height:
+            lines[i-1].right_height =round(vehicle.length - lines[i-1].height,5)
+            lines[i].left_height = round(lines[i-1].height - lines[i].height,5)
+        else:
+            lines[i - 1].right_height = round(lines[i].height - lines[i - 1].height,5)
+            lines[i].left_height = round(vehicle.length - lines[i].height,5)
+        i = i+1
+    i=len(lines)
+    lines[i-1].right=round(vehicle.length - lines[i-1].height,5)
+
+
+def cal_waste_area(vehicle,line):
+    tmp_start=entity.Point(line.start.x,line.start.y)
+    tmp_end=entity.Point(line.end.x,line.end.y)
+    tmp_left_height=min(line.left_height,line.right_height)
+    tmp_right_height=tmp_left_height
+
+    tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
+    if tmp_line.width>=0.03 and tmp_line.left_height>=0.03:
+        vehicle.waste_area.append(tmp_line)
+
+
+def make_new_binList(station,q):
+    bin_list=station.binList
+    new_list=[]
+
+    for i in range(len(bin_list)):
+        j = random.randint(0,len(bin_list)-1)
+        tmp_rate=random.random()
+        while tmp_rate>q or bin_list[j] in new_list:
+            j = (j+1) % len(bin_list)
+            tmp_rate = random.random()
+        new_list.append(bin_list[j])
+    station.binList=[]
+    station.binList=new_list
+
+
+def merge_lowest_line(vehicle,lines,index):
+    if len(lines) == 1:
+        print(1111)
+        lines[index].is_able=False
+        return
+    if index == 0:
+        lines[index+1].start.x=lines[index].start.x
+        lines[index+1].width = round(lines[index+1].width+lines[index].width,5)
+    elif index == len(lines)-1:
+        lines[index-1].end.x = lines[index].end.x
+        lines[index - 1].width = round(lines[index - 1].width + lines[index].width, 5)
+    else:
+        if lines[index-1].height < lines[index+1].height:
+            lines[index - 1].end.x = lines[index].end.x
+            lines[index - 1].width = round(lines[index - 1].width + lines[index].width, 5)
+        elif lines[index-1].height < lines[index+1].height:
+            lines[index - 1].end.x = lines[index+1].end.x
+            lines[index - 1].width = round(lines[index - 1].width + lines[index].width+lines[index+1].width, 5)
+            lines.remove(lines[index+1])
+        else:
+            lines[index + 1].start.x = lines[index].start.x
+            lines[index + 1].width = round(lines[index + 1].width + lines[index].width, 5)
+    lines[index-1].is_able=True
+    cal_waste_area(vehicle,lines[index])
+    lines.remove(lines[index])
+    cal_lines(vehicle,lines)
+
+
 #对一种情况下，放入某一个货物bin进行打分
 def gene_score(line,bin):
 
     l=bin.length
     w=bin.width
+
     a=0.0955
 
     if w==line.width and l==line.left_height:
