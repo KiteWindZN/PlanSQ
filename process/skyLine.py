@@ -738,6 +738,7 @@ def gene_score(line,bin):
 
     a=0.0955
 
+
     if w==line.width and l==line.left_height:
         score=12
     elif w==line.width and l==line.right_height:

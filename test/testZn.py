@@ -56,7 +56,9 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             createEntity.cal_station_area_weight(choose_station)
 
+
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -81,6 +83,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
 
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
                 dis_cost = tmp_dis * choose_vehicle.perPrice
                 if next_s_id != "-1" and next_s_id!= s_id and dis_cost < choose_vehicle.startPrice:
                     max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
@@ -149,6 +152,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
 
+
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -158,7 +162,6 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     break
 
         if choose_station.weight == 0:
-
 
             nobor_list = mst[s_id]
             tmp_dis = sys.maxsize
