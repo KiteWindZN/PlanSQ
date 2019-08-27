@@ -5,8 +5,8 @@ import sys
 
 #skyline算法，缺少组合装入和可装入的检测
 def skyline(vehicle,station):
-    #if vehicle.id == u"V976" and station.id==u"S079":
-    #    print ( "11111")
+    if vehicle.id == u"V548":
+        print ( "11111")
 
     vehicle.path.append(station.id)
     bins=station.binList
@@ -376,12 +376,24 @@ def skyline(vehicle,station):
             if choose > 0:
                 lines[choose-1].end.x=round(lines[choose-1].end.x + bin_list[final_bin].width,5)
                 lines[choose - 1].width = round(lines[choose - 1].width + bin_list[final_bin].width, 5)
+            else:
+                tmp_start=entity.Point(0,vehicle_length)
+                tmp_end=entity.Point(bin_list[final_bin].width,vehicle_length)
+                '''
+                lines.insert(0,entity.Line(tmp_start,tmp_end,0,0))
+            if choose == 0:
+                choose = 1
+            '''
             lines[choose].start.x=round(lines[choose].start.x + bin_list[final_bin].width,5)
             lines[choose].width = round(lines[choose].width-bin_list[final_bin].width,5)
         elif score == 1:
             if choose+1 < len(lines):
                 lines[choose+1].start.x =round(lines[choose+1].start.x-bin_list[final_bin].width,5)
                 lines[choose+1].width = round(lines[choose+1].width + bin_list[final_bin].width,5)
+            else:
+                tmp_start = entity.Point(lines[choose].end.x-bin_list[final_bin].width,vehicle_length)
+                tmp_end = entity.Point(lines[choose].end.x, vehicle_length)
+                #lines.append(entity.Line(tmp_start,tmp_end,0,0))
             lines[choose].end.x = round(lines[choose].end.x - bin_list[final_bin].width,5)
             lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
 
@@ -631,7 +643,7 @@ def gene_score(line,bin):
 
     l=bin.length
     w=bin.width
-    a=0.1
+    a=0.0955
 
     if w==line.width and l==line.left_height:
         score=12

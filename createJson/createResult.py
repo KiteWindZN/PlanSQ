@@ -2,9 +2,9 @@
 from process import createEntity
 import datetime
 
-def createFileJson():
+def createFileJson(cost):
     date=datetime.datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
-    path="../result/"+date+'-result.json'
+    path="../result/"+str(cost)+"_"+date+'-result.json'
     return path
 
 def createJson(json_path,vehicle_list):

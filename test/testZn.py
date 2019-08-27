@@ -56,7 +56,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             createEntity.cal_station_area_weight(choose_station)
 
-            while max_height < choose_vehicle.length*0.9:
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
 
                 nobor_list = mst[s_id]
                 tmp_dis = sys.maxsize
@@ -85,7 +85,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             if next_s_id == "-1" or dis_cost > choose_vehicle.startPrice:
                 continue
 
-            while max_height < choose_vehicle.length*0.9:
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
 
                 nobor_list = mst[s_id]
                 tmp_dis = sys.maxsize
@@ -161,7 +161,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             max_height = skyLine.skyline(choose_vehicle, choose_station)
             createEntity.cal_station_area_weight(choose_station)
 
-            while max_height < choose_vehicle.length*0.9:
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -184,7 +184,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             if next_s_id == "-1" or dis_cost > choose_vehicle.startPrice:
                 continue
 
-            while max_height < choose_vehicle.length*0.9:
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     max_height=skyLine.skyline(choose_vehicle, stations[next_s_id])
@@ -247,7 +247,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             max_height = skyLine.skyline(choose_vehicle, choose_station)
             createEntity.cal_station_area_weight(choose_station)
 
-            while max_height < choose_vehicle.length*0.9:
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -261,7 +261,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         if choose_station.weight == 0:
 
             avg_h=avg_height(choose_vehicle.lines)
-            while avg_h < choose_vehicle.length*0.9:
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -482,7 +482,7 @@ def change_vehicle(vehicle_list,vehicles):
         if v.length == 17.5 and v.max_height<= 9.6:
             for v2 in vehicles:
                 v1=geneticAlgm.create_new_vehicle(v2)
-                if v1.is_available == True:
+                if v2.is_available == True:
                     tmp_station = entity.Station(v.path[0], v1.length, 0)
                     for b in v.bin_list:
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
@@ -502,7 +502,7 @@ def change_vehicle(vehicle_list,vehicles):
         elif v.length == 9.6 and v.max_height<= 7.8:
             for v2 in vehicles:
                 v1=geneticAlgm.create_new_vehicle(v2)
-                if v1.is_available == True:
+                if v2.is_available == True:
                     tmp_station = entity.Station(v.path[0], v1.length, 0)
                     for b in v.bin_list:
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
@@ -547,16 +547,14 @@ def myTest():
 
     # map,time = createEntity.floyd(map,time)
 
-    path = createResult.createFileJson()
+
 
     #gene = geneticAlgm.create_gene_station(stations)
 
     # print len(gene)
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
-    station_list1=random_list(station_list1)
+    #station_list1=random_list(station_list1)
     station_list2 = random_list(station_list2)
-    station_list3 = random_list(station_list3)
-
 
 
     print (station_list1)
@@ -593,7 +591,7 @@ def myTest():
         len_2 = len_2 + len(v.bin_list)
 
     print("len_1 : ", len_1, "len_2 : ", len_2)
-
+    path = createResult.createFileJson(total_cost)
     createResult.createJson(path, vehicle_list1)
 
 
@@ -605,6 +603,7 @@ def myTest():
         if tmp_area/(v.length*v.width) < 0.7:
             print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
-            createEntity.draw_rect(v,tmp_area)
+            #createEntity.draw_rect(v,tmp_area)
 
-myTest()
+for i in range(20):
+    myTest()
