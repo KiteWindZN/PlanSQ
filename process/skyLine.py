@@ -5,7 +5,7 @@ import sys
 import random
 #skyline算法，缺少组合装入和可装入的检测
 def skyline(vehicle,station):
-    if vehicle.id == u"V548":
+    if vehicle.id == u"V898":
         print ( "11111")
 
     vehicle.path.append(station.id)
@@ -177,7 +177,7 @@ def skyline(vehicle,station):
                 lines.insert(choose+1,tmp_line)
             else:
                 lines.append(tmp_line)
-
+            cal_lines(vehicle,lines)
             #line.is_able = False
             continue
         #if bin_list[final_bin].id == u"B13019":
@@ -187,7 +187,7 @@ def skyline(vehicle,station):
             max_height = round(bin_list[final_bin].length + line.height,5)
 
         # 把bin装入，计算四个点的坐标
-        if score !=6 and score != 3 and score !=1:
+        if score !=6 and score != 3 and score !=1 and score != 3.5:
             #left_start_x = lines[choose].end.x
             #left_start_y = lines[choose].start.y
 
@@ -296,7 +296,7 @@ def skyline(vehicle,station):
                     lines[choose-1].right_height = round(vehicle_length - lines[choose-1].height,5)
                 else:
                     lines[choose].left_height= round(vehicle_length-lines[choose].height,5)
-                    lines[choose-1].right = round(lines[choose].height - lines[choose-1].height,5)
+                    lines[choose-1].right_height = round(lines[choose].height - lines[choose-1].height,5)
 
         elif score == 8 or score==5.5:
 
@@ -311,7 +311,7 @@ def skyline(vehicle,station):
                     lines[choose-1].right_height =  round(lines[choose].height - lines[choose-1].height,5)
                 else:
                     lines[choose].left_height = round(lines[choose-1].height - lines[choose].height, 5)
-                    lines[choose-1].righ_height = round(vehicle_length - lines[choose-1].height,5)
+                    lines[choose-1].right_height = round(vehicle_length - lines[choose-1].height,5)
             if choose + 1 < len(lines):
                 if lines[choose+1].height > lines[choose].height:
                     lines[choose].right_height = round(lines[choose+1].height - lines[choose].height,5)
@@ -323,7 +323,7 @@ def skyline(vehicle,station):
                 lines[choose].right_height = round(vehicle_length - lines[choose].height,5)
 
 
-        elif score == 7 :
+        elif score == 7 or score == 4.5:
 
             lines[choose].start.x =round(lines[choose].start.x + bin_list[final_bin].width,5)
             lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
@@ -331,7 +331,7 @@ def skyline(vehicle,station):
                 lines[choose-1].end.x= round(lines[choose-1].end.x+bin_list[final_bin].width,5)
                 lines[choose-1].width = round(lines[choose-1].width + bin_list[final_bin].width,5)
 
-        elif score == 6:
+        elif score == 6 or score == 3.5:
 
             lines[choose].end.x = round(lines[choose].end.x-bin_list[final_bin].width,5)
             lines[choose].width = round(lines[choose].width - bin_list[final_bin].width,5)
@@ -628,10 +628,13 @@ def merge_line(lines,min_width,vehicle):
                         lines.remove(lines[i])
                         i=i-1
                     else:
+                        if lines[i+1].start.x == 5.6 and lines[i+1].start.y==1.28:
+                            print("cccc")
                         lines[i].end.x = lines[i+1].end.x
                         lines[i].width = round(lines[i].width+lines[i+1].width,5)
                         lines[i].right_height = lines[i+1].right_height
                         lines[i].is_able=True
+                        cal_lines(vehicle, lines)
                         cal_waste_area(vehicle, lines[i+1])
                         lines.remove(lines[i+1])
 
@@ -654,7 +657,7 @@ def merge_line(lines,min_width,vehicle):
             lines[i].left_height = round(vehicle.length - lines[i].height,5)
         i = i+1
     i=len(lines)
-    lines[i-1].right=round(vehicle.length - lines[i-1].height,5)
+    lines[i-1].right_height=round(vehicle.length - lines[i-1].height,5)
 
 
 def cal_lines(vehicle,lines):
@@ -662,6 +665,18 @@ def cal_lines(vehicle,lines):
         line.width= round(line.end.x - line.start.x,5)
         if line.width ==0:
             lines.remove(line)
+
+    i=1
+    N = len(lines)
+    while i < N:
+        if lines[i].start.y ==lines[i-1].end.y:
+            lines[i].start.x = lines[i-1].start.x
+            lines[i].width = round(lines[i-1].width+lines[i].width,5)
+            lines.remove(lines[i-1])
+            i=i-1
+        i=i+1
+        N=len(lines)
+
     lines[0].left_height = round(vehicle.length - lines[0].height,5)
 
     i=1
@@ -674,16 +689,16 @@ def cal_lines(vehicle,lines):
             lines[i].left_height = round(vehicle.length - lines[i].height,5)
         i = i+1
     i=len(lines)
-    lines[i-1].right=round(vehicle.length - lines[i-1].height,5)
+    lines[i-1].right_height=round(vehicle.length - lines[i-1].height,5)
 
 
 def cal_waste_area(vehicle,line):
-    tmp_start=entity.Point(line.start.x,line.start.y)
-    tmp_end=entity.Point(line.end.x,line.end.y)
+    #tmp_start=entity.Point(line.start.x,line.start.y)
+    #tmp_end=entity.Point(line.end.x,line.end.y)
     tmp_left_height=min(line.left_height,line.right_height)
     tmp_right_height=tmp_left_height
 
-    tmp_line=entity.Line(tmp_start,tmp_end,tmp_left_height,tmp_right_height)
+    tmp_line=entity.Line(entity.Point(line.start.x,line.start.y),entity.Point(line.end.x,line.end.y),tmp_left_height,tmp_right_height)
     if tmp_line.width>=0.03 and tmp_line.left_height>=0.03:
         vehicle.waste_area.append(tmp_line)
 
@@ -756,6 +771,12 @@ def gene_score(line,bin):
         score=6
     elif w==line.width:
         score = 5.5
+
+    elif l == line.left_height:
+        score = 4.5
+    elif l == line.right_height:
+        score = 3.5
+
     elif line.width*(1-a) < w < line.width and line.left_height*(1-a) < l < line.left_height*(1+a):
         score=5
     elif line.width*(1-a) < w < line.width and l >= line.left_height*(1+a):
@@ -795,7 +816,7 @@ def add_bin(lines,choose_line,bin,vehicle):
                 lines[choose_line - 1].right_height = round(lines[choose_line].height - lines[choose_line - 1].height,5)
             else:
                 lines[choose_line].left_height = round(lines[choose_line - 1].height - lines[choose_line].height, 5)
-                lines[choose_line - 1].righ_height = round(vehicle_length - lines[choose_line - 1].height,5)
+                lines[choose_line - 1].right_height = round(vehicle_length - lines[choose_line - 1].height,5)
 
         if choose_line == 0:
             line.left_height = vehicle_length - line.height
