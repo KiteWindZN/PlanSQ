@@ -42,10 +42,14 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         createEntity.cal_station_area_weight(choose_station)
         if choose_station.id == u"S051":
             print "aaa"
+        if choose_vehicle.id == u'V791':
+            print ("znzn")
         while choose_station.weight!=0:
 
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+            if choose_vehicle.id == u'V791':
+                print ("znzn")
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
             vehicles[choose_vehicle_num].is_available = False
@@ -54,10 +58,11 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
             createEntity.cal_station_area_weight(choose_station)
             used_rate = cal_used_rate(choose_vehicle)
+
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
             #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-                if choose_vehicle.id == u'V888':
+                if choose_vehicle.id == u'V791':
                     print ("znzn")
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle,stations[next_s_id])
@@ -94,7 +99,17 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id=next_s_id
                 else:
                     break
-            used_rate = cal_used_rate(choose_vehicle)
+                used_rate = cal_used_rate(choose_vehicle)
+            '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+            '''
             '''
             tmp_area = 0.0
             choose_vehicle_area = choose_vehicle.length * choose_vehicle.width
@@ -155,7 +170,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             createEntity.cal_station_area_weight(choose_station)
             used_rate = cal_used_rate(choose_vehicle)
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
-
+            #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
 
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
@@ -165,6 +180,9 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id=next_s_id
                 else:
                     break
+                used_rate = cal_used_rate(choose_vehicle)
+
+
 
         if choose_station.weight == 0:
 
@@ -188,6 +206,16 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id=next_s_id
                 else:
                     break
+            '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+            '''
             '''
             tmp_area = 0.0
             choose_vehicle_area = choose_vehicle.length * choose_vehicle.width
@@ -270,6 +298,16 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 else:
                     break
                 avg_h = avg_height(choose_vehicle.lines)
+            '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+            '''
             '''
             tmp_area = 0.0
             choose_vehicle_area = choose_vehicle.length * choose_vehicle.width
@@ -678,11 +716,11 @@ def myTest():
         v=vehicle_list1[i]
         for b in v.bin_list:
             tmp_area = round(tmp_area+b.length*b.width,5)
-        if tmp_area/(v.length*v.width) <0.7:
+        if tmp_area/(v.length*v.width) <0.8:
 
             print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
             #createEntity.draw_rect(v,tmp_area)
 
-for i in range(20):
+for i in range(10):
     myTest()
