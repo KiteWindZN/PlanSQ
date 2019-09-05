@@ -28,7 +28,8 @@ def choose_vehicle_index(vehicle_list,station):
 def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
     res_vehicle_list=[]
     for i in range(len(station_list1)):
-
+        if (i+1) % 10==0:
+            print i
         s_id = station_list1[i]
 
         choose_station=stations[s_id]
@@ -163,6 +164,8 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             '''
 
     for i in range(len(station_list2)):
+        if (i+1) % 10==0:
+            print i
         s_id  = station_list2[i]
 
         choose_station=stations[s_id]
@@ -274,6 +277,9 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id = next_s_id
             '''
     for i in range(len(station_list3)):
+        if (i+1) % 10==0:
+            print i
+
         s_id  = station_list3[i]
 
         choose_station=stations[s_id]
@@ -690,7 +696,7 @@ def random_list(list):
     return res_list
 
 def myTest():
-    path = "../dataset/month4/"
+    path = "../dataset/month3/"
 
     print("enter")
     map, time = createEntity.createMap(path + "matrix.json")

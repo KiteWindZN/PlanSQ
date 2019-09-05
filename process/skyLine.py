@@ -4,6 +4,7 @@ from entity import entity
 import geneticAlgm
 import sys
 import random
+import bin_packing
 #skyline算法，缺少组合装入和可装入的检测
 def skyline(vehicle,station):
     if vehicle.id == u"V898":
@@ -118,6 +119,20 @@ def skyline(vehicle,station):
             continue
 
         line=lines[choose]
+
+        if score < 5.5:
+            bin_waste, res_map, res_sort = bin_packing.waste_area(vehicle, line, bin_list)
+            min_waste=sys.maxsize
+            min_index=-1
+            for h in range(len(bin_waste)):
+                if min_waste> bin_waste[h]:
+                    min_waste=bin_waste[h]
+                    min_index=h
+            compose_list=res_map[min_index]
+            compose_sort = res_sort[min_index]
+
+            bin_packing.add_compose_bins(vehicle,choose,compose_list,compose_sort,bins)
+            continue
 
         if score == 0:
             # 选择下一个line

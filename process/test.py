@@ -4,15 +4,10 @@ if __name__=='__main__':
     #c =((a-b) * 100) / 100
     #c =round((a-b), 5)
     d=1.1
-    if(c == d):
-        print("bbbb")
-    print(c)
-<<<<<<< Updated upstream
     print("aaaa")
 
 
 def scan_lines(lines,vehicle):
-
     i=0
     N= len(lines)
     while i< N:
@@ -110,6 +105,3 @@ def merge_line(vehicle,lines,min_width):
 
 
     scan_lines(lines,vehicle)
-=======
-    print("aaaa")
->>>>>>> Stashed changes
