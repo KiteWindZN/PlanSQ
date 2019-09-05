@@ -83,6 +83,16 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 used_rate = cal_used_rate(choose_vehicle)
                 if used_rate > 1:
                     print("zzzzz")
+            '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+            '''
 
         if choose_station.weight == 0:
 
@@ -103,9 +113,11 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 else:
                     break
                 used_rate = cal_used_rate(choose_vehicle)
+
             res_vehicle_list.append(choose_vehicle)
         '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
 
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
@@ -217,12 +229,14 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
 
+
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
                     s_id = next_s_id
+
             '''
             '''
             tmp_area = 0.0
@@ -337,6 +351,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
                     s_id = next_s_id
+
             '''
             '''
             tmp_area = 0.0
@@ -675,7 +690,7 @@ def random_list(list):
     return res_list
 
 def myTest():
-    path = "../dataset/month3/"
+    path = "../dataset/month4/"
 
     print("enter")
     map, time = createEntity.createMap(path + "matrix.json")
@@ -694,7 +709,7 @@ def myTest():
 
 
 
-    #gene = geneticAlgm.create_gene_station(stations)
+    gene = geneticAlgm.create_gene_station(stations)
 
     # print len(gene)
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
@@ -710,7 +725,6 @@ def myTest():
     #vehicle_list = schedule(stations,vehicles,map,time)
     #geneticAlgm.check_vehicle_list(vehicle_list)
 
-
     #station_list1=[]
     #station_list2=[]
     #station_list3 = []
@@ -724,6 +738,7 @@ def myTest():
     for s in station_list3:
         ll = len(stations[s].binList)
         len_1 += ll
+
     vehicle_list1=schedule_mst(stations,vehicles,station_list3,station_list1,station_list2,map,time)
 
     pick_bins(vehicle_list1,stations,map,time)

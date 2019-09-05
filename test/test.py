@@ -40,6 +40,7 @@ def resolveBinJson(path,map,bins):
     bin_map={}
     #for i in range(len(vehicles_info)):
     #    v_info = vehicles_info[i]
+
     for v_info in vehicles_info:
         if v_info <= "V333":
           length = 7.8
@@ -86,10 +87,12 @@ def resolveBinJson(path,map,bins):
     print(len(bin_map),i)
 
 
-path = "../dataset/month3/"
+
+path = "../dataset/month4/"
 
 print("enter")
 map, time = createEntity.createMap(path + "matrix.json")
+
 stations, maxLimit = createEntity.createStation(path + "station.json")
 #station_total=stations["S001"]
 
