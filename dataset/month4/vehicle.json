@@ -1,0 +1,7996 @@
+{
+  "Vehicle": [
+    {
+      "vehicle_id": "V001",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V002",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V003",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V004",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V005",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V006",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V007",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V008",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V009",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V010",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V011",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V012",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V013",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V014",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V015",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V016",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V017",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V018",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V019",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V020",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V021",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V022",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V023",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V024",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V025",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V026",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V027",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V028",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V029",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V030",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V031",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V032",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V033",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V034",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V035",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V036",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V037",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V038",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V039",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V040",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V041",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V042",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V043",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V044",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V045",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V046",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V047",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V048",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V049",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V050",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V051",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V052",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V053",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V054",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V055",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V056",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V057",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V058",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V059",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V060",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V061",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V062",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V063",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V064",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V065",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V066",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V067",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V068",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V069",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V070",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V071",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V072",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V073",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V074",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V075",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V076",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V077",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V078",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V079",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V080",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V081",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V082",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V083",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V084",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V085",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V086",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V087",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V088",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V089",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V090",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V091",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V092",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V093",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V094",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V095",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V096",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V097",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V098",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V099",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V100",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V101",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V102",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V103",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V104",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V105",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V106",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V107",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V108",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V109",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V110",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V111",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V112",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V113",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V114",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V115",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V116",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V117",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V118",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V119",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V120",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V121",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V122",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V123",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V124",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V125",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V126",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V127",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V128",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V129",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V130",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V131",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V132",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V133",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V134",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V135",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V136",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V137",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V138",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V139",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V140",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V141",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V142",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V143",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V144",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V145",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V146",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V147",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V148",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V149",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V150",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V151",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V152",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V153",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V154",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V155",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V156",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V157",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V158",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V159",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V160",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V161",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V162",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V163",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V164",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V165",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V166",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V167",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V168",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V169",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V170",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V171",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V172",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V173",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V174",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V175",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V176",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V177",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V178",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V179",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V180",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V181",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V182",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V183",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V184",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V185",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V186",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V187",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V188",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V189",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V190",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V191",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V192",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V193",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V194",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V195",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V196",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V197",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V198",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V199",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V200",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V201",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V202",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V203",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V204",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V205",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V206",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V207",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V208",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V209",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V210",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V211",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V212",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V213",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V214",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V215",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V216",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V217",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V218",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V219",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V220",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V221",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V222",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V223",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V224",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V225",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V226",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V227",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V228",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V229",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V230",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V231",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V232",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V233",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V234",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V235",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V236",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V237",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V238",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V239",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V240",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V241",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V242",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V243",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V244",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V245",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V246",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V247",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V248",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V249",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V250",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V251",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V252",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V253",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V254",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V255",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V256",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V257",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V258",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V259",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V260",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V261",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V262",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V263",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V264",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V265",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V266",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V267",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V268",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V269",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V270",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V271",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V272",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V273",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V274",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V275",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V276",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V277",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V278",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V279",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V280",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V281",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V282",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V283",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V284",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V285",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V286",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V287",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V288",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V289",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V290",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V291",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V292",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V293",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V294",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V295",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V296",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V297",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V298",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V299",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V300",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V301",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V302",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V303",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V304",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V305",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V306",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V307",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V308",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V309",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V310",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V311",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V312",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V313",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V314",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V315",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V316",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V317",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V318",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V319",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V320",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V321",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V322",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V323",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V324",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V325",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V326",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V327",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V328",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V329",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V330",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V331",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V332",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V333",
+      "vehicle_length": 7.8,
+      "vehicle_width": 2.3,
+      "vehicle_weight": 10000,
+      "flag_down_fare": 888,
+      "distance_fare": 0.004
+    },
+    {
+      "vehicle_id": "V334",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V335",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V336",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V337",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V338",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V339",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V340",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V341",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V342",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V343",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V344",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V345",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V346",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V347",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V348",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V349",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V350",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V351",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V352",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V353",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V354",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V355",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V356",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V357",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V358",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V359",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V360",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V361",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V362",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V363",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V364",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V365",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V366",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V367",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V368",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V369",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V370",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V371",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V372",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V373",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V374",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V375",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V376",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V377",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V378",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V379",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V380",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V381",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V382",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V383",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V384",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V385",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V386",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V387",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V388",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V389",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V390",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V391",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V392",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V393",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V394",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V395",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V396",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V397",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V398",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V399",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V400",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V401",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V402",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V403",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V404",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V405",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V406",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V407",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V408",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V409",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V410",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V411",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V412",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V413",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V414",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V415",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V416",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V417",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V418",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V419",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V420",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V421",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V422",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V423",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V424",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V425",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V426",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V427",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V428",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V429",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V430",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V431",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V432",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V433",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V434",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V435",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V436",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V437",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V438",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V439",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V440",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V441",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V442",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V443",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V444",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V445",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V446",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V447",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V448",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V449",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V450",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V451",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V452",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V453",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V454",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V455",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V456",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V457",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V458",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V459",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V460",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V461",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V462",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V463",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V464",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V465",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V466",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V467",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V468",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V469",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V470",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V471",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V472",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V473",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V474",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V475",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V476",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V477",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V478",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V479",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V480",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V481",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V482",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V483",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V484",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V485",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V486",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V487",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V488",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V489",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V490",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V491",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V492",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V493",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V494",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V495",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V496",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V497",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V498",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V499",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V500",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V501",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V502",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V503",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V504",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V505",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V506",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V507",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V508",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V509",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V510",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V511",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V512",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V513",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V514",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V515",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V516",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V517",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V518",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V519",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V520",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V521",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V522",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V523",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V524",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V525",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V526",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V527",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V528",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V529",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V530",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V531",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V532",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V533",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V534",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V535",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V536",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V537",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V538",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V539",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V540",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V541",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V542",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V543",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V544",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V545",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V546",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V547",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V548",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V549",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V550",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V551",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V552",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V553",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V554",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V555",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V556",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V557",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V558",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V559",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V560",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V561",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V562",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V563",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V564",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V565",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V566",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V567",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V568",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V569",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V570",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V571",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V572",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V573",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V574",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V575",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V576",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V577",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V578",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V579",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V580",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V581",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V582",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V583",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V584",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V585",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V586",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V587",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V588",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V589",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V590",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V591",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V592",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V593",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V594",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V595",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V596",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V597",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V598",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V599",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V600",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V601",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V602",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V603",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V604",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V605",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V606",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V607",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V608",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V609",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V610",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V611",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V612",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V613",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V614",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V615",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V616",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V617",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V618",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V619",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V620",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V621",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V622",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V623",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V624",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V625",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V626",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V627",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V628",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V629",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V630",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V631",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V632",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V633",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V634",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V635",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V636",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V637",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V638",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V639",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V640",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V641",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V642",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V643",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V644",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V645",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V646",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V647",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V648",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V649",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V650",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V651",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V652",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V653",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V654",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V655",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V656",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V657",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V658",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V659",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V660",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V661",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V662",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V663",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V664",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V665",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V666",
+      "vehicle_length": 9.6,
+      "vehicle_width": 3,
+      "vehicle_weight": 15000,
+      "flag_down_fare": 999,
+      "distance_fare": 0.00418
+    },
+    {
+      "vehicle_id": "V667",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V668",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V669",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V670",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V671",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V672",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V673",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V674",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V675",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V676",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V677",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V678",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V679",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V680",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V681",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V682",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V683",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V684",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V685",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V686",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V687",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V688",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V689",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V690",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V691",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V692",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V693",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V694",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V695",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V696",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V697",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V698",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V699",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V700",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V701",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V702",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V703",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V704",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V705",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V706",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V707",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V708",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V709",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V710",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V711",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V712",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V713",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V714",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V715",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V716",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V717",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V718",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V719",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V720",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V721",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V722",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V723",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V724",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V725",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V726",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V727",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V728",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V729",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V730",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V731",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V732",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V733",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V734",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V735",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V736",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V737",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V738",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V739",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V740",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V741",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V742",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V743",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V744",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V745",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V746",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V747",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V748",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V749",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V750",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V751",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V752",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V753",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V754",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V755",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V756",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V757",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V758",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V759",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V760",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V761",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V762",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V763",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V764",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V765",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V766",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V767",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V768",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V769",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V770",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V771",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V772",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V773",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V774",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V775",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V776",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V777",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V778",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V779",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V780",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V781",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V782",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V783",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V784",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V785",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V786",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V787",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V788",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V789",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V790",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V791",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V792",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V793",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V794",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V795",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V796",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V797",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V798",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V799",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V800",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V801",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V802",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V803",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V804",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V805",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V806",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V807",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V808",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V809",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V810",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V811",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V812",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V813",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V814",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V815",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V816",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V817",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V818",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V819",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V820",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V821",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V822",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V823",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V824",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V825",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V826",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V827",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V828",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V829",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V830",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V831",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V832",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V833",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V834",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V835",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V836",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V837",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V838",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V839",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V840",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V841",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V842",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V843",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V844",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V845",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V846",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V847",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V848",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V849",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V850",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V851",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V852",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V853",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V854",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V855",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V856",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V857",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V858",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V859",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V860",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V861",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V862",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V863",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V864",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V865",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V866",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V867",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V868",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V869",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V870",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V871",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V872",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V873",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V874",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V875",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V876",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V877",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V878",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V879",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V880",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V881",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V882",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V883",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V884",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V885",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V886",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V887",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V888",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V889",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V890",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V891",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V892",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V893",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V894",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V895",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V896",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V897",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V898",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V899",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V900",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V901",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V902",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V903",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V904",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V905",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V906",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V907",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V908",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V909",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V910",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V911",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V912",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V913",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V914",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V915",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V916",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V917",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V918",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V919",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V920",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V921",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V922",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V923",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V924",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V925",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V926",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V927",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V928",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V929",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V930",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V931",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V932",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V933",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V934",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V935",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V936",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V937",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V938",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V939",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V940",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V941",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V942",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V943",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V944",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V945",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V946",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V947",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V948",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V949",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V950",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V951",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V952",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V953",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V954",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V955",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V956",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V957",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V958",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V959",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V960",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V961",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V962",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V963",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V964",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V965",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V966",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V967",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V968",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V969",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V970",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V971",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V972",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V973",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V974",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V975",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V976",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V977",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V978",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V979",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V980",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V981",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V982",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V983",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V984",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V985",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V986",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V987",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V988",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V989",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V990",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V991",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V992",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V993",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V994",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V995",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V996",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V997",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V998",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    },
+    {
+      "vehicle_id": "V999",
+      "vehicle_length": 17.5,
+      "vehicle_width": 3,
+      "vehicle_weight": 30000,
+      "flag_down_fare": 1199,
+      "distance_fare": 0.00439
+    }
+  ]
+}

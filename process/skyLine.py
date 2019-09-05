@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from entity import entity
+import geneticAlgm
 import sys
 import random
 #skyline算法，缺少组合装入和可装入的检测
@@ -8,17 +9,20 @@ def skyline(vehicle,station):
     if vehicle.id == u"V898":
         print ( "11111")
 
-    vehicle.path.append(station.id)
+    #vehicle.path.append(station.id)
     bins=station.binList
     for b in bins:
         if b.local_station not in vehicle.station_bin:
             vehicle.station_bin[b.local_station] = []
-    #station_id=station.id
 
     vehicle_length=vehicle.length
     vehicle_width=vehicle.width
     #lines中的线段按照严格的从左到右的顺序排列
     lines=vehicle.lines
+    max_height=vehicle.max_height
+    for l in lines:
+        l.is_able = True
+    '''
     start=entity.Point(0,0)
     end=entity.Point(vehicle_width,0)
     #line=entity.Line(start,end,vehicle_length,vehicle_length)
@@ -54,6 +58,7 @@ def skyline(vehicle,station):
             bins.remove(bins[choose])
 
 
+    '''
 
     while max_height<=vehicle_length and vehicle.used_weight <= vehicle.weight and len(bins)>0:
 
@@ -506,7 +511,7 @@ def merge_line(lines,min_width,vehicle):
                     lines[i+1].is_able=True
                     cal_waste_area(vehicle, lines[i])
                     lines.remove(lines[i])
-
+                    cal_lines(vehicle, lines)
                     i = i - 1
                 else:
                     if lines[i].height - lines[i+1].height >0.5:
@@ -535,7 +540,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i].right_height = round(vehicle.length - lines[i].height, 5)
                         cal_waste_area(vehicle, lines[i + 1])
                         lines.remove(lines[i+1]) #####
-
+                        cal_lines(vehicle, lines)
 
 
             elif i == N-1:
@@ -555,7 +560,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].right_height = lines[i].right_height
                         lines[i-1].is_able = True
                         lines.remove(lines[i])
-
+                        cal_lines(vehicle, lines)
                         i=i-1
                     #else:
                     #    print("TODO")
@@ -565,8 +570,9 @@ def merge_line(lines,min_width,vehicle):
                     lines[i-1].right_height = round(vehicle.length-lines[i-1].height,5)
                     lines[i-1].is_able = True
                     cal_waste_area(vehicle, lines[i])
-                    lines.remove(lines[i])
 
+                    lines.remove(lines[i])
+                    cal_lines(vehicle, lines)
                     i=i-1
             else:
                 if lines[i-1].height < lines[i+1].height:
@@ -578,6 +584,7 @@ def merge_line(lines,min_width,vehicle):
                         lines[i-1].is_able = True
                         cal_waste_area(vehicle, lines[i])
                         lines.remove(lines[i])
+                        cal_lines(vehicle, lines)
                         i=i-1
                     else:
                         lines[i].start.x = lines[i-1].start.x
@@ -597,12 +604,14 @@ def merge_line(lines,min_width,vehicle):
                                 lines[i].left_height = lines[i-2].left_height
                                 lines[i].width = round(lines[i - 2].width + lines[i].width, 5)
                                 lines[i].start.x= lines[i-2].start.x
+
                                 lines.remove(lines[i-2])
                                 flag=1
 
                         lines[i].width = round(lines[i - 1].width + lines[i].width, 5)
                         lines[i].is_able = True
                         lines.remove(lines[i-1])
+                        cal_lines(vehicle, lines)
                         i=i-1
                         if flag == 1:
                             i=i-1
@@ -615,6 +624,7 @@ def merge_line(lines,min_width,vehicle):
                         cal_waste_area(vehicle, lines[i])
                         lines.remove(lines[i])
                         lines.remove(lines[i])
+                        cal_lines(vehicle, lines)
                         i=i-2
 
                 else:
@@ -624,8 +634,10 @@ def merge_line(lines,min_width,vehicle):
 
                         lines[i-1].right_height = round(vehicle.length - lines[i-1].height,5)
                         lines[i+1].left_height = round(lines[i-1].height - lines[i+1].height,5)
+                        lines[i+1].is_able=True
                         cal_waste_area(vehicle, lines[i])
                         lines.remove(lines[i])
+                        cal_lines(vehicle, lines)
                         i=i-1
                     else:
                         if lines[i+1].start.x == 5.6 and lines[i+1].start.y==1.28:
@@ -634,9 +646,10 @@ def merge_line(lines,min_width,vehicle):
                         lines[i].width = round(lines[i].width+lines[i+1].width,5)
                         lines[i].right_height = lines[i+1].right_height
                         lines[i].is_able=True
-                        cal_lines(vehicle, lines)
+
                         cal_waste_area(vehicle, lines[i+1])
                         lines.remove(lines[i+1])
+                        cal_lines(vehicle, lines)
 
         i=i+1
         N=len(lines)
@@ -752,7 +765,7 @@ def gene_score(line,bin):
     l=bin.length
     w=bin.width
 
-    a=0.0955
+    a=0.2
 
 
     if w==line.width and l==line.left_height:
@@ -895,3 +908,102 @@ def merge_line_add(lines):
     line = lines[len(lines)-1]
     if line.width ==0:
         lines.remove(line)
+
+
+def pre_skyline(vehicle,station):
+
+    vehicle.path.append(station.id)
+    bins=station.binList
+
+    #station_id=station.id
+    vehicle_1 = geneticAlgm.create_new_vehicle(vehicle)
+    vehicle_2 = geneticAlgm.create_new_vehicle(vehicle)
+
+    for b in bins:
+        if b.local_station not in vehicle.station_bin:
+            vehicle_1.station_bin[b.local_station] = []
+            vehicle_2.station_bin[b.local_station] = []
+            vehicle.station_bin[b.local_station] = []
+    vehicle_1.path.append(station.id)
+    vehicle_2.path.append(station.id)
+
+    vehicle_length=vehicle.length
+    vehicle_width=vehicle.width
+    #lines中的线段按照严格的从左到右的顺序排列
+    lines=vehicle.lines
+
+    end=entity.Point(vehicle_width,0)
+
+
+    #车辆的初始状态
+    if len(lines)==0:
+        choose = find_max_width_2(bins,vehicle_width,vehicle_length)
+
+        #先放进一个宽度最大的箱子，目前没有发现有箱子的尺寸比车子还大，故此处的if语句恒为True
+        if choose == -1:
+            print "dddd"
+        if bins[choose].length < vehicle_width and bins[choose].width <= vehicle_length:
+            b=geneticAlgm.create_new_bin(bins[choose])
+            b.rotate_bin()
+            b.set_pointList(entity.Point(0, 0), entity.Point(b.width, 0),
+                                       entity.Point(b.width, b.length),
+                                       entity.Point(0, b.length))
+            rightDown1 = entity.Point(b.width, 0)
+            rightUp1 = entity.Point(b.width, b.length)
+            leftUp1 = entity.Point(0, b.length)
+            line11 = entity.Line(leftUp1, rightUp1, vehicle_length - rightUp1.y, vehicle_length - rightUp1.y)
+            line12 = entity.Line(rightDown1, end, leftUp1.y, vehicle_length)
+            vehicle_1.lines.append(line11)
+            vehicle_1.lines.append(line12)
+            vehicle_1.station_bin[b.local_station].append(bins[choose])
+            vehicle_1.bin_list.append(b)
+            # vehicle.weight=vehicle.weight-bins[choose].weight
+            vehicle_1.used_weight = vehicle_1.used_weight + b.weight
+            vehicle_1.max_height = b.length
+
+        if bins[choose].width <= vehicle_width and bins[choose].length <= vehicle_length:
+
+            rightDown=entity.Point(bins[choose].width,0)
+            rightUp=entity.Point(bins[choose].width,bins[choose].length)
+            leftUp=entity.Point(0,bins[choose].length)
+            #bins[choose].set_pointList(leftDown,rightDown,rightUp,leftUp)
+            bins[choose].set_pointList(entity.Point(0,0), entity.Point(bins[choose].width,0),
+                                       entity.Point(bins[choose].width, bins[choose].length),
+                                       entity.Point(0,bins[choose].length))
+            line1=entity.Line(leftUp,rightUp,vehicle_length-rightUp.y,vehicle_length-rightUp.y)
+            line2=entity.Line(rightDown,end,leftUp.y,vehicle_length)
+            vehicle_2.lines.append(line1)
+            vehicle_2.lines.append(line2)
+            vehicle_2.station_bin[bins[choose].local_station].append(bins[choose])
+            vehicle_2.bin_list.append(bins[choose])
+            #vehicle.weight=vehicle.weight-bins[choose].weight
+            vehicle.used_weight = vehicle.used_weight + bins[choose].weight
+            vehicle_2.max_height=bins[choose].length
+            bins.remove(bins[choose])
+        return vehicle_1,vehicle_2
+
+
+
+def process_skyline(vehicle,station):
+    if len(vehicle.bin_list) == 0:
+
+        vehicle_1,vehicle_2 = pre_skyline(vehicle,station)
+        station_1 = geneticAlgm.create_new_station(station)
+        station_2 = geneticAlgm.create_new_station(station)
+
+        skyline(vehicle_1,station_1)
+        skyline(vehicle_2,station_2)
+
+        if geneticAlgm.cal_used_rate(vehicle_1) > geneticAlgm.cal_used_rate(vehicle_2):
+            vehicle=vehicle_1
+            station=station_1
+            return vehicle_1.max_height,vehicle_1,station_1
+        else:
+            vehicle=vehicle_2
+            station=station_2
+            return vehicle_2.max_height,vehicle_2,station_2
+    else:
+        vehicle.path.append(station.id)
+
+        skyline(vehicle,station)
+        return vehicle.max_height ,vehicle, station

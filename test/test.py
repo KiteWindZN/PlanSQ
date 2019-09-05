@@ -30,14 +30,16 @@ plt.gca().add_patch(plt.Rectangle((0.1, 0.1), 1,2,facecolor=colors[color_index%7
 plt.show()
 
 
-def resolveBinJson(path,map):
+def resolveBinJson(path,map,bins):
     file=open(path,"r")
     fileJson=json.load(file)
     #print(fileJson)
-
+    i=0
     vehicles_info = fileJson
     vehicle_list=[]
-
+    bin_map={}
+    #for i in range(len(vehicles_info)):
+    #    v_info = vehicles_info[i]
     for v_info in vehicles_info:
         if v_info <= "V333":
           length = 7.8
@@ -60,12 +62,36 @@ def resolveBinJson(path,map):
         vehicle=entity.Vehicle(v_info,length,width,weight,sp,pp)
         vehicle_list.append(entity.Vehicle(v_info,length,width,weight,sp,pp))
         vehicle_list[-1].path=vehicles_info[v_info]["Route"]
+
+        path=vehicles_info[v_info]["Route"]
+        info=vehicles_info[v_info]
+
+        for p in path:
+            bin_list=info[p]
+            #print (v_info,len(bin_list))
+            i += len(bin_list)
+            for b in bin_list:
+                b_id=b
+
+                if b_id not in bin_map:
+                    bin_map[b_id]=1
+                else:
+                    bin_map[b_id] += 1
+    for b in bins:
+        b_id = b.id
+        if b_id not in bin_map:
+            print b_id,b.local_station
     cost,rate=geneticAlgm.cal_final_result(vehicle_list,map)
     print(cost, rate)
+    print(len(bin_map),i)
 
 
 path = "../dataset/month3/"
 
 print("enter")
 map, time = createEntity.createMap(path + "matrix.json")
-resolveBinJson("../result/new2.json",map)
+stations, maxLimit = createEntity.createStation(path + "station.json")
+#station_total=stations["S001"]
+
+bins = createEntity.createBin(path + "bin.json", stations)
+resolveBinJson("../result/912583.11432_2019-09-05-10:00:07-result.json",map,bins)

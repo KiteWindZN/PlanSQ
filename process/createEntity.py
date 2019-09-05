@@ -21,10 +21,10 @@ def createMap(path):
         end=arrival_station_id[i]
         dis=distance[i]
         t=time[i]
-        #if t >= 600:
-        #    #两个站点之间的行驶时间超过10小时(600分钟)，路径无效
-        #    print(start+" , ",end," , ",t)
-        #    continue
+        if t >= 600 or dis >100000:
+            #两个站点之间的行驶时间超过10小时(600分钟)，路径无效
+            #print(start,end,dis,t)
+            continue
         #if start == end:
         #    continue
         map[start][end]=dis
@@ -268,7 +268,7 @@ def update_stations(stations):
 def draw_rect(vehicle,used_area):
     colors = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple']
     fig = plt.figure()
-    ax = fig.add_subplot(111)
+
     bin_list = vehicle.bin_list
     plt.xlim(0, round(vehicle.length,5))
     plt.ylim(0, round(vehicle.length,5))

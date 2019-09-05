@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 from entity import entity
-from process import createEntity
-from process import skyLine
+import createEntity
+import skyLine
+#from test import testZn
 import sys
 import random
 from createJson import createResult
@@ -319,9 +320,12 @@ def find_next_ok_station(vehicle,stations,gene,i,start_station,map,T):
 
 def check_vehicle(vehicle):
     path= vehicle.path
+    if vehicle.id == "V656":
+        print ("gggggg")
     station_bin = vehicle.station_bin
     for s in path:
         if s not in station_bin:
+            print vehicle.id
             print("aaa")
         if len(station_bin[s])==0:
             path.remove(s)
@@ -500,6 +504,30 @@ def create_new_vehicle(vehicle):
     v=entity.Vehicle(id,length,width,weight,sp,pp)
     return v
 
+
+def create_new_station(station):
+    id=station.id
+    vehicle_limit=station.vehicle_limit
+    loading_time=station.loading_time
+    s=entity.Station(id,vehicle_limit,loading_time)
+    binList = station.binList
+    for b in binList:
+        new_b=create_new_bin(b)
+        s.binList.append(new_b)
+    return s
+
+def create_new_bin(bin):
+    id=bin.id
+    length=bin.length
+    width=bin.width
+    weight=bin.weight
+    s=bin.local_station
+    b=entity.Bin(id, length, width, weight, s)
+    #point_list=bin.pointList
+    #for p in point_list:
+    #    b.pointList.append(entity.Point(p.x,p.y))
+    return b
+
 def choose_vehicle_index(vehicle_list,station,stations,gene,gene_index):
 
     #if station.id == "S194":
@@ -609,6 +637,11 @@ def cal_final_result(vehicle_list,mst):
 
     return total_cost, total_rate
 
+def cal_used_rate(v):
+    tmp_area=0
+    for b in v.bin_list:
+        tmp_area = round(tmp_area + b.length * b.width, 5)
+    return tmp_area / (v.length * v.width)
 
 
 if __name__ == '__main__':
