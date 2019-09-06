@@ -1076,12 +1076,12 @@ def compose_skyline(vehicle,station):
         score = 0
         final_bin = 0
         for i in range(len(bin_list)):
-            if bin_list[final_bin].length + lines[choose].height > vehicle_length or bin_list[final_bin].width > lines[
+            if bin_list[i].length + lines[choose].height > vehicle_length or bin_list[i].width > lines[
                 choose].width:
                 tmp_score1 = -1
             else:
                 tmp_score1 = gene_score(lines[choose], bin_list[i])
-            if bin_list[final_bin].width + lines[choose].height > vehicle_length or bin_list[final_bin].length > lines[
+            if bin_list[i].width + lines[choose].height > vehicle_length or bin_list[i].length > lines[
                 choose].width:
                 tmp_score2 = -1
             else:

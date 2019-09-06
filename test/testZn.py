@@ -28,7 +28,7 @@ def choose_vehicle_index(vehicle_list,station):
 def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
     res_vehicle_list=[]
     for i in range(len(station_list1)):
-        if (i+1) % 10==0:
+        if (i+1) % 100==0:
             print i
         s_id = station_list1[i]
 
@@ -164,7 +164,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             '''
 
     for i in range(len(station_list2)):
-        if (i+1) % 10==0:
+        if (i+1) % 100==0:
             print i
         s_id  = station_list2[i]
 
@@ -229,18 +229,38 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 else:
                     break
             res_vehicle_list.append(choose_vehicle)
-            '''
-            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
+                res_vehicle_list.remove(res_vehicle_list[-1])
+                pour_bins(choose_vehicle,stations)
+
+                max_height = choose_vehicle.max_height
+                s_id = choose_vehicle.path[0]
+                while max_height < choose_vehicle.length * 0.9 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+                    next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+                    if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                        add_bin2waste(choose_vehicle, stations[next_s_id])
+                        max_height, choose_vehicle, stations[next_s_id] = skyLine.process_skyline(choose_vehicle,
+                                                                                                  stations[next_s_id])
+                        tmp_weight = stations[next_s_id].weight
+                        createEntity.cal_station_area_weight(stations[next_s_id])
+                        if tmp_weight == stations[next_s_id].weight:
+                            break
+                        s_id = next_s_id
+                    else:
+                        break
+                res_vehicle_list.append(choose_vehicle)
 
 
+                '''
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
                     s_id = next_s_id
+                '''
 
-            '''
             '''
             tmp_area = 0.0
             choose_vehicle_area = choose_vehicle.length * choose_vehicle.width
@@ -277,7 +297,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id = next_s_id
             '''
     for i in range(len(station_list3)):
-        if (i+1) % 10==0:
+        if (i+1) % 100==0:
             print i
 
         s_id  = station_list3[i]
@@ -784,11 +804,11 @@ def myTest():
 
         for b in v.bin_list:
             tmp_area = round(tmp_area+b.length*b.width,5)
-        if tmp_area/(v.length*v.width) < 1.1:
+        if tmp_area/(v.length*v.width) < 0.7:
 
-            #print(v.id," ",tmp_area," ",round(v.length*v.width,5))
+            print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
-            createEntity.draw_rect(v,tmp_area)
+            #createEntity.draw_rect(v,tmp_area)
     '''
     for s in stations:
         if stations[s].isEmpty == False or len(stations[s].binList)>0:
@@ -821,6 +841,8 @@ def pour_bins(vehicle,stations):
         createEntity.cal_station_area_weight(ss)
     choose_station = stations[vehicle.path[0]]
     choose_vehicle = geneticAlgm.create_new_vehicle(vehicle)
+    tmp_line=entity.Line(entity.Point(0,0),entity.Point(choose_vehicle.width,0),choose_vehicle.length,choose_vehicle.length)
+    choose_vehicle.lines.append(tmp_line)
     skyLine.compose_skyline(choose_vehicle,choose_station)
 
 for i in range(1):
