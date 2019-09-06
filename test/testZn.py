@@ -85,7 +85,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 if used_rate > 1:
                     print("zzzzz")
             '''
-            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+            if used_rate < 0.7 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
 
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
@@ -696,7 +696,7 @@ def random_list(list):
     return res_list
 
 def myTest():
-    path = "../dataset/month3/"
+    path = "../dataset/month4/"
 
     print("enter")
     map, time = createEntity.createMap(path + "matrix.json")
@@ -784,11 +784,11 @@ def myTest():
 
         for b in v.bin_list:
             tmp_area = round(tmp_area+b.length*b.width,5)
-        if tmp_area/(v.length*v.width) < 0.7:
+        if tmp_area/(v.length*v.width) < 1.1:
 
-            print(v.id," ",tmp_area," ",round(v.length*v.width,5))
+            #print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
-            #createEntity.draw_rect(v,tmp_area)
+            createEntity.draw_rect(v,tmp_area)
     '''
     for s in stations:
         if stations[s].isEmpty == False or len(stations[s].binList)>0:
@@ -807,5 +807,21 @@ def myTest():
         if flag==0:
             print ("ggggg ",b_id,b.local_station)
     '''
-for i in range(10):
+
+def pour_bins(vehicle,stations):
+    for b in vehicle.bin_list:
+        b.pointList = []
+        stations[b.local_station].binList.append(b)
+
+    station_list = []
+    for s in vehicle.path:
+        ss = stations[s]
+        station_list.append(ss)
+        ss.isEmpty = False
+        createEntity.cal_station_area_weight(ss)
+    choose_station = stations[vehicle.path[0]]
+    choose_vehicle = geneticAlgm.create_new_vehicle(vehicle)
+    skyLine.compose_skyline(choose_vehicle,choose_station)
+
+for i in range(1):
     myTest()

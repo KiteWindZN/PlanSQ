@@ -97,4 +97,4 @@ stations, maxLimit = createEntity.createStation(path + "station.json")
 #station_total=stations["S001"]
 
 bins = createEntity.createBin(path + "bin.json", stations)
-resolveBinJson("../result/912583.11432_2019-09-05-10:00:07-result.json",map,bins)
+resolveBinJson("../result/913993.22866_2019-09-06-10:30:16-result.json",map,bins)

@@ -279,6 +279,8 @@ def draw_rect(vehicle,used_area):
         end1=point_list[0].y
         width=round(point_list[1].x - point_list[0].x,5)
         height=round(point_list[2].y - point_list[1].y,5)
+        if point_list[2].x > vehicle.width:
+            print "kuakuakua",vehicle.id
         #print (start1,end1, width,height)
         color_index=random.randint(1,100)
         plt.gca().add_patch(plt.Rectangle((start1, end1), width, height,facecolor=colors[color_index%7]))
@@ -286,8 +288,8 @@ def draw_rect(vehicle,used_area):
     plt.suptitle(vehicle.id+":used_rate: "+str(used_rate))
     date = datetime.datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
     pic_name = '../pic/rect_' + str(date) + '.png'
-    plt.savefig(pic_name)
-    plt.show()
+    #plt.savefig(pic_name)
+    #plt.show()
 
 
 

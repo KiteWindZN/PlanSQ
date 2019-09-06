@@ -376,4 +376,4 @@ def add_compose_bins(vehicle,index,bin_list,sort_list,bins):
         bins.remove(bins[bin_index])
 
 
-my_test()
+#my_test()
