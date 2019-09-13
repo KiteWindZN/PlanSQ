@@ -14,7 +14,10 @@ def createJson(json_path,vehicle_list):
 
         for j in range(len(vehicle_list)):
             vehicle=vehicle_list[j]
-
+            if j == 600:
+                print j
+            if vehicle.id == u"V333" or vehicle.id == u"V322" or vehicle.id == u"V271":
+                print vehicle.id
             f.write("\t\""+vehicle.id+"\": {\n")
             f.write("\t\t\"Route\": [")
             for i in range(len(vehicle.path)):

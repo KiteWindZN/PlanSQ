@@ -288,8 +288,8 @@ def draw_rect(vehicle,used_area):
     plt.suptitle(vehicle.id+":used_rate: "+str(used_rate))
     date = datetime.datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
     pic_name = '../pic/rect_' + str(date) + '.png'
-    #plt.savefig(pic_name)
-    #plt.show()
+    plt.savefig(pic_name)
+    plt.show()
 
 
 

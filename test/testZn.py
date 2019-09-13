@@ -4,6 +4,7 @@ from process import createEntity
 from process import skyLine
 from createJson import createResult
 import sys
+from reinforcement_learning import  r_learning
 from process import multipul_skyline
 import random
 def choose_vehicle_index(vehicle_list,station):
@@ -229,7 +230,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 else:
                     break
             res_vehicle_list.append(choose_vehicle)
-
+            '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
                 res_vehicle_list.remove(res_vehicle_list[-1])
                 pour_bins(choose_vehicle,stations)
@@ -252,14 +253,14 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 res_vehicle_list.append(choose_vehicle)
 
 
-                '''
+                
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
                     s_id = next_s_id
-                '''
+            '''
 
             '''
             tmp_area = 0.0
@@ -314,6 +315,10 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                                                                                   choose_station)
         stations[choose_station.id] = choose_station
         createEntity.cal_station_area_weight(choose_station)
+
+        if choose_station.id == u'S204':
+            print choose_station.id
+
         while choose_station.weight!=0:
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
@@ -345,6 +350,8 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
 
         max_height = choose_vehicle.max_height
         if choose_station.weight == 0:
+            if choose_station.id == u'S204':
+                print choose_station.id
 
             avg_h=avg_height(choose_vehicle.lines)
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
@@ -578,6 +585,8 @@ def pick_bins(vehicle_list,stations,map,time):
 
                     for b in v1.bin_list:
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
+                        if len(b.pointList)==0:
+                            break
                         tmp_bin.pointList.append(b.pointList[0])
                         tmp_bin.pointList.append(b.pointList[1])
                         tmp_bin.pointList.append(b.pointList[2])
@@ -604,6 +613,8 @@ def pick_bins(vehicle_list,stations,map,time):
 def change_vehicle(vehicle_list,vehicles):
     for i in range(len(vehicle_list)):
         v=vehicle_list[i]
+        if v.id== u'V388':
+            print "dddddd"
         if v.length == 17.5 and v.max_height<= 9.6:
             for v2 in vehicles:
                 v1=geneticAlgm.create_new_vehicle(v2)
@@ -613,7 +624,9 @@ def change_vehicle(vehicle_list,vehicles):
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
                         tmp_station.binList.append(tmp_bin)
                         tmp_station.isEmpty=False
-                    skyLine.skyline(v1,tmp_station)
+                    #skyLine.skyline(v1,tmp_station)
+                    r_learning.bin_packing_function(v1, tmp_station)
+                    v1.path = v.path
                     if tmp_station.isEmpty == True:
                         v1.path=[]
                         for p in v.path:
@@ -633,7 +646,9 @@ def change_vehicle(vehicle_list,vehicles):
                         tmp_bin=entity.Bin(b.id,b.length,b.width,b.weight,b.local_station)
                         tmp_station.binList.append(tmp_bin)
                         tmp_station.isEmpty=False
-                    skyLine.skyline(v1,tmp_station)
+                    #skyLine.skyline(v1,tmp_station)
+                    r_learning.bin_packing_function(v1,tmp_station)
+                    v1.path=v.path
                     if tmp_station.isEmpty == True:
 
                         v1.path = []
@@ -741,8 +756,28 @@ def myTest():
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
     #station_list1=random_list(station_list1)
     station_list2 = random_list(station_list2)
-
-
+    '''
+    station_list1=[u'S036', u'S033', u'S028', u'S021', u'S012', u'S094', u'S178', u'S002', u'S160', u'S215', u'S108', u'S100',
+     u'S103', u'S208', u'S072', u'S078', u'S175', u'S176', u'S190', u'S069', u'S129', u'S122', u'S127', u'S059',
+     u'S057', u'S051']
+    station_list2=[u'S067', u'S177', u'S074', u'S063', u'S187', u'S105', u'S135', u'S210', u'S198', u'S044', u'S161', u'S195',
+     u'S091', u'S034', u'S076', u'S086', u'S087', u'S053', u'S134', u'S095', u'S136', u'S055', u'S204', u'S149',
+     u'S015', u'S014', u'S043', u'S052', u'S019', u'S166', u'S031', u'S164', u'S070', u'S173', u'S144', u'S040',
+     u'S115', u'S148', u'S003', u'S068', u'S112', u'S037', u'S133', u'S167', u'S143', u'S096', u'S081', u'S119',
+     u'S152', u'S032', u'S191', u'S123', u'S118', u'S125', u'S158', u'S186', u'S188', u'S165', u'S107', u'S159',
+     u'S042']
+    station_list3=[u'S038', u'S039', u'S035', u'S030', u'S049', u'S048', u'S041', u'S045', u'S047', u'S046', u'S029', u'S027',
+     u'S026', u'S025', u'S024', u'S023', u'S022', u'S020', u'S137', u'S131', u'S130', u'S132', u'S139', u'S138',
+     u'S018', u'S013', u'S010', u'S011', u'S016', u'S017', u'S092', u'S093', u'S090', u'S097', u'S098', u'S099',
+     u'S179', u'S140', u'S141', u'S142', u'S145', u'S146', u'S147', u'S209', u'S171', u'S089', u'S088', u'S211',
+     u'S170', u'S085', u'S084', u'S080', u'S083', u'S082', u'S153', u'S151', u'S150', u'S157', u'S156', u'S155',
+     u'S154', u'S168', u'S201', u'S200', u'S005', u'S004', u'S007', u'S006', u'S001', u'S009', u'S008', u'S214',
+     u'S109', u'S212', u'S213', u'S104', u'S106', u'S101', u'S102', u'S184', u'S185', u'S180', u'S181', u'S182',
+     u'S183', u'S189', u'S162', u'S163', u'S071', u'S073', u'S075', u'S077', u'S079', u'S172', u'S174', u'S207',
+     u'S206', u'S205', u'S203', u'S202', u'S117', u'S116', u'S114', u'S113', u'S111', u'S110', u'S197', u'S196',
+     u'S194', u'S193', u'S192', u'S199', u'S062', u'S061', u'S060', u'S066', u'S065', u'S064', u'S128', u'S120',
+     u'S121', u'S126', u'S124', u'S169', u'S058', u'S056', u'S054', u'S050']
+    '''
     print (station_list1)
     print (station_list2)
     print (station_list3)
@@ -765,7 +800,7 @@ def myTest():
         ll = len(stations[s].binList)
         len_1 += ll
 
-    vehicle_list1=schedule_mst(stations,vehicles,station_list3,station_list1,station_list2,map,time)
+    vehicle_list1=schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,station_list3,map,time)
 
     pick_bins(vehicle_list1,stations,map,time)
     change_vehicle(vehicle_list1, vehicles)
@@ -804,11 +839,11 @@ def myTest():
 
         for b in v.bin_list:
             tmp_area = round(tmp_area+b.length*b.width,5)
-        if tmp_area/(v.length*v.width) < 0.7:
+        if tmp_area/(v.length*v.width) < 0.75:
 
             print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
-            #createEntity.draw_rect(v,tmp_area)
+            createEntity.draw_rect(v,tmp_area)
     '''
     for s in stations:
         if stations[s].isEmpty == False or len(stations[s].binList)>0:
@@ -843,7 +878,306 @@ def pour_bins(vehicle,stations):
     choose_vehicle = geneticAlgm.create_new_vehicle(vehicle)
     tmp_line=entity.Line(entity.Point(0,0),entity.Point(choose_vehicle.width,0),choose_vehicle.length,choose_vehicle.length)
     choose_vehicle.lines.append(tmp_line)
-    skyLine.compose_skyline(choose_vehicle,choose_station)
+    choose_vehicle.path.append(choose_station.id)
+    choose_vehicle.max_height = 0
+    #skyLine.compose_skyline(choose_vehicle,choose_station)
+    max_height=r_learning.bin_packing_function(choose_vehicle,choose_station)
+    vehicle=choose_vehicle
+    return max_height
+
+
+
+def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
+    res_vehicle_list=[]
+    for i in range(len(station_list1)):
+        if (i+1) % 1==0:
+            print i
+        if station_list1[i]==u"S032":
+            print station_list1[i]
+        s_id = station_list1[i]
+        if i==21:
+            print "pause"
+        choose_station=stations[s_id]
+        if choose_station.isEmpty==True:
+            continue
+        choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
+        choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+        if choose_vehicle.id == u"V395":
+            print ("aaaaaa")
+        #choose_vehicle.path.append(s_id)
+        choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
+        vehicles[choose_vehicle_num].is_available = False
+
+        max_height=r_learning.bin_packing_function(choose_vehicle,choose_station)
+
+        #res_vehicle_list.append(choose_vehicle)
+        createEntity.cal_station_area_weight(choose_station)
+
+        while choose_station.weight!=0:
+            res_vehicle_list.append(choose_vehicle)
+            choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
+            choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+            if choose_vehicle.id == u"V395":
+                print ("aaaaaa")
+
+            choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
+            vehicles[choose_vehicle_num].is_available = False
+            #skyLine.make_new_binList(choose_station,0.7)
+            max_height=r_learning.bin_packing_function(choose_vehicle, choose_station)
+            #stations[choose_station.id] = choose_station
+            createEntity.cal_station_area_weight(choose_station)
+            used_rate = cal_used_rate(choose_vehicle)
+            s_id = choose_station.id
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+            #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle,stations[next_s_id])
+                    max_height=r_learning.bin_packing_function(choose_vehicle, stations[next_s_id])
+                    tmp_weight=stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+
+                used_rate = cal_used_rate(choose_vehicle)
+                if used_rate > 1:
+                    print("zzzzz")
+            '''
+            if used_rate < 0.7 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+            '''
+
+        if choose_station.weight == 0:
+
+            used_rate = cal_used_rate(choose_vehicle)
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+            #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                dis_cost = tmp_dis * choose_vehicle.perPrice
+                if next_s_id != "-1" and next_s_id!= s_id and dis_cost < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height=r_learning.bin_packing_function(choose_vehicle, stations[next_s_id])
+                    tmp_weight = stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+                used_rate = cal_used_rate(choose_vehicle)
+
+            res_vehicle_list.append(choose_vehicle)
+        '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+        '''
+
+    for i in range(len(station_list2)):
+        if (i+1) % 1==0:
+            print i
+        s_id  = station_list2[i]
+        if station_list2[i]==u"S021":
+            print station_list2[i]
+        choose_station=stations[s_id]
+        if choose_station.isEmpty==True:
+            continue
+        choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
+        choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+        if choose_vehicle.id == u"V395":
+            print ("aaaaaa")
+        #choose_vehicle.path.append(s_id)
+        vehicles[choose_vehicle_num].is_available = False
+        #skyLine.make_new_binList(choose_station, 0.7)
+        max_height=r_learning.bin_packing_function(choose_vehicle, choose_station)
+        #stations[choose_station.id] = choose_station
+        createEntity.cal_station_area_weight(choose_station)
+        while choose_station.weight!=0:
+            res_vehicle_list.append(choose_vehicle)
+            choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
+            choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+            if choose_vehicle.id == u"V395":
+                print ("aaaaaa")
+            #choose_vehicle.path.append(s_id)
+            vehicles[choose_vehicle_num].is_available = False
+
+            max_height=r_learning.bin_packing_function(choose_vehicle,
+                                                                                      choose_station)
+            #stations[choose_station.id] = choose_station
+            createEntity.cal_station_area_weight(choose_station)
+            used_rate = cal_used_rate(choose_vehicle)
+            s_id = choose_station.id
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+            #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
+                    tmp_weight = stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+                used_rate = cal_used_rate(choose_vehicle)
+
+
+
+        if choose_station.weight == 0:
+
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+                if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
+                    tmp_weight = stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+            res_vehicle_list.append(choose_vehicle)
+            '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
+                res_vehicle_list.remove(res_vehicle_list[-1])
+                pour_bins(choose_vehicle,stations)
+
+                max_height = choose_vehicle.max_height
+                s_id = choose_vehicle.path[0]
+                while max_height < choose_vehicle.length * 0.9 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+                    next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+                    if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                        add_bin2waste(choose_vehicle, stations[next_s_id])
+                        max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
+                        tmp_weight = stations[next_s_id].weight
+                        createEntity.cal_station_area_weight(stations[next_s_id])
+                        if tmp_weight == stations[next_s_id].weight:
+                            break
+                        s_id = next_s_id
+                    else:
+                        break
+                res_vehicle_list.append(choose_vehicle)
+                
+
+                
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+            '''
+
+
+    for i in range(len(station_list3)):
+        if (i+1) % 1==0:
+            print i
+        if station_list3[i]==u"S204":
+            print station_list3[i]
+        s_id  = station_list3[i]
+
+        choose_station=stations[s_id]
+        if choose_station.isEmpty==True:
+            continue
+        choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
+        choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+        if choose_vehicle.id == u"V395":
+            print ("aaaaaa")
+        vehicles[choose_vehicle_num].is_available = False
+        #skyLine.make_new_binList(choose_station, 0.7)
+        max_height=r_learning.bin_packing_function(choose_vehicle,choose_station)
+        #stations[choose_station.id] = choose_station
+        createEntity.cal_station_area_weight(choose_station)
+        while choose_station.weight!=0:
+            res_vehicle_list.append(choose_vehicle)
+            choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
+            choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+            #res_vehicle_list.append(choose_vehicle)
+            vehicles[choose_vehicle_num].is_available = False
+            if choose_vehicle.id == u"V395":
+                print ("aaaaaa")
+            max_height=r_learning.bin_packing_function(choose_vehicle,choose_station)
+            #stations[choose_station.id] = choose_station
+            createEntity.cal_station_area_weight(choose_station)
+            s_id=choose_station.id
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+
+                    max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
+                    choose_vehicle.usedTime += T[s_id][next_s_id] + stations[next_s_id].loading_time
+                    tmp_weight = stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+
+        max_height = choose_vehicle.max_height
+        if choose_station.weight == 0:
+
+            avg_h=avg_height(choose_vehicle.lines)
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    createEntity.cal_station_area_weight(choose_station)
+                    if stations[next_s_id].weight ==0:
+                        stations[next_s_id].isEmpty=True
+
+                    max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
+                    choose_vehicle.usedTime += T[s_id][next_s_id] + stations[next_s_id].loading_time
+                    tmp_weight = stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+                avg_h = avg_height(choose_vehicle.lines)
+            res_vehicle_list.append(choose_vehicle)
+            '''
+            if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
+
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+
+                if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height = skyLine.skyline(choose_vehicle, stations[next_s_id])
+                    s_id = next_s_id
+
+            '''
+
+    return res_vehicle_list
+
+
+
 
 for i in range(1):
     myTest()

@@ -141,8 +141,10 @@ def put_bin(vehicle,choose,bin,rotate):
     max_height=vehicle.max_height
 
     lines=vehicle.lines
+
     if rotate == 1:
         bin.rotate_bin()
+    max_height = max(max_height, bin.length + lines[choose].height)
     score=skyLine.gene_score(lines[choose],bin)
     # 把bin装入，计算四个点的坐标
     if score != 6 and score != 3 and score != 1 and score != 3.5:
@@ -170,7 +172,6 @@ def put_bin(vehicle,choose,bin,rotate):
     vehicle.used_weight = round(vehicle.used_weight + bin.weight, 5)
     # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
 
-    max_height = max(max_height, bin.length + lines[choose].height)
 
     if score == 0:
         # 选择下一个line
@@ -180,7 +181,6 @@ def put_bin(vehicle,choose,bin,rotate):
         left_start_y = lines[choose].height
         tmp_r_height = lines[choose].right_height
 
-        vehicle.station_bin[bin.local_station].append(bin)
         # 更新vehicle.used_weight
         vehicle.used_weight = vehicle.used_weight + bin.weight
 
@@ -217,6 +217,13 @@ def put_bin(vehicle,choose,bin,rotate):
                 lines.remove(lines[choose])
             else:  # 装满了整个车
                 max_height = vehicle_length
+                lines[choose].height = vehicle_length
+                lines[choose].left_right = 0
+                lines[choose].right_right = 0
+                lines[choose].start.x = 0
+                lines[choose].end.x = vehicle.width
+                lines[choose].start.y = vehicle_length
+                lines[choose].end.y = vehicle_length
 
 
         elif choose > 0:
@@ -334,20 +341,25 @@ def put_bin(vehicle,choose,bin,rotate):
     vehicle.max_height=max_height
     skyLine.cal_lines(vehicle,lines)
 
-    return next_index
+    return next_index,max_height
 
 
 def add_compose_bins(vehicle,index,bin_list,sort_list,bins):
     next_index=index
+    max_height=vehicle.max_height
     for i in range(len(bin_list)):
-        bin_index=bin_list[i]
-        next_index=put_bin(vehicle,next_index,bins[bin_index],sort_list[i])
+        bin=bin_list[i]
+        next_index,max_height=put_bin(vehicle,next_index,bin,sort_list[i])
 
+    for b in bin_list:
+        skyLine.delete_bin(bins,b)
+    '''
     bin_list.sort()
     bin_list.reverse()
     for i in range(len(bin_list)):
         bin_index=bin_list[i]
         bins.remove(bins[bin_index])
 
-
+    '''
+    return max_height
 #my_test()
