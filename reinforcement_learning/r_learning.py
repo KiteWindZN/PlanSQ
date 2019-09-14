@@ -67,7 +67,7 @@ def find_next_bin_list(vehicle,bins,choose):
         else:
             tmp_waste_0 = lines[next_line_index].width * bin_map[i][-1].length
 
-        tmp_value_0 = round(sum_score/len(bin_map[i])-5*tmp_waste_0,5)
+        tmp_value_0 = round(sum_score/len(bin_map[i])-5*tmp_waste_0 - 0.3*len(bin_map[i]),5)
         #赋值res_value,res_sort,res_map
         for j in range(len(bin_map[i])):
             res_map[i].append(bin_map[i][j])
@@ -110,7 +110,7 @@ def find_next_bin_list(vehicle,bins,choose):
             tmp_waste_1=0
         else:
             tmp_waste_1 = lines[next_line_index].width * bin_map[i][-1].length
-        tmp_value_1 = round(sum_score/len(bin_map[i])-5*tmp_waste_1,5)
+        tmp_value_1 = round(sum_score/len(bin_map[i])-5*tmp_waste_1 - 0.3*len(bin_map[i]),5)
 
         if tmp_value_1 > tmp_value_0:
             res_map[i]=[]

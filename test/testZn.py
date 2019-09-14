@@ -38,6 +38,8 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             continue
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+        if choose_vehicle.id == u'V653':
+            print ("znzn")
 
         #choose_vehicle.path.append(s_id)
         choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
@@ -46,6 +48,9 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         max_height,choose_vehicle,choose_station = skyLine.process_skyline(choose_vehicle,choose_station)
         stations[choose_station.id] = choose_station
         #res_vehicle_list.append(choose_vehicle)
+        used_rate = cal_used_rate(choose_vehicle)
+        if used_rate < 0.8:
+            max_height,choose_vehicle=pour_bins(choose_vehicle,stations)
         createEntity.cal_station_area_weight(choose_station)
         if choose_station.id == u"S196":
             print "aaa"
@@ -54,7 +59,7 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-            if choose_vehicle.id == u'V791':
+            if choose_vehicle.id == u'V653':
                 print ("znzn")
 
             choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
@@ -64,11 +69,14 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             stations[choose_station.id] = choose_station
             createEntity.cal_station_area_weight(choose_station)
             used_rate = cal_used_rate(choose_vehicle)
-
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
+            s_id = choose_station.id
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
             #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-                if choose_vehicle.id == u'V791':
+                if choose_vehicle.id == u'V653':
                     print ("znzn")
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
@@ -85,6 +93,10 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 used_rate = cal_used_rate(choose_vehicle)
                 if used_rate > 1:
                     print("zzzzz")
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
             '''
             if used_rate < 0.7 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
 
@@ -170,30 +182,45 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
         s_id  = station_list2[i]
 
         choose_station=stations[s_id]
+        createEntity.cal_station_area_weight(choose_station)
         if choose_station.isEmpty==True:
             continue
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-
+        if choose_vehicle.id == u'V399':
+            print ("znzn")
         #choose_vehicle.path.append(s_id)
         vehicles[choose_vehicle_num].is_available = False
         #skyLine.make_new_binList(choose_station, 0.7)
         max_height, choose_vehicle, choose_station = skyLine.process_skyline(choose_vehicle, choose_station)
         stations[choose_station.id] = choose_station
+        used_rate = cal_used_rate(choose_vehicle)
+        if used_rate < 0.8:
+            max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
         createEntity.cal_station_area_weight(choose_station)
+
         while choose_station.weight!=0:
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-
+            if choose_vehicle.id == u'V399':
+                print ("znzn")
             #choose_vehicle.path.append(s_id)
             vehicles[choose_vehicle_num].is_available = False
 
             max_height, choose_vehicle, choose_station = skyLine.process_skyline(choose_vehicle,
                                                                                       choose_station)
+
             stations[choose_station.id] = choose_station
+
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
+
             createEntity.cal_station_area_weight(choose_station)
             used_rate = cal_used_rate(choose_vehicle)
+            s_id = choose_station.id
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
             #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
 
@@ -211,7 +238,10 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 else:
                     break
                 used_rate = cal_used_rate(choose_vehicle)
-
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
 
 
         if choose_station.weight == 0:
@@ -229,6 +259,9 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id=next_s_id
                 else:
                     break
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
@@ -300,7 +333,8 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
     for i in range(len(station_list3)):
         if (i+1) % 100==0:
             print i
-
+        if station_list3[i]==u'S041':
+            print "S041"
         s_id  = station_list3[i]
 
         choose_station=stations[s_id]
@@ -308,12 +342,18 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             continue
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-
+        if choose_vehicle.id == u'V653':
+            print ("znzn")
         vehicles[choose_vehicle_num].is_available = False
         #skyLine.make_new_binList(choose_station, 0.7)
         max_height, choose_vehicle, choose_station = skyLine.process_skyline(choose_vehicle,
                                                                                   choose_station)
         stations[choose_station.id] = choose_station
+        used_rate = cal_used_rate(choose_vehicle)
+        if used_rate < 0.8:
+            max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+            createEntity.cal_station_area_weight(choose_station)
+
         createEntity.cal_station_area_weight(choose_station)
 
         if choose_station.id == u'S204':
@@ -323,14 +363,21 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+            if choose_vehicle.id == u'V653':
+                print ("znzn")
             #res_vehicle_list.append(choose_vehicle)
             vehicles[choose_vehicle_num].is_available = False
 
             max_height, choose_vehicle, choose_station = skyLine.process_skyline(choose_vehicle,
                                                                                       choose_station)
             stations[choose_station.id] = choose_station
-            createEntity.cal_station_area_weight(choose_station)
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
 
+            createEntity.cal_station_area_weight(choose_station)
+            s_id = choose_station.id
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
 
@@ -347,6 +394,10 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                     s_id=next_s_id
                 else:
                     break
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
 
         max_height = choose_vehicle.max_height
         if choose_station.weight == 0:
@@ -374,6 +425,11 @@ def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst
                 else:
                     break
                 avg_h = avg_height(choose_vehicle.lines)
+            used_rate = cal_used_rate(choose_vehicle)
+            if used_rate < 0.8:
+                max_height, choose_vehicle = pour_bins(choose_vehicle, stations)
+                createEntity.cal_station_area_weight(choose_station)
+
             res_vehicle_list.append(choose_vehicle)
             '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
@@ -754,18 +810,18 @@ def myTest():
 
     # print len(gene)
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
-    #station_list1=random_list(station_list1)
-    station_list2 = random_list(station_list2)
+    station_list3=random_list(station_list3)
+    #station_list2 = random_list(station_list2)
     '''
     station_list1=[u'S036', u'S033', u'S028', u'S021', u'S012', u'S094', u'S178', u'S002', u'S160', u'S215', u'S108', u'S100',
      u'S103', u'S208', u'S072', u'S078', u'S175', u'S176', u'S190', u'S069', u'S129', u'S122', u'S127', u'S059',
      u'S057', u'S051']
-    station_list2=[u'S067', u'S177', u'S074', u'S063', u'S187', u'S105', u'S135', u'S210', u'S198', u'S044', u'S161', u'S195',
-     u'S091', u'S034', u'S076', u'S086', u'S087', u'S053', u'S134', u'S095', u'S136', u'S055', u'S204', u'S149',
-     u'S015', u'S014', u'S043', u'S052', u'S019', u'S166', u'S031', u'S164', u'S070', u'S173', u'S144', u'S040',
-     u'S115', u'S148', u'S003', u'S068', u'S112', u'S037', u'S133', u'S167', u'S143', u'S096', u'S081', u'S119',
-     u'S152', u'S032', u'S191', u'S123', u'S118', u'S125', u'S158', u'S186', u'S188', u'S165', u'S107', u'S159',
-     u'S042']
+    station_list2=[u'S052', u'S034', u'S161', u'S165', u'S081', u'S166', u'S003', u'S040', u'S148', u'S123', u'S158', u'S177',
+     u'S112', u'S119', u'S187', u'S149', u'S191', u'S086', u'S087', u'S076', u'S015', u'S195', u'S133', u'S037',
+     u'S144', u'S188', u'S091', u'S125', u'S167', u'S152', u'S105', u'S096', u'S115', u'S095', u'S143', u'S135',
+     u'S159', u'S067', u'S186', u'S070', u'S043', u'S032', u'S068', u'S136', u'S014', u'S164', u'S019', u'S210',
+     u'S053', u'S042', u'S118', u'S204', u'S031', u'S198', u'S134', u'S055', u'S074', u'S173', u'S063', u'S044',
+     u'S107']
     station_list3=[u'S038', u'S039', u'S035', u'S030', u'S049', u'S048', u'S041', u'S045', u'S047', u'S046', u'S029', u'S027',
      u'S026', u'S025', u'S024', u'S023', u'S022', u'S020', u'S137', u'S131', u'S130', u'S132', u'S139', u'S138',
      u'S018', u'S013', u'S010', u'S011', u'S016', u'S017', u'S092', u'S093', u'S090', u'S097', u'S098', u'S099',
@@ -778,6 +834,7 @@ def myTest():
      u'S194', u'S193', u'S192', u'S199', u'S062', u'S061', u'S060', u'S066', u'S065', u'S064', u'S128', u'S120',
      u'S121', u'S126', u'S124', u'S169', u'S058', u'S056', u'S054', u'S050']
     '''
+
     print (station_list1)
     print (station_list2)
     print (station_list3)
@@ -804,7 +861,7 @@ def myTest():
 
     pick_bins(vehicle_list1,stations,map,time)
     change_vehicle(vehicle_list1, vehicles)
-    geneticAlgm.check_vehicle_list(vehicle_list1)
+    #geneticAlgm.check_vehicle_list(vehicle_list1)
     #gene,cost,rate = genetic(vehicles,stations,map,time,200)
     #vehicle_list = geneticAlgm.schedule_gene(gene, vehicles, stations, map, time)
     #total_cost, total_rate = geneticAlgm.cal_final_result(vehicle_list, map)
@@ -868,22 +925,40 @@ def pour_bins(vehicle,stations):
         b.pointList = []
         stations[b.local_station].binList.append(b)
 
-    station_list = []
+
+    merge_station=entity.Station(vehicle.path[0],stations[vehicle.path[0]].vehicle_limit,stations[vehicle.path[0]].loading_time)
+    for p in vehicle.path:
+        tmp_bin_list=stations[p].binList
+        for b in tmp_bin_list:
+            tmp_b=geneticAlgm.create_new_bin(b)
+            merge_station.binList.append(tmp_b)
+            merge_station.isEmpty=False
+
+
     for s in vehicle.path:
         ss = stations[s]
-        station_list.append(ss)
         ss.isEmpty = False
         createEntity.cal_station_area_weight(ss)
-    choose_station = stations[vehicle.path[0]]
+    #choose_station = stations[vehicle.path[0]]
+    choose_station=merge_station
     choose_vehicle = geneticAlgm.create_new_vehicle(vehicle)
     tmp_line=entity.Line(entity.Point(0,0),entity.Point(choose_vehicle.width,0),choose_vehicle.length,choose_vehicle.length)
     choose_vehicle.lines.append(tmp_line)
-    choose_vehicle.path.append(choose_station.id)
+    #choose_vehicle.path.append(choose_station.id)
     choose_vehicle.max_height = 0
     #skyLine.compose_skyline(choose_vehicle,choose_station)
     max_height=r_learning.bin_packing_function(choose_vehicle,choose_station)
+    choose_vehicle.path=vehicle.path
     vehicle=choose_vehicle
-    return max_height
+
+    for b in vehicle.bin_list:
+        local_station=b.local_station
+        skyLine.delete_bin(stations[local_station].binList,b)
+
+    for p in vehicle.path:
+        createEntity.cal_station_area_weight(stations[p])
+
+    return max_height,vehicle
 
 
 

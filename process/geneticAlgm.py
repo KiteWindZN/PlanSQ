@@ -510,7 +510,11 @@ def create_new_station(station):
     vehicle_limit=station.vehicle_limit
     loading_time=station.loading_time
     s=entity.Station(id,vehicle_limit,loading_time)
+
     binList = station.binList
+    if len(binList)>0:
+        s.isEmpty=False
+
     for b in binList:
         new_b=create_new_bin(b)
         s.binList.append(new_b)
