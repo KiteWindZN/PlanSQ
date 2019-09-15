@@ -3,6 +3,7 @@ from process import skyLine
 from entity import entity
 from process import bin_packing
 from process import geneticAlgm
+from process import  createEntity
 #寻找最适合放入选中line的bin的组合
 def find_next_bin_list(vehicle,bins,choose):
     #print ("find the next bin with reinforcement learning method")
@@ -500,3 +501,73 @@ def bin_packing_function(vehicle,station):
     vehicle.max_height=max_height
     return max_height
 
+
+#合并两个距离很近的站点
+def merge_stations(station1,station2):
+
+    merge_station=entity.Station(station1.id,min(station1.vehicle_limit,station2.vehicle_limit),station1.loading_time+station2.loading_time)
+
+    tmp_bin_list=station1.binList
+    for b in tmp_bin_list:
+        tmp_b=geneticAlgm.create_new_bin(b)
+        merge_station.binList.append(tmp_b)
+        merge_station.isEmpty=False
+    tmp_bin_list = station2.binList
+    for b in tmp_bin_list:
+        tmp_b = geneticAlgm.create_new_bin(b)
+        merge_station.binList.append(tmp_b)
+        merge_station.isEmpty = False
+    return merge_station
+
+#根据vehicle里面装入的bin，来将对应站点的bin删除
+def delete_packedbins(vehicle,stations):
+    bin_list=vehicle.bin_list
+    for b in bin_list:
+        local_station=b.local_station
+        skyLine.delete_bin(stations[local_station].binList,b)
+
+    for p in vehicle.path:
+        createEntity.cal_station_area_weight(stations[p])
+
+        
+#因为map为非对称结构图，所以根据vehicle的现有的路径，求出最优路径
+def cal_path(vehicle,map):
+    path=vehicle.path
+    if len(path)==2:
+        if path[1] in map[path[0]] and path[0] in map[path[1]]:
+            if map[path[1]][path[0]] < map[path[0]][path[1]]:
+                tmp_p = path[0]
+                path[0] = path[1]
+                path[1] = tmp_p
+
+
+#调整bin_list的放置方向，以减少浪费空间
+def modify_bin_list(line,bin_list,bin_sort):
+    width=line.width
+    for i in range(len(bin_list)):
+        b=bin_list[i]
+        if bin_sort[i]==0:
+            l=b.length
+            w=b.width
+        else:
+            l=b.width
+            w=b.length
+        if l>b and l-b<=width:
+            bin_sort[i]=1-bin_sort[i]
+            width = width-(l-b)
+
+#标记station是否含有很多的小的bin
+def label_station(stations):
+    for station in stations:
+        bin_list=station.binList
+        small=0
+        large=0
+        for b in bin_list:
+            if b.width>0.9 and b.length>0.9:
+                large += 1
+            else:
+                small += 1
+        if large > small:
+            station.label=1
+        else:
+            station.label=0

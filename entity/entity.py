@@ -7,6 +7,7 @@ class Station():
     isEmpty=True
     weight=0.0
     area=0.0
+    label=0
 
 
     def __init__(self,id,vehicle_limit,loading_time):
@@ -17,6 +18,7 @@ class Station():
         self.isEmpty=True
         self.weight=0.0
         self.area=0.0
+        self.label=0
 
 
 class Vehicle:
