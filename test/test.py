@@ -75,13 +75,14 @@ def resolveBinJson(path,map,bins):
                     bin_map[b_id]=1
                 else:
                     bin_map[b_id] += 1
+                    print "hhhhhhhh"
         #check_result(vehicle,point_lists)
 
         tmp_list=[]
         for p in point_lists:
             tmp_list.append(point_lists[p])
-        print vehicle.id
-        check_rect(tmp_list)
+        #print vehicle.id
+        #check_rect(tmp_list)
     for b in bins:
         b_id = b.id
         if b_id not in bin_map:
@@ -101,7 +102,7 @@ def test_result():
     #station_total=stations["S001"]
 
     bins = createEntity.createBin(path + "bin.json", stations)
-    resolveBinJson("../result/884332.97881_2019-09-13-17:39:20-result.json",map,bins)
+    resolveBinJson("../result/855710.53721_2019-09-16-21:09:33-result.json",map,bins)
 
 def test_gene_score():
     line_1=entity.Line(entity.Point(0,0),entity.Point(1.275,0),1.225,7.8)

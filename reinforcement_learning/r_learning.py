@@ -524,8 +524,8 @@ def merge_stations(vehicle,stations):
 
     merge_station = entity.Station(stations[vehicle.path[0]].id, stations[vehicle.path[0]].vehicle_limit, 0)
     for b in vehicle.bin_list:
-        b.pointList = []
-        merge_station.binList.append(b)
+        #b.pointList = []
+        merge_station.binList.append(geneticAlgm.create_new_bin(b))
 
     return merge_station
 
@@ -616,11 +616,14 @@ def merge_packing(vehicle,stations):
     choose_vehicle.max_height = 0
 
     bin_packing_function(choose_vehicle, merge_station)
-    choose_vehicle.path = vehicle.path
-    vehicle = choose_vehicle
 
+    if len(merge_station.binList)>0:
+        return vehicle.max_height,vehicle
+    
     last_station=stations[vehicle.path[-1]]
     max_height = bin_packing_function(choose_vehicle,last_station)
+    choose_vehicle.path = vehicle.path
+    vehicle = choose_vehicle
 
     return max_height,vehicle
 
