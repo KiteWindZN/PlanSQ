@@ -67,8 +67,14 @@ def find_next_bin_list(vehicle,bins,choose):
             tmp_waste_0=0
         else:
             tmp_waste_0 = lines[next_line_index].width * bin_map[i][-1].length
-
-        tmp_value_0 = round(sum_score/len(bin_map[i])-5*tmp_waste_0 - 0.3*len(bin_map[i]),5)
+        tmp_area=0
+        large_num=0
+        for b in bin_map[i]:
+            tmp_area += round(b.length * b.width,5)
+            if b.length > 0.9 and b.width > 0.9:
+                large_num += 1
+        tmp_value_0 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_0 - 0.8*len(bin_map[i])+ tmp_area+large_num,5)
+        #tmp_value_0 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_0 , 5)
         #赋值res_value,res_sort,res_map
         for j in range(len(bin_map[i])):
             res_map[i].append(bin_map[i][j])
@@ -111,7 +117,14 @@ def find_next_bin_list(vehicle,bins,choose):
             tmp_waste_1=0
         else:
             tmp_waste_1 = lines[next_line_index].width * bin_map[i][-1].length
-        tmp_value_1 = round(sum_score/len(bin_map[i])-5*tmp_waste_1 - 0.3*len(bin_map[i]),5)
+        tmp_area = 0
+        large_num=0
+        for b in bin_map[i]:
+            tmp_area += round(b.length * b.width, 5)
+            if b.length >0.9 and b.width>0.9:
+                large_num += 1
+        tmp_value_1 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_1 - 0.8*len(bin_map[i])+tmp_area + large_num,5)
+        #tmp_value_1 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_1, 5)
 
         if tmp_value_1 > tmp_value_0:
             res_map[i]=[]
@@ -132,6 +145,7 @@ def find_next_bin_list(vehicle,bins,choose):
             res_index = i
     vehicle.lines=deep_copy_lines(copy_lines)
     # 也可以直接return res_map[res_index][0], res_sort[res_index][0]
+    modify_bin_list(vehicle.lines[choose],res_map[res_index],res_sort[res_index])
     return res_map[res_index],res_sort[res_index],res_value[res_index]
 
 
@@ -409,7 +423,7 @@ def get_next_line(vehicle,bin,choose,rotate):
         lines[choose].width = round(lines[choose].width - bin_width, 5)
 
     skyLine.cal_lines(vehicle, lines)
-    # 本站点的货物已经装完
+
     return  next_index,score
 
 #寻找下一个分数最高的bin
@@ -419,7 +433,7 @@ def choose_next_bin(vehicle,bins,choose,choosed_bins):
     bin_list = skyLine.get_available_bin_list(vehicle, bins, choose)
     if len(bin_list) == 0:
         return bin_list,-1, -1
-    score = 0
+    score = -2
     final_bin = -1
     for i in range(len(bin_list)):
         if is_in_bin_list(bin_list[i], choosed_bins) == True:
@@ -467,7 +481,8 @@ def deep_copy_lines(lines):
 
 #以skyLine和机器学习为基础的的组合装箱算法的调用入口
 def bin_packing_function(vehicle,station):
-
+    if station.id == u"S009":
+        print "dddddddddd"
     vehicle.path.append(station.id)
     bins = station.binList
     for b in bins:
@@ -547,14 +562,21 @@ def modify_bin_list(line,bin_list,bin_sort):
     for i in range(len(bin_list)):
         b=bin_list[i]
         if bin_sort[i]==0:
+            w=b.width
+        else:
+            w=b.length
+        width -= w
+    for i in range(len(bin_list)):
+        b=bin_list[i]
+        if bin_sort[i]==0:
             l=b.length
             w=b.width
         else:
             l=b.width
             w=b.length
-        if l>b and l-b<=width:
+        if l>w and l-w<=width:
             bin_sort[i]=1-bin_sort[i]
-            width = width-(l-b)
+            width = width-(l-w)
 
 #标记station是否含有很多的小的bin
 def label_station(stations):

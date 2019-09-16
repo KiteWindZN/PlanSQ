@@ -616,7 +616,7 @@ def avg_height(lines):
 
 def pick_bins(vehicle_list,stations,map,time):
     for v in vehicle_list:
-        if v.max_height < v.length * 0.4:
+        if v.max_height < v.length * 0.6:
             for v1 in vehicle_list:
                 if v1.id == v.id:
                     continue
@@ -811,29 +811,11 @@ def myTest():
     # print len(gene)
     station_list1,station_list2,station_list3=createEntity.divide_stations(stations)
     station_list3=random_list(station_list3)
-    #station_list2 = random_list(station_list2)
-    '''
-    station_list1=[u'S036', u'S033', u'S028', u'S021', u'S012', u'S094', u'S178', u'S002', u'S160', u'S215', u'S108', u'S100',
-     u'S103', u'S208', u'S072', u'S078', u'S175', u'S176', u'S190', u'S069', u'S129', u'S122', u'S127', u'S059',
-     u'S057', u'S051']
-    station_list2=[u'S052', u'S034', u'S161', u'S165', u'S081', u'S166', u'S003', u'S040', u'S148', u'S123', u'S158', u'S177',
-     u'S112', u'S119', u'S187', u'S149', u'S191', u'S086', u'S087', u'S076', u'S015', u'S195', u'S133', u'S037',
-     u'S144', u'S188', u'S091', u'S125', u'S167', u'S152', u'S105', u'S096', u'S115', u'S095', u'S143', u'S135',
-     u'S159', u'S067', u'S186', u'S070', u'S043', u'S032', u'S068', u'S136', u'S014', u'S164', u'S019', u'S210',
-     u'S053', u'S042', u'S118', u'S204', u'S031', u'S198', u'S134', u'S055', u'S074', u'S173', u'S063', u'S044',
-     u'S107']
-    station_list3=[u'S038', u'S039', u'S035', u'S030', u'S049', u'S048', u'S041', u'S045', u'S047', u'S046', u'S029', u'S027',
-     u'S026', u'S025', u'S024', u'S023', u'S022', u'S020', u'S137', u'S131', u'S130', u'S132', u'S139', u'S138',
-     u'S018', u'S013', u'S010', u'S011', u'S016', u'S017', u'S092', u'S093', u'S090', u'S097', u'S098', u'S099',
-     u'S179', u'S140', u'S141', u'S142', u'S145', u'S146', u'S147', u'S209', u'S171', u'S089', u'S088', u'S211',
-     u'S170', u'S085', u'S084', u'S080', u'S083', u'S082', u'S153', u'S151', u'S150', u'S157', u'S156', u'S155',
-     u'S154', u'S168', u'S201', u'S200', u'S005', u'S004', u'S007', u'S006', u'S001', u'S009', u'S008', u'S214',
-     u'S109', u'S212', u'S213', u'S104', u'S106', u'S101', u'S102', u'S184', u'S185', u'S180', u'S181', u'S182',
-     u'S183', u'S189', u'S162', u'S163', u'S071', u'S073', u'S075', u'S077', u'S079', u'S172', u'S174', u'S207',
-     u'S206', u'S205', u'S203', u'S202', u'S117', u'S116', u'S114', u'S113', u'S111', u'S110', u'S197', u'S196',
-     u'S194', u'S193', u'S192', u'S199', u'S062', u'S061', u'S060', u'S066', u'S065', u'S064', u'S128', u'S120',
-     u'S121', u'S126', u'S124', u'S169', u'S058', u'S056', u'S054', u'S050']
-    '''
+    station_list1 = random_list(station_list1)
+    station_list1=[u'S122', u'S033', u'S190', u'S051', u'S069', u'S078', u'S103', u'S021', u'S036', u'S002', u'S028', u'S059', u'S108', u'S175', u'S127', u'S208', u'S057', u'S178', u'S072', u'S100', u'S094', u'S012', u'S160', u'S215', u'S129', u'S176']
+    station_list2=[u'S044',u'S034', u'S037', u'S031', u'S032', u'S040', u'S043', u'S042',  u'S135', u'S134', u'S136', u'S133', u'S019', u'S014', u'S015', u'S091', u'S096', u'S095', u'S143', u'S144', u'S148', u'S149', u'S087', u'S086', u'S081', u'S152', u'S159', u'S158', u'S003', u'S166', u'S167', u'S164', u'S165', u'S161', u'S105', u'S107', u'S186', u'S187', u'S188', u'S070', u'S074', u'S076', u'S173', u'S177', u'S204', u'S119', u'S118', u'S115', u'S112', u'S195', u'S191', u'S210', u'S198', u'S063', u'S067', u'S068', u'S123', u'S125', u'S055', u'S052', u'S053']
+    station_list3=[u'S008',u'S058', u'S102', u'S097', u'S206', u'S065', u'S113', u'S207', u'S039', u'S189', u'S128', u'S027', u'S170', u'S050', u'S005', u'S174', u'S017', u'S046', u'S209', u'S138', u'S183', u'S041', u'S184', u'S016', u'S205', u'S106', u'S201', u'S061', u'S172', u'S010', u'S075', u'S156', u'S079', u'S080', u'S151', u'S035', u'S192',  u'S109', u'S098', u'S085', u'S121', u'S194', u'S132', u'S162', u'S126', u'S089', u'S142', u'S131', u'S199', u'S157', u'S146', u'S203', u'S200', u'S193', u'S214', u'S116', u'S001', u'S213', u'S024', u'S062', u'S026', u'S084', u'S150', u'S147', u'S130', u'S038', u'S077', u'S163', u'S029', u'S009', u'S139', u'S047', u'S197', u'S004', u'S110', u'S101', u'S082', u'S049', u'S018', u'S141', u'S137', u'S020', u'S071', u'S154', u'S169', u'S013', u'S007', u'S006', u'S212', u'S022', u'S179', u'S171', u'S185', u'S099', u'S011', u'S114', u'S030', u'S025', u'S056', u'S093', u'S153', u'S111', u'S120', u'S155', u'S196', u'S092', u'S023', u'S182', u'S140', u'S088', u'S181', u'S083', u'S104', u'S211', u'S064', u'S117', u'S045', u'S060', u'S124', u'S066', u'S180', u'S073', u'S168', u'S054', u'S145', u'S090', u'S048', u'S202']
+
 
     print (station_list1)
     print (station_list2)
@@ -856,12 +838,17 @@ def myTest():
     for s in station_list3:
         ll = len(stations[s].binList)
         len_1 += ll
-
-    vehicle_list1=schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,station_list3,map,time)
-
+   # choose_vehicle=vehicles[-1]
+    #choose_vehicle.length=3
+    #choose_vehicle.width=17.5
+    #max_height, choose_vehicle, choose_station = skyLine.process_skyline(choose_vehicle, stations[u"S009"])
+    #max_height = r_learning.bin_packing_function(choose_vehicle, stations[u"S041"])
+    #use_rate=cal_used_rate(choose_vehicle)
+    #vehicle_list1=schedule_mst_r_learning(stations,vehicles,station_list3,station_list1,station_list2,map,time)
+    vehicle_list1 = schedule_mst_r_learning(stations, vehicles, station_list3, station_list1, station_list2, map, time)
     pick_bins(vehicle_list1,stations,map,time)
     change_vehicle(vehicle_list1, vehicles)
-    #geneticAlgm.check_vehicle_list(vehicle_list1)
+    geneticAlgm.check_vehicle_list(vehicle_list1)
     #gene,cost,rate = genetic(vehicles,stations,map,time,200)
     #vehicle_list = geneticAlgm.schedule_gene(gene, vehicles, stations, map, time)
     #total_cost, total_rate = geneticAlgm.cal_final_result(vehicle_list, map)
@@ -896,7 +883,7 @@ def myTest():
 
         for b in v.bin_list:
             tmp_area = round(tmp_area+b.length*b.width,5)
-        if tmp_area/(v.length*v.width) < 0.75:
+        if  tmp_area/(v.length*v.width) < 0.75:
 
             print(v.id," ",tmp_area," ",round(v.length*v.width,5))
 
@@ -1006,7 +993,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
             #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-
+                if next_s_id == u"S044":
+                    print "fffffffff"
 
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle,stations[next_s_id])
@@ -1036,10 +1024,12 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
         if choose_station.weight == 0:
 
             used_rate = cal_used_rate(choose_vehicle)
+
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
             #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-
+                if next_s_id == u"S044":
+                    print "fffffffff"
                 dis_cost = tmp_dis * choose_vehicle.perPrice
                 if next_s_id != "-1" and next_s_id!= s_id and dis_cost < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
@@ -1077,7 +1067,7 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             continue
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-        if choose_vehicle.id == u"V395":
+        if choose_vehicle.id == u"V206":
             print ("aaaaaa")
         #choose_vehicle.path.append(s_id)
         vehicles[choose_vehicle_num].is_available = False
@@ -1089,7 +1079,7 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-            if choose_vehicle.id == u"V395":
+            if choose_vehicle.id == u"V206":
                 print ("aaaaaa")
             #choose_vehicle.path.append(s_id)
             vehicles[choose_vehicle_num].is_available = False
@@ -1104,7 +1094,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             #while used_rate < 0.85 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
 
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-
+                if next_s_id == u"S044":
+                    print "fffffffff"
                 if next_s_id != "-1" and next_s_id != s_id and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
@@ -1123,6 +1114,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
 
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
+                if next_s_id == u"S044":
+                    print "fffffffff"
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
@@ -1178,7 +1171,7 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             continue
         choose_vehicle_num=choose_vehicle_index(vehicles,choose_station)
         choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
-        if choose_vehicle.id == u"V395":
+        if choose_vehicle.id == u"V206":
             print ("aaaaaa")
         vehicles[choose_vehicle_num].is_available = False
         #skyLine.make_new_binList(choose_station, 0.7)
@@ -1191,7 +1184,7 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
             #res_vehicle_list.append(choose_vehicle)
             vehicles[choose_vehicle_num].is_available = False
-            if choose_vehicle.id == u"V395":
+            if choose_vehicle.id == u"V206":
                 print ("aaaaaa")
             max_height=r_learning.bin_packing_function(choose_vehicle,choose_station)
             #stations[choose_station.id] = choose_station
@@ -1199,7 +1192,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             s_id=choose_station.id
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-
+                if next_s_id == u"S123":
+                    print "fffffffff"
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
 
@@ -1217,9 +1211,11 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
         if choose_station.weight == 0:
 
             avg_h=avg_height(choose_vehicle.lines)
+
             while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
                 next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, mst, T)
-
+                if next_s_id == u"S123":
+                    print "fffffffff"
                 if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
                     add_bin2waste(choose_vehicle, stations[next_s_id])
                     createEntity.cal_station_area_weight(choose_station)
@@ -1250,7 +1246,6 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
             '''
 
     return res_vehicle_list
-
 
 
 

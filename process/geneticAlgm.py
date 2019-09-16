@@ -618,8 +618,9 @@ def cal_cost_and_rate(vehicle,map):
             start= path[i]
             continue
         cur=path[i]
-        if start == u'S133' or cur==u'S133':
+        if start == u'S044' or cur==u'S044':
             print("nonono")
+            print start,cur
         distance = distance + map[start][cur]
         start=cur
     cost = cost +distance * vehicle.perPrice
