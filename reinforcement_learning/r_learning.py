@@ -3,7 +3,8 @@ from process import skyLine
 from entity import entity
 from process import bin_packing
 from process import geneticAlgm
-from process import  createEntity
+from process import createEntity
+import sys
 #寻找最适合放入选中line的bin的组合
 def find_next_bin_list(vehicle,bins,choose):
     #print ("find the next bin with reinforcement learning method")
@@ -244,6 +245,7 @@ def get_next_line(vehicle,bin,choose,rotate):
                 lines[choose].end.x = vehicle.width
                 lines[choose].start.y = vehicle_length
                 lines[choose].end.y = vehicle_length
+
                 #break
 
         elif choose > 0:
@@ -518,21 +520,15 @@ def bin_packing_function(vehicle,station):
 
 
 #合并两个距离很近的站点
-def merge_stations(station1,station2):
+def merge_stations(vehicle,stations):
 
-    merge_station=entity.Station(station1.id,min(station1.vehicle_limit,station2.vehicle_limit),station1.loading_time+station2.loading_time)
+    merge_station = entity.Station(stations[vehicle.path[0]].id, stations[vehicle.path[0]].vehicle_limit, 0)
+    for b in vehicle.bin_list:
+        b.pointList = []
+        merge_station.binList.append(b)
 
-    tmp_bin_list=station1.binList
-    for b in tmp_bin_list:
-        tmp_b=geneticAlgm.create_new_bin(b)
-        merge_station.binList.append(tmp_b)
-        merge_station.isEmpty=False
-    tmp_bin_list = station2.binList
-    for b in tmp_bin_list:
-        tmp_b = geneticAlgm.create_new_bin(b)
-        merge_station.binList.append(tmp_b)
-        merge_station.isEmpty = False
     return merge_station
+
 
 #根据vehicle里面装入的bin，来将对应站点的bin删除
 def delete_packedbins(vehicle,stations):
@@ -578,18 +574,88 @@ def modify_bin_list(line,bin_list,bin_sort):
             bin_sort[i]=1-bin_sort[i]
             width = width-(l-w)
 
-#标记station是否含有很多的小的bin
-def label_station(stations):
-    for station in stations:
-        bin_list=station.binList
-        small=0
-        large=0
-        for b in bin_list:
-            if b.width>0.9 and b.length>0.9:
-                large += 1
-            else:
-                small += 1
-        if large > small:
-            station.label=1
+def label_station(station):
+    bin_list = station.binList
+    small = 0
+    large = 0
+    for b in bin_list:
+        if b.width > 0.9 and b.length > 0.9:
+            large += 1
         else:
-            station.label=0
+            small += 1
+    if large * 0.6 < small:
+        station.label = 1
+    elif large * 0.4 < small:
+        station.label = 0
+    else:
+        station.label = -1
+
+#标记station是否含有很多的小的bin
+def label_stations(stations):
+    for s in stations:
+        label_station(stations[s])
+
+
+def cal_small_bin(station):
+    bin_list=station.binList
+    small=0
+    for b in bin_list:
+        if b.width<= 0.9 or b.length <= 0.9:
+            small += 1
+    return small
+
+
+def merge_packing(vehicle,stations):
+    geneticAlgm.check_vehicle(vehicle)
+    merge_station=merge_stations(vehicle,stations)
+    choose_vehicle = geneticAlgm.create_new_vehicle(vehicle)
+    tmp_line = entity.Line(entity.Point(0, 0), entity.Point(choose_vehicle.width, 0), choose_vehicle.length,
+                           choose_vehicle.length)
+    choose_vehicle.lines.append(tmp_line)
+
+    choose_vehicle.max_height = 0
+
+    bin_packing_function(choose_vehicle, merge_station)
+    choose_vehicle.path = vehicle.path
+    vehicle = choose_vehicle
+
+    last_station=stations[vehicle.path[-1]]
+    max_height = bin_packing_function(choose_vehicle,last_station)
+
+    return max_height,vehicle
+
+
+def choose_partner_station(vehicle,s_id,stations,map,T):
+    station=stations[s_id]
+    nabor_list=map[s_id]
+    cur_label = station.label
+    tmp_dis = sys.maxsize
+    next_id = "-1"
+    for s in nabor_list:
+        tmp_station=stations[s]
+        tmp_label=tmp_station.label
+        if cur_label + tmp_label == 0:
+            if tmp_dis > map[s_id][s] and stations[s].vehicle_limit >= vehicle.length and vehicle.usedTime+T[s_id][s]+stations[s].loading_time<=600:
+                tmp_dis = map[s_id][s]
+                next_id = s
+
+    if tmp_dis > 50000:
+        #choose the nearest station
+        next_id, tmp_dis = next_station(vehicle, s_id, stations, map, T)
+    return next_id,tmp_dis
+
+def next_station(vehicle,s_id,stations,map,time):
+    nobor_list = map[s_id]
+    tmp_dis = sys.maxsize
+    next_s_id = "-1"
+    next_list = []
+    next_dis = []
+    for n_s in nobor_list:
+        if map[s_id][n_s] < tmp_dis and n_s != s_id and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit >= vehicle.length\
+                and vehicle.usedTime+time[s_id][n_s] + stations[n_s].loading_time <= 600 and n_s not in vehicle.path:
+            tmp_dis = map[s_id][n_s]
+            next_s_id = n_s
+            next_list.append(n_s)
+            next_dis.append(tmp_dis)
+    return next_s_id, tmp_dis
+
