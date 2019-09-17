@@ -851,6 +851,7 @@ def myTest():
     pick_bins(vehicle_list1,stations,map,time)
     change_vehicle(vehicle_list1, vehicles)
     geneticAlgm.check_vehicle_list(vehicle_list1)
+    r_learning.cal_vehicle_list_path(vehicle_list1,map)
     #gene,cost,rate = genetic(vehicles,stations,map,time,200)
     #vehicle_list = geneticAlgm.schedule_gene(gene, vehicles, stations, map, time)
     #total_cost, total_rate = geneticAlgm.cal_final_result(vehicle_list, map)
@@ -1085,6 +1086,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
         #stations[choose_station.id] = choose_station
         createEntity.cal_station_area_weight(choose_station)
         while choose_station.weight!=0:
+            #if len(choose_vehicle.path)>1:
+            #    max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
@@ -1137,6 +1140,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
                     s_id=next_s_id
                 else:
                     break
+            #if len(choose_vehicle.path)>1:
+            #    max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9 and choose_vehicle.max_height > choose_vehicle.length * 0.9:
@@ -1191,6 +1196,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
         #stations[choose_station.id] = choose_station
         createEntity.cal_station_area_weight(choose_station)
         while choose_station.weight!=0:
+            #if len(choose_vehicle.path)>1:
+            #    max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
@@ -1247,6 +1254,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
                 else:
                     break
                 avg_h = avg_height(choose_vehicle.lines)
+            #if len(choose_vehicle.path)>1:
+            #    max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
