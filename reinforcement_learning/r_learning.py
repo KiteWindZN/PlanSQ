@@ -551,6 +551,10 @@ def cal_path(vehicle,map):
                 path[0] = path[1]
                 path[1] = tmp_p
 
+def cal_vehicle_list_path(vehicle_list, map):
+    for v in vehicle_list:
+        cal_path(v, map)
+
 
 #调整bin_list的放置方向，以减少浪费空间
 def modify_bin_list(line,bin_list,bin_sort):
