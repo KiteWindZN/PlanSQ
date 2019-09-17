@@ -540,7 +540,7 @@ def delete_packedbins(vehicle,stations):
     for p in vehicle.path:
         createEntity.cal_station_area_weight(stations[p])
 
-        
+
 #因为map为非对称结构图，所以根据vehicle的现有的路径，求出最优路径
 def cal_path(vehicle,map):
     path=vehicle.path
