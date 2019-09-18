@@ -530,6 +530,14 @@ def merge_stations(vehicle,stations):
     return merge_station
 
 
+def merge_two_station(station1,station2):
+    merge_station = entity.Station(station1.id, station1.vehicle_limit, 0)
+    for b in station1.binList:
+        merge_station.binList.append(geneticAlgm.create_new_bin(b))
+    for b in station2.binList:
+        merge_station.binList.append(geneticAlgm.create_new_bin(b))
+    return merge_station
+
 #根据vehicle里面装入的bin，来将对应站点的bin删除
 def delete_packedbins(vehicle,stations):
     bin_list=vehicle.bin_list
@@ -666,3 +674,35 @@ def next_station(vehicle,s_id,stations,map,time):
             next_dis.append(tmp_dis)
     return next_s_id, tmp_dis
 
+# TODO
+def merge_nearest_stations(stations,map):
+    for s_1 in map:
+        tmp_dis= sys.maxsize
+        choose_s="-1"
+        for s_2 in map[s_1]:
+            if s_1 == s_2:
+                continue
+            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000:
+                tmp_dis = map[s_1][s_2]
+                choose_s = s_2
+        if choose_s == -1:
+            continue
+        merge_station = merge_two_station(stations[s_1],stations[s_2])
+
+
+def print_nearest_stations(map):
+    my_set=set()
+    for s_1 in map:
+        for s_2 in map[s_1]:
+            if s_1 == s_2:
+                continue
+            if map[s_1][s_2] <= 1000:
+                print s_1,s_2,map[s_1][s_2]
+                my_set.add(s_1)
+                my_set.add(s_2)
+    print len(my_set)
+
+if __name__ == '__main__':
+    path = "../dataset/month4/"
+    map, time = createEntity.createMap(path + "matrix.json")
+    print_nearest_stations(map)

@@ -487,7 +487,7 @@ def next_station(vehicle,s_id,stations,map,time):
     next_list = []
     next_dis = []
     for n_s in nobor_list:
-        if map[s_id][n_s] < tmp_dis and n_s != s_id and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit >= vehicle.length\
+        if map[s_id][n_s] < tmp_dis and n_s != s_id and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit == vehicle.length\
                 and vehicle.usedTime+time[s_id][n_s] + stations[n_s].loading_time <= 600 and n_s not in vehicle.path:
             tmp_dis = map[s_id][n_s]
             next_s_id = n_s
@@ -847,7 +847,7 @@ def myTest():
     #max_height = r_learning.bin_packing_function(choose_vehicle, stations[u"S041"])
     #use_rate=cal_used_rate(choose_vehicle)
     #vehicle_list1=schedule_mst_r_learning(stations,vehicles,station_list3,station_list1,station_list2,map,time)
-    vehicle_list1 = schedule_mst_r_learning(stations, vehicles, station_list3, station_list1, station_list2, map, time)
+    vehicle_list1 = schedule_mst_r_learning(stations, vehicles, station_list1, station_list2, station_list3, map, time)
     pick_bins(vehicle_list1,stations,map,time)
     change_vehicle(vehicle_list1, vehicles)
     geneticAlgm.check_vehicle_list(vehicle_list1)
@@ -1196,8 +1196,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
         #stations[choose_station.id] = choose_station
         createEntity.cal_station_area_weight(choose_station)
         while choose_station.weight!=0:
-            #if len(choose_vehicle.path)>1:
-            #    max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
+            if len(choose_vehicle.path)>1:
+                max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
             choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
@@ -1254,8 +1254,8 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
                 else:
                     break
                 avg_h = avg_height(choose_vehicle.lines)
-            #if len(choose_vehicle.path)>1:
-            #    max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
+            if len(choose_vehicle.path)>1:
+                max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
             res_vehicle_list.append(choose_vehicle)
             '''
             if used_rate < 0.8 and choose_vehicle.used_weight < choose_vehicle.weight * 0.9:
