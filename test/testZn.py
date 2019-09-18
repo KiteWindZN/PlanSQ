@@ -487,7 +487,7 @@ def next_station(vehicle,s_id,stations,map,time):
     next_list = []
     next_dis = []
     for n_s in nobor_list:
-        if map[s_id][n_s] < tmp_dis and n_s != s_id and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit == vehicle.length\
+        if map[s_id][n_s] < tmp_dis and n_s != s_id and stations[n_s].isEmpty == False and stations[n_s].vehicle_limit >= vehicle.length\
                 and vehicle.usedTime+time[s_id][n_s] + stations[n_s].loading_time <= 600 and n_s not in vehicle.path:
             tmp_dis = map[s_id][n_s]
             next_s_id = n_s
@@ -954,6 +954,11 @@ def pour_bins(vehicle,stations):
 
 def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
     res_vehicle_list=[]
+    #merge_station_list=r_learning.merge_nearest_stations(stations,mst)
+    #res_vehicle_list=process_merged_station(stations,merge_station_list,vehicles,mst,T)
+
+    #res_vehicle_list=process_station(stations,vehicles)
+
     for i in range(len(station_list1)):
         if (i+1) % 1==0:
             print i
@@ -1268,6 +1273,83 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
                     s_id = next_s_id
 
             '''
+
+    return res_vehicle_list
+
+
+def process_merged_station(stations,merged_station_list,vehicles,map,T):
+    res_vehicle_list=[]
+    for station in merged_station_list:
+        merge_list_id = []
+        merge_list_id.append(station.binList[0].local_station)
+        merge_list_id.append(station.binList[-1].local_station)
+        choose_vehicle_num = choose_vehicle_index(vehicles, station)
+        choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+        vehicles[choose_vehicle_num].is_available = False
+
+        max_height=r_learning.bin_packing_function(choose_vehicle,station)
+        r_learning.delete_packedbins(choose_vehicle,stations)
+        while r_learning.is_one_empty(merge_list_id,stations)==False:
+            res_vehicle_list.append(choose_vehicle)
+            choose_vehicle_num = choose_vehicle_index(vehicles, station)
+            choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+            vehicles[choose_vehicle_num].is_available = False
+            max_height = r_learning.bin_packing_function(choose_vehicle, station)
+            r_learning.delete_packedbins(choose_vehicle, stations)
+            s_id=choose_vehicle.path[-1]
+            while max_height < choose_vehicle.length*0.9 and choose_vehicle.used_weight < choose_vehicle.weight*0.9:
+                next_s_id, tmp_dis = next_station(choose_vehicle, s_id, stations, map, T)
+                if next_s_id == u"S044":
+                    print "fffffffff"
+                if next_s_id != "-1" and tmp_dis * choose_vehicle.perPrice < choose_vehicle.startPrice:
+                    add_bin2waste(choose_vehicle, stations[next_s_id])
+                    max_height=r_learning.bin_packing_function(choose_vehicle,stations[next_s_id])
+                    r_learning.label_station(stations[next_s_id])
+                    if stations[next_s_id].is_merged == 1:
+                        r_learning.delete_from_merged_station(merged_station_list, station, choose_vehicle)
+                    tmp_weight = stations[next_s_id].weight
+                    createEntity.cal_station_area_weight(stations[next_s_id])
+                    if tmp_weight == stations[next_s_id].weight:
+                        break
+                    s_id=next_s_id
+                else:
+                    break
+        if r_learning.is_one_empty(merge_list_id,stations)==True:
+            res_vehicle_list.append(choose_vehicle)
+
+    return res_vehicle_list
+
+
+def process_station(stations,vehicles):
+    res_vehicle_list=[]
+    for s in stations:
+        choose_station=stations[s]
+        label=choose_station.label
+        if label==-1:
+            small_bin = r_learning.cal_small_bin(choose_station)
+            while small_bin > 10:
+                choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
+                choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+                vehicles[choose_vehicle_num].is_available = False
+                max_height = r_learning.bin_packing_function(choose_vehicle, choose_station)
+                res_vehicle_list.append(choose_vehicle)
+                small_bin = r_learning.cal_small_bin(choose_station)
+
+                if choose_vehicle.id == u"V598":
+                    print ("aaaaaa")
+        elif label==1:
+            large_bin = r_learning.cal_large_bin(choose_station)
+            while large_bin > 10:
+                choose_vehicle_num = choose_vehicle_index(vehicles, choose_station)
+                choose_vehicle = geneticAlgm.create_new_vehicle(vehicles[choose_vehicle_num])
+                vehicles[choose_vehicle_num].is_available = False
+                max_height = r_learning.bin_packing_function(choose_vehicle, choose_station)
+
+                res_vehicle_list.append(choose_vehicle)
+                large_bin = r_learning.cal_large_bin(choose_station)
+
+                if choose_vehicle.id == u"V598":
+                    print ("aaaaaa")
 
     return res_vehicle_list
 

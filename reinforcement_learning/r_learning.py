@@ -616,6 +616,14 @@ def cal_small_bin(station):
             small += 1
     return small
 
+def cal_large_bin(station):
+    bin_list=station.binList
+    large=0
+    for b in bin_list:
+        if b.width > 0.9 and b.length > 0.9:
+            large += 1
+    return large
+
 
 def merge_packing(vehicle,stations):
     geneticAlgm.check_vehicle(vehicle)
@@ -638,6 +646,26 @@ def merge_packing(vehicle,stations):
     vehicle = choose_vehicle
 
     return max_height,vehicle
+
+
+#根据vehicle里面装入的bin，来将对应站点的bin删除
+def delete_packedbins(vehicle,stations):
+    get_real_path(vehicle)
+    bin_list=vehicle.bin_list
+    for b in bin_list:
+        local_station=b.local_station
+        skyLine.delete_bin(stations[local_station].binList,b)
+
+    for p in vehicle.path:
+        createEntity.cal_station_area_weight(stations[p])
+
+
+def get_real_path(vehicle):
+    station_bin = vehicle.station_bin
+    path=[]
+    for s in station_bin:
+        path.append(s)
+    vehicle.path=path
 
 
 def choose_partner_station(vehicle,s_id,stations,map,T):
@@ -676,18 +704,34 @@ def next_station(vehicle,s_id,stations,map,time):
 
 # TODO
 def merge_nearest_stations(stations,map):
+    res_station_list=[]
     for s_1 in map:
         tmp_dis= sys.maxsize
         choose_s="-1"
+        if stations[s_1].is_merged == 1:
+            continue
         for s_2 in map[s_1]:
             if s_1 == s_2:
                 continue
-            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000:
+            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000 and stations[s_1].vehicle_limit == stations[s_2].vehicle_limit:
                 tmp_dis = map[s_1][s_2]
                 choose_s = s_2
-        if choose_s == -1:
+        if choose_s == "-1":
             continue
-        merge_station = merge_two_station(stations[s_1],stations[s_2])
+
+        merge_station = merge_two_station(stations[s_1],stations[choose_s])
+        stations[s_1].is_merged=1
+        stations[choose_s].is_merged=1
+        res_station_list.append(merge_station)
+    return res_station_list
+
+
+def is_one_empty(path,stations):
+
+    for p in path:
+        if stations[p].isEmpty==True:
+            return True
+    return False
 
 
 def print_nearest_stations(map):
@@ -702,7 +746,28 @@ def print_nearest_stations(map):
                 my_set.add(s_2)
     print len(my_set)
 
+
+def delete_from_merged_station(merge_list,station,vehicle):
+    for s in merge_list:
+        if len(s.binList)==0:
+            continue
+        path=[]
+        path.append(s.binList[0].local_station)
+        path.append(s.binList[-1].local_station)
+        if station.id in path:
+            for b in vehicle.bin_list:
+                if b.local_station == station.id:
+                    skyLine.delete_bin(s.binList,b)
+
+
+
 if __name__ == '__main__':
     path = "../dataset/month4/"
     map, time = createEntity.createMap(path + "matrix.json")
-    print_nearest_stations(map)
+    #print_nearest_stations(map)
+    stations, maxLimit = createEntity.createStation(path + "station.json")
+
+    bins = createEntity.createBin(path + "bin.json", stations)
+    label_stations(stations)
+    station_list=merge_nearest_stations(stations,map)
+    print len(station_list)
