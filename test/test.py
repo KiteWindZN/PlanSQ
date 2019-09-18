@@ -75,7 +75,7 @@ def resolveBinJson(path,map,bins):
                     bin_map[b_id]=1
                 else:
                     bin_map[b_id] += 1
-                    print "hhhhhhhh"
+                    print "hhhhhhhh",b_id,p,v_info
         #check_result(vehicle,point_lists)
 
         tmp_list=[]
@@ -86,7 +86,7 @@ def resolveBinJson(path,map,bins):
     for b in bins:
         b_id = b.id
         if b_id not in bin_map:
-            print b_id,b.local_station
+            print b_id,b.local_station,v_info
     cost,rate=geneticAlgm.cal_final_result(vehicle_list,map)
     print(cost, rate)
     print(len(bin_map),i)
@@ -102,7 +102,7 @@ def test_result():
     #station_total=stations["S001"]
 
     bins = createEntity.createBin(path + "bin.json", stations)
-    resolveBinJson("../result/855710.53721_2019-09-16-21:09:33-result.json",map,bins)
+    resolveBinJson("../result/859706.77129_2019-09-18-22:36:51-result.json",map,bins)
 
 def test_gene_score():
     line_1=entity.Line(entity.Point(0,0),entity.Point(1.275,0),1.225,7.8)
