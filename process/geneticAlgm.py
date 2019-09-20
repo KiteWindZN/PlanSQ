@@ -609,6 +609,8 @@ def cal_cost_and_rate(vehicle,map):
     bin_list=vehicle.bin_list
     total_area=vehicle.length * vehicle.width
     used_area=0.0
+    if vehicle.id==u"V890":
+        print vehicle.path
     path=vehicle.path
 
     cost=cost + vehicle.startPrice
@@ -618,9 +620,9 @@ def cal_cost_and_rate(vehicle,map):
             start= path[i]
             continue
         cur=path[i]
-        if start == u'S044' or cur==u'S044':
+        if cur not in map[start]:
             print("nonono")
-            print start,cur
+            print start,cur,vehicle.id
         distance = distance + map[start][cur]
         start=cur
     cost = cost +distance * vehicle.perPrice

@@ -102,7 +102,7 @@ def test_result():
     #station_total=stations["S001"]
 
     bins = createEntity.createBin(path + "bin.json", stations)
-    resolveBinJson("../result/859706.77129_2019-09-18-22:36:51-result.json",map,bins)
+    resolveBinJson("../result/857431.84167_2019-09-19-10:01:44-result.json",map,bins)
 
 def test_gene_score():
     line_1=entity.Line(entity.Point(0,0),entity.Point(1.275,0),1.225,7.8)

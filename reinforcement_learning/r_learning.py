@@ -74,7 +74,11 @@ def find_next_bin_list(vehicle,bins,choose):
             tmp_area += round(b.length * b.width,5)
             if b.length > 0.9 and b.width > 0.9:
                 large_num += 1
-        tmp_value_0 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_0 - 0.8*len(bin_map[i])+ tmp_area+large_num,5)
+        if bins[i].local_station == u"S011" or bins[i].local_station == u"S154":
+            tmp_value_0 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_0 - 0.8*len(bin_map[i])+ 0.9*tmp_area+3.2*large_num,5)
+        else:
+            tmp_value_0 = round(0.5 * sum_score / len(bin_map[i]) - 3 * tmp_waste_0 - 0.8 * len(
+            bin_map[i]) + tmp_area + 3 * large_num, 5)
         #tmp_value_0 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_0 , 5)
         #赋值res_value,res_sort,res_map
         for j in range(len(bin_map[i])):
@@ -124,7 +128,11 @@ def find_next_bin_list(vehicle,bins,choose):
             tmp_area += round(b.length * b.width, 5)
             if b.length >0.9 and b.width>0.9:
                 large_num += 1
-        tmp_value_1 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_1 - 0.8*len(bin_map[i])+tmp_area + large_num,5)
+        if bins[i].local_station == u"S011" or bins[i].local_station == u"S154":
+            tmp_value_1 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_1 - 0.8*len(bin_map[i])+0.9*tmp_area + 3.2*large_num,5)
+        else:
+            tmp_value_1 = round(0.5 * sum_score / len(bin_map[i]) - 3 * tmp_waste_1 - 0.8 * len(
+                bin_map[i]) + tmp_area + 3 * large_num, 5)
         #tmp_value_1 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_1, 5)
 
         if tmp_value_1 > tmp_value_0:
@@ -483,8 +491,7 @@ def deep_copy_lines(lines):
 
 #以skyLine和机器学习为基础的的组合装箱算法的调用入口
 def bin_packing_function(vehicle,station):
-    if station.id == u"S009":
-        print "dddddddddd"
+
     vehicle.path.append(station.id)
     bins = station.binList
     for b in bins:
@@ -595,12 +602,30 @@ def label_station(station):
             large += 1
         else:
             small += 1
-    if large * 0.6 < small:
+    station.small=small
+    station.large=large
+    if large * 0.7 < small and small > 65:
         station.label = 1
-    elif large * 0.4 < small:
-        station.label = 0
-    else:
+    elif large * 0.3 > small and large > 65:
         station.label = -1
+    else:
+        station.label = 0
+
+
+def get_station_id_by_label(stations,list_id):
+    list1=[]
+    list2=[]
+    list3=[]
+
+    for s in list_id:
+        if stations[s].label==-1:
+            list1.append(s)
+        elif stations[s].label==0:
+            list2.append(s)
+        else:
+            list3.append(s)
+    return list1,list2,list3
+
 
 #标记station是否含有很多的小的bin
 def label_stations(stations):
@@ -704,16 +729,19 @@ def next_station(vehicle,s_id,stations,map,time):
 
 # TODO
 def merge_nearest_stations(stations,map):
+    for s in stations:
+        stations[s].is_merged=0
+
     res_station_list=[]
     for s_1 in map:
         tmp_dis= sys.maxsize
         choose_s="-1"
-        if stations[s_1].is_merged == 1:
+        if stations[s_1].is_merged == 1 or stations[s_1].isEmpty==True:
             continue
         for s_2 in map[s_1]:
             if s_1 == s_2:
                 continue
-            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000 and stations[s_1].vehicle_limit == stations[s_2].vehicle_limit:
+            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000 and stations[s_1].vehicle_limit == stations[s_2].vehicle_limit and stations[s_2].is_merged == 0 and stations[s_2].isEmpty==False:
                 tmp_dis = map[s_1][s_2]
                 choose_s = s_2
         if choose_s == "-1":
@@ -725,6 +753,36 @@ def merge_nearest_stations(stations,map):
         res_station_list.append(merge_station)
     return res_station_list
 
+
+def merge_diff_size_stations(stations,map):
+    station_id_list = []
+    for s in stations:
+        stations[s].is_merged=0
+    for s_1 in map:
+        tmp_dis = sys.maxsize
+        choose_s = "-1"
+        if stations[s_1].is_merged == 1 or stations[s_1].isEmpty == True:
+            continue
+        for s_2 in map[s_1]:
+            if s_1 == s_2:
+                continue
+            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000 and stations[s_2].is_merged == 0 and stations[s_2].isEmpty==False:
+                tmp_dis = map[s_1][s_2]
+                choose_s = s_2
+        if choose_s == "-1":
+            continue
+        if stations[s_1].vehicle_limit < stations[choose_s].vehicle_limit:
+            station_id_list.append([])
+            station_id_list[-1].append(s_1)
+            station_id_list[-1].append(choose_s)
+        else:
+            station_id_list.append([])
+            station_id_list[-1].append(choose_s)
+            station_id_list[-1].append(s_1)
+    return station_id_list
+
+def merge_sum_zero_label_stations(stations,map):
+    print("TODO")
 
 def is_one_empty(path,stations):
 
@@ -745,6 +803,24 @@ def print_nearest_stations(map):
                 my_set.add(s_1)
                 my_set.add(s_2)
     print len(my_set)
+
+
+def get_large_station_id_list(stations,vehicle_limit):
+    large_bin_station = []
+    for s in stations:
+        if stations[s].label == -1 and stations[s].vehicle_limit == vehicle_limit:
+            #print s, len(stations[s].binList)
+            large_bin_station.append(s)
+    return large_bin_station
+
+
+def get_small_station_id_list(stations,vehicle_limit):
+    small_bin_station = []
+    for s in stations:
+        if stations[s].label == 1 and stations[s].vehicle_limit == vehicle_limit:
+            #print s, len(stations[s].binList)
+            small_bin_station.append(s)
+    return small_bin_station
 
 
 def delete_from_merged_station(merge_list,station,vehicle):
@@ -769,5 +845,14 @@ if __name__ == '__main__':
 
     bins = createEntity.createBin(path + "bin.json", stations)
     label_stations(stations)
-    station_list=merge_nearest_stations(stations,map)
-    print len(station_list)
+    #station_list=merge_nearest_stations(stations,map)
+    #print len(station_list)
+    #merge_diff_size_stations(stations,map)
+    large_bin_station=[]
+    small_bin_station=[]
+    '''
+    for s in stations:
+        if stations[s].label==-1 and stations[s].vehicle_limit==10:
+            print s,len(stations[s].binList)
+    '''
+    process_merge_by_label_stations(stations,map,18)

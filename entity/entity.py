@@ -9,6 +9,8 @@ class Station():
     area=0.0
     label=0
     is_merged = 0
+    small=0
+    large=0
 
 
     def __init__(self,id,vehicle_limit,loading_time):
@@ -21,6 +23,8 @@ class Station():
         self.area=0.0
         self.label=0
         self.is_merged = 0
+        self.small=0
+        self.large=0
 
 
 class Vehicle:
