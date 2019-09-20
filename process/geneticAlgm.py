@@ -622,7 +622,7 @@ def cal_cost_and_rate(vehicle,map):
         cur=path[i]
         if cur not in map[start]:
             print("nonono")
-            print start,cur,vehicle.id
+            print i,start,cur,vehicle.id
         distance = distance + map[start][cur]
         start=cur
     cost = cost +distance * vehicle.perPrice

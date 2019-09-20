@@ -559,17 +559,71 @@ def delete_packedbins(vehicle,stations):
 #因为map为非对称结构图，所以根据vehicle的现有的路径，求出最优路径
 def cal_path(vehicle,map):
     path=vehicle.path
-    if len(path)==2:
+    n=len(path)
+    if n == 2:
         if path[1] in map[path[0]] and path[0] in map[path[1]]:
             if map[path[1]][path[0]] < map[path[0]][path[1]]:
                 tmp_p = path[0]
                 path[0] = path[1]
                 path[1] = tmp_p
+        return
+    list=get_full_sort(n)
+    tmp_dis=sys.maxsize
+    res=-1
+    for j in range(len(list)):
+        L=list[j]
+        sum_dis=0
+        start=L[0]
+        for i in range(len(L)):
+            if i==0:
+                continue
+            cur=L[i]
+            if path[cur] in map[path[start]]:
+                sum_dis+=map[path[start]][path[cur]]
+            else:
+                sum_dis=sys.maxsize
+                break
+            start=cur
+        if tmp_dis > sum_dis:
+            tmp_dis=sum_dis
+            res=j
+
+    tmp_path=[]
+
+    for i in range(n):
+        tmp_path.append(path[list[res][i]])
+
+    vehicle.path=tmp_path
+
+
 
 def cal_vehicle_list_path(vehicle_list, map):
     for v in vehicle_list:
+        if len(v.path) == 1:
+            continue
         cal_path(v, map)
 
+
+
+def get_full_sort(n):
+    list=[]
+    sub_list=[]
+    cal_full_sort(list,sub_list,n)
+    return list
+
+
+def cal_full_sort(list,sub_list,n):
+    if len(sub_list) == n:
+        tmp_list=[]
+        for num in sub_list:
+            tmp_list.append(num)
+        list.append(tmp_list)
+        return
+    for i in range(n):
+        if i not in sub_list:
+            sub_list.append(i)
+            cal_full_sort(list,sub_list,n)
+            sub_list.remove(sub_list[-1])
 
 #调整bin_list的放置方向，以减少浪费空间
 def modify_bin_list(line,bin_list,bin_sort):
@@ -604,9 +658,9 @@ def label_station(station):
             small += 1
     station.small=small
     station.large=large
-    if large * 0.7 < small and small > 65:
+    if large * 0.7 < small and small - 0.5*large > 30:
         station.label = 1
-    elif large * 0.3 > small and large > 65:
+    elif large * 0.3 > small and large - 2 * small > 30:
         station.label = -1
     else:
         station.label = 0
@@ -855,4 +909,6 @@ if __name__ == '__main__':
         if stations[s].label==-1 and stations[s].vehicle_limit==10:
             print s,len(stations[s].binList)
     '''
-    process_merge_by_label_stations(stations,map,18)
+    #process_merge_by_label_stations(stations,map,18)
+
+    print get_full_sort(2)
