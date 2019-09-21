@@ -42,6 +42,8 @@ def find_next_bin_list(vehicle,bins,choose):
         #深拷贝lines
         copy_lines=deep_copy_lines(lines)
 
+        used_weight=vehicle.used_weight
+        used_weight += available_bins[i].weight
         bin_map[i].append(geneticAlgm.create_new_bin(available_bins[i]))
         bin_sort[i].append(0)
         sum_score=0
@@ -53,9 +55,10 @@ def find_next_bin_list(vehicle,bins,choose):
             if tmp_score >= 8 or tmp_score == 5.5:
                 break
             #根据打分规则选出下一个分数最高的bin
-            bin_list,final_bin,score=choose_next_bin(vehicle,bins,next_line_index,bin_map[i])
+            bin_list,final_bin,score=choose_next_bin(vehicle,bins,next_line_index,bin_map[i],used_weight)
             if final_bin != -1:
                 next_line_index, tmp_score = get_next_line(vehicle, bin_list[final_bin], next_line_index, 0)  # 正着放:
+                used_weight +=bin_list[final_bin].weight
                 lines=vehicle.lines
             else:
                 tmp_score=-1
@@ -97,16 +100,19 @@ def find_next_bin_list(vehicle,bins,choose):
         bin_sort[i].append(1)
         sum_score = 0
         next_line_index,tmp_score = get_next_line(vehicle,available_bins[i],choose,1)#倒着放
+        used_weight=vehicle.used_weight
+        used_weight += available_bins[i].weight
 
         while tmp_score!=-1:
             sum_score += tmp_score
             if tmp_score >= 8 or tmp_score == 5.5:
                 break
             # 根据打分规则选出下一个分数最高的bin
-            bin_list,final_bin,score=choose_next_bin(vehicle,bins,next_line_index,bin_map[i])
+            bin_list,final_bin,score=choose_next_bin(vehicle,bins,next_line_index,bin_map[i],used_weight)
             if final_bin!=-1:
                 next_line_index, tmp_score = get_next_line(vehicle, bin_list[final_bin], next_line_index, 0)  # 正着放:
                 lines=vehicle.lines
+                used_weight += bin_list[final_bin].weight
             else:
                 tmp_score=-1
             if tmp_score!=-1:
@@ -437,7 +443,7 @@ def get_next_line(vehicle,bin,choose,rotate):
     return  next_index,score
 
 #寻找下一个分数最高的bin
-def choose_next_bin(vehicle,bins,choose,choosed_bins):
+def choose_next_bin(vehicle,bins,choose,choosed_bins,used_weight):
     lines = vehicle.lines
     vehicle_length = vehicle.length
     bin_list = skyLine.get_available_bin_list(vehicle, bins, choose)
@@ -446,7 +452,7 @@ def choose_next_bin(vehicle,bins,choose,choosed_bins):
     score = -2
     final_bin = -1
     for i in range(len(bin_list)):
-        if is_in_bin_list(bin_list[i], choosed_bins) == True:
+        if is_in_bin_list(bin_list[i], choosed_bins) == True or used_weight+bin_list[i].weight > vehicle.weight:
             continue
         if bin_list[i].length + lines[choose].height > vehicle_length or bin_list[i].width > lines[choose].width:
             tmp_score1 = -1
@@ -658,9 +664,11 @@ def label_station(station):
             small += 1
     station.small=small
     station.large=large
-    if large * 0.7 < small and small - 0.5*large > 30:
+    #if large * 0.7 < small and small - 0.5*large > 30:
+    if large * 0.65 < small and small > 50:
         station.label = 1
-    elif large * 0.3 > small and large - 2 * small > 30:
+    #elif large * 0.3 > small and large - 2 * small > 30:
+    elif large * 0.35 > small and large > 50:
         station.label = -1
     else:
         station.label = 0
@@ -904,11 +912,11 @@ if __name__ == '__main__':
     #merge_diff_size_stations(stations,map)
     large_bin_station=[]
     small_bin_station=[]
-    '''
+
     for s in stations:
-        if stations[s].label==-1 and stations[s].vehicle_limit==10:
+        if stations[s].label==1 and stations[s].vehicle_limit==18:
             print s,len(stations[s].binList)
-    '''
+
     #process_merge_by_label_stations(stations,map,18)
 
-    print get_full_sort(2)
+    #print get_full_sort(2)

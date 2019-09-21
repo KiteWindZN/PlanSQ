@@ -331,10 +331,18 @@ def check_vehicle(vehicle):
             path.remove(s)
             station_bin.pop(s)
 
+def check_vehicle_weight(vehicle):
+    bin_list=vehicle.bin_list
+    sum_weight=0
+    for bin in bin_list:
+        sum_weight= round(sum_weight+bin.weight,5)
+    if sum_weight > vehicle.weight:
+        print vehicle.id ,"over weight"
 
 def check_vehicle_list(vehicle_list):
     for vehicle in vehicle_list:
         check_vehicle(vehicle)
+        check_vehicle_weight(vehicle)
 
 def check_vehicle_limit(vehicle_list,stations):
     for vehicle in vehicle_list:

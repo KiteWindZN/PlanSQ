@@ -181,9 +181,6 @@ def put_bin(vehicle,choose,bin,rotate):
         left_start_y = lines[choose].height
         tmp_r_height = lines[choose].right_height
 
-        # 更新vehicle.used_weight
-        vehicle.used_weight = vehicle.used_weight + bin.weight
-
         lines[choose].start = entity.Point(leftDown.x, leftDown.y + bin.length)
         lines[choose].end = entity.Point(leftDown.x + bin.width,
                                          leftDown.y + bin.length)
