@@ -544,7 +544,7 @@ def merge_stations(vehicle,stations):
 
 
 def merge_two_station(station1,station2):
-    merge_station = entity.Station(station1.id, station1.vehicle_limit, 0)
+    merge_station = entity.Station(station1.id, min(station1.vehicle_limit,station2.vehicle_limit), 0)
     for b in station1.binList:
         merge_station.binList.append(geneticAlgm.create_new_bin(b))
     for b in station2.binList:
@@ -658,17 +658,17 @@ def label_station(station):
     small = 0
     large = 0
     for b in bin_list:
-        if b.width > 0.9 and b.length > 0.9:
+        if b.width > 0.9 and b.length > 0.9 and (b.length != 1.45 and b.width != 1.45):
             large += 1
-        else:
+        elif b.length != 1.45 and b.width != 1.45:
             small += 1
     station.small=small
     station.large=large
     #if large * 0.7 < small and small - 0.5*large > 30:
-    if large * 0.65 < small and small > 50:
+    if large * 0.6 < small and small > 40:
         station.label = 1
     #elif large * 0.3 > small and large - 2 * small > 30:
-    elif large * 0.35 > small and large > 50:
+    elif large * 0.4 > small and large > 40:
         station.label = -1
     else:
         station.label = 0
@@ -816,32 +816,7 @@ def merge_nearest_stations(stations,map):
     return res_station_list
 
 
-def merge_diff_size_stations(stations,map):
-    station_id_list = []
-    for s in stations:
-        stations[s].is_merged=0
-    for s_1 in map:
-        tmp_dis = sys.maxsize
-        choose_s = "-1"
-        if stations[s_1].is_merged == 1 or stations[s_1].isEmpty == True:
-            continue
-        for s_2 in map[s_1]:
-            if s_1 == s_2:
-                continue
-            if tmp_dis > map[s_1][s_2] and map[s_1][s_2] <= 1000 and stations[s_2].is_merged == 0 and stations[s_2].isEmpty==False:
-                tmp_dis = map[s_1][s_2]
-                choose_s = s_2
-        if choose_s == "-1":
-            continue
-        if stations[s_1].vehicle_limit < stations[choose_s].vehicle_limit:
-            station_id_list.append([])
-            station_id_list[-1].append(s_1)
-            station_id_list[-1].append(choose_s)
-        else:
-            station_id_list.append([])
-            station_id_list[-1].append(choose_s)
-            station_id_list[-1].append(s_1)
-    return station_id_list
+
 
 def merge_sum_zero_label_stations(stations,map):
     print("TODO")
