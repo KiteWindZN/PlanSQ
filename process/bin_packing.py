@@ -349,6 +349,8 @@ def add_compose_bins(vehicle,index,bin_list,sort_list,bins):
         next_index,max_height=put_bin(vehicle,next_index,bin,sort_list[i])
 
     for b in bin_list:
+        if b.id == u'B10263' or b.id==u'B22429':
+            print "lele",b.id,vehicle.id
         skyLine.delete_bin(bins,b)
     '''
     bin_list.sort()

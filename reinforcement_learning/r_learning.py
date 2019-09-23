@@ -70,7 +70,8 @@ def find_next_bin_list(vehicle,bins,choose):
         if tmp_score >= 8 or tmp_score == 5.5:
             tmp_waste_0=0
         else:
-            tmp_waste_0 = lines[next_line_index].width * bin_map[i][-1].length
+            #tmp_waste_0 = lines[next_line_index].width * bin_map[i][-1].length
+            tmp_waste_0 = lines[next_line_index].width
         tmp_area=0
         large_num=0
         for b in bin_map[i]:
@@ -80,7 +81,7 @@ def find_next_bin_list(vehicle,bins,choose):
         if bins[i].local_station == u"S011" or bins[i].local_station == u"S154":
             tmp_value_0 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_0 - 0.8*len(bin_map[i])+ 0.9*tmp_area+3.2*large_num,5)
         else:
-            tmp_value_0 = round(0.5 * sum_score / len(bin_map[i]) - 3 * tmp_waste_0 - 0.8 * len(
+            tmp_value_0 = round(0.3 * sum_score / len(bin_map[i]) - 3 * tmp_waste_0 - 0.8 * len(
             bin_map[i]) + tmp_area + 3 * large_num, 5)
         #tmp_value_0 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_0 , 5)
         #赋值res_value,res_sort,res_map
@@ -127,7 +128,8 @@ def find_next_bin_list(vehicle,bins,choose):
         if tmp_score >= 8 or tmp_score == 5.5:
             tmp_waste_1=0
         else:
-            tmp_waste_1 = lines[next_line_index].width * bin_map[i][-1].length
+            #tmp_waste_1 = lines[next_line_index].width * bin_map[i][-1].length
+            tmp_waste_1 = lines[next_line_index].width
         tmp_area = 0
         large_num=0
         for b in bin_map[i]:
@@ -137,7 +139,7 @@ def find_next_bin_list(vehicle,bins,choose):
         if bins[i].local_station == u"S011" or bins[i].local_station == u"S154":
             tmp_value_1 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_1 - 0.8*len(bin_map[i])+0.9*tmp_area + 3.2*large_num,5)
         else:
-            tmp_value_1 = round(0.5 * sum_score / len(bin_map[i]) - 3 * tmp_waste_1 - 0.8 * len(
+            tmp_value_1 = round(0.3 * sum_score / len(bin_map[i]) - 3 * tmp_waste_1 - 0.8 * len(
                 bin_map[i]) + tmp_area + 3 * large_num, 5)
         #tmp_value_1 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_1, 5)
 
@@ -525,6 +527,15 @@ def bin_packing_function(vehicle,station):
         if len(bin_list)==0:
             lines[choose].is_able=False
             continue
+
+        tmp_list=[]
+        tmp_sort=[]
+        tmp_list.append(bin_list[0])
+        tmp_sort.append(bin_sort[0])
+        bin_list=tmp_list
+        bin_sort=tmp_sort
+
+
         max_height=bin_packing.add_compose_bins(vehicle,choose,bin_list,bin_sort,bins)
     if len(station.binList)==0:
         station.isEmpty=True
@@ -808,7 +819,8 @@ def merge_nearest_stations(stations,map):
                 choose_s = s_2
         if choose_s == "-1":
             continue
-
+        if s_1==u"S114" or choose_s==u"S114":
+            print "nearest,S114"
         merge_station = merge_two_station(stations[s_1],stations[choose_s])
         stations[s_1].is_merged=1
         stations[choose_s].is_merged=1
