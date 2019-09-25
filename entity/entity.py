@@ -1,17 +1,5 @@
 # -*- coding:utf-8 -*-
-class Station():
-    id=""
-    vehicle_limit=0
-    loading_time=0
-    binList=[]
-    isEmpty=True
-    weight=0.0
-    area=0.0
-    label=0
-    is_merged = 0
-    small=0
-    large=0
-
+class Station:
 
     def __init__(self,id,vehicle_limit,loading_time):
         self.id=id
@@ -28,21 +16,6 @@ class Station():
 
 
 class Vehicle:
-    id=0
-    length=0.0
-    width=0.0
-    weight = 0.0
-    startPrice=0.0
-    perPrice=0.0
-    usedTime=0.0 #已使用时间
-    path=[]
-    bin_list=[]
-    lines=[]
-    max_height=0.0
-    used_weight=0.0
-    station_bin={}
-    is_available=True
-    waste_area=[]
 
     def __init__(self,id,length,width,weight,sp,pp):
         self.id=id
@@ -51,7 +24,7 @@ class Vehicle:
         self.weight=weight
         self.startPrice=sp
         self.perPrice=pp
-        self.usedTime=0.0
+        self.usedTime=0.0  #已使用时间
         self.path=[]
         self.bin_list=[]
         self.lines=[]
@@ -73,13 +46,8 @@ class Vehicle:
         line=Line(s,e,left_height,right_height)
         self.lines.append(line)
 
+
 class Bin:
-    id=0
-    length=0.0
-    width=0.0
-    weight=0.0
-    pointList=[]
-    local_station=""
 
     def __init__(self,id,length,width,weight,s):
         self.id=id
