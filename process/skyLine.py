@@ -1076,7 +1076,6 @@ def put_bin2vehicle(vehicle,score,bin,choose):
         lines[choose].width = round(lines[choose].width - bin.width, 5)
 
 
-
 def get_choose_line(vehicle,bins):
     lines=vehicle.lines
     # merge line fragment

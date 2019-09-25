@@ -70,8 +70,8 @@ def find_next_bin_list(vehicle,bins,choose):
         if tmp_score >= 8 or tmp_score == 5.5:
             tmp_waste_0=0
         else:
-            #tmp_waste_0 = lines[next_line_index].width * bin_map[i][-1].length
-            tmp_waste_0 = lines[next_line_index].width
+            tmp_waste_0 = lines[next_line_index].width * bin_map[i][-1].length
+            #tmp_waste_0 = lines[next_line_index].width
         tmp_area=0
         large_num=0
         for b in bin_map[i]:
@@ -81,7 +81,7 @@ def find_next_bin_list(vehicle,bins,choose):
         if bins[i].local_station == u"S011" or bins[i].local_station == u"S154":
             tmp_value_0 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_0 - 0.8*len(bin_map[i])+ 0.9*tmp_area+3.2*large_num,5)
         else:
-            tmp_value_0 = round(0.3 * sum_score / len(bin_map[i]) - 3 * tmp_waste_0 - 0.8 * len(
+            tmp_value_0 = round(0.5 * sum_score / len(bin_map[i]) - 3 * tmp_waste_0 - 0.8 * len(
             bin_map[i]) + tmp_area + 3 * large_num, 5)
         #tmp_value_0 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_0 , 5)
         #赋值res_value,res_sort,res_map
@@ -89,7 +89,6 @@ def find_next_bin_list(vehicle,bins,choose):
             res_map[i].append(bin_map[i][j])
             res_sort[i].append(bin_sort[i][j])
             res_value[i]=tmp_value_0
-
 
         lines=deep_copy_lines(copy_lines)
         vehicle.lines=lines
@@ -128,8 +127,8 @@ def find_next_bin_list(vehicle,bins,choose):
         if tmp_score >= 8 or tmp_score == 5.5:
             tmp_waste_1=0
         else:
-            #tmp_waste_1 = lines[next_line_index].width * bin_map[i][-1].length
-            tmp_waste_1 = lines[next_line_index].width
+            tmp_waste_1 = lines[next_line_index].width * bin_map[i][-1].length
+            #tmp_waste_1 = lines[next_line_index].width
         tmp_area = 0
         large_num=0
         for b in bin_map[i]:
@@ -139,7 +138,7 @@ def find_next_bin_list(vehicle,bins,choose):
         if bins[i].local_station == u"S011" or bins[i].local_station == u"S154":
             tmp_value_1 = round(0.5*sum_score/len(bin_map[i])-3*tmp_waste_1 - 0.8*len(bin_map[i])+0.9*tmp_area + 3.2*large_num,5)
         else:
-            tmp_value_1 = round(0.3 * sum_score / len(bin_map[i]) - 3 * tmp_waste_1 - 0.8 * len(
+            tmp_value_1 = round(0.5 * sum_score / len(bin_map[i]) - 3 * tmp_waste_1 - 0.8 * len(
                 bin_map[i]) + tmp_area + 3 * large_num, 5)
         #tmp_value_1 = round(sum_score / len(bin_map[i]) - 5 * tmp_waste_1, 5)
 
@@ -613,13 +612,11 @@ def cal_path(vehicle,map):
     vehicle.path=tmp_path
 
 
-
 def cal_vehicle_list_path(vehicle_list, map):
     for v in vehicle_list:
         if len(v.path) == 1:
             continue
         cal_path(v, map)
-
 
 
 def get_full_sort(n):
@@ -663,6 +660,7 @@ def modify_bin_list(line,bin_list,bin_sort):
         if l>w and l-w<=width:
             bin_sort[i]=1-bin_sort[i]
             width = width-(l-w)
+
 
 def label_station(station):
     bin_list = station.binList
@@ -762,7 +760,8 @@ def get_real_path(vehicle):
     station_bin = vehicle.station_bin
     path=[]
     for s in station_bin:
-        path.append(s)
+        if len(station_bin[s]) > 0:
+            path.append(s)
     vehicle.path=path
 
 
@@ -775,7 +774,7 @@ def choose_partner_station(vehicle,s_id,stations,map,T):
     for s in nabor_list:
         tmp_station=stations[s]
         tmp_label=tmp_station.label
-        if cur_label + tmp_label == 0:
+        if tmp_label == 1:
             if tmp_dis > map[s_id][s] and stations[s].vehicle_limit >= vehicle.length and vehicle.usedTime+T[s_id][s]+stations[s].loading_time<=600:
                 tmp_dis = map[s_id][s]
                 next_id = s
@@ -784,6 +783,7 @@ def choose_partner_station(vehicle,s_id,stations,map,T):
         #choose the nearest station
         next_id, tmp_dis = next_station(vehicle, s_id, stations, map, T)
     return next_id,tmp_dis
+
 
 def next_station(vehicle,s_id,stations,map,time):
     nobor_list = map[s_id]
@@ -799,6 +799,17 @@ def next_station(vehicle,s_id,stations,map,time):
             next_list.append(n_s)
             next_dis.append(tmp_dis)
     return next_s_id, tmp_dis
+
+
+def merge_two_stations(station1,station2):
+    merge_station = entity.Station(station1.id, min(station1.vehicle_limit,station2.vehicle_limit), 0)
+    for b in station1.binList:
+        #b.pointList = []
+        merge_station.binList.append(geneticAlgm.create_new_bin(b))
+    for b in station2.binList:
+        #b.pointList = []
+        merge_station.binList.append(geneticAlgm.create_new_bin(b))
+    return merge_station
 
 # TODO
 def merge_nearest_stations(stations,map):
@@ -824,14 +835,13 @@ def merge_nearest_stations(stations,map):
         merge_station = merge_two_station(stations[s_1],stations[choose_s])
         stations[s_1].is_merged=1
         stations[choose_s].is_merged=1
+        if len(merge_station.binList) == 0:
+            stations[s_1].isEmpty=True
+            stations[choose_s].isEmpty==True
+            continue
         res_station_list.append(merge_station)
     return res_station_list
 
-
-
-
-def merge_sum_zero_label_stations(stations,map):
-    print("TODO")
 
 def is_one_empty(path,stations):
 

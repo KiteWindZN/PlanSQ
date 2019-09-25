@@ -2,7 +2,6 @@
 from entity import entity
 import createEntity
 import skyLine
-#from test import testZn
 import sys
 import random
 from createJson import createResult
@@ -59,17 +58,7 @@ def genetic(vehicles,stations,map,time,gene_num):
             for nn in range(len(res_gene)/4):
                 gene_mutation(res_gene[index1])
                 gene_cross(res_gene[index1], res_gene[index2])
-            #index1 = random.randint(0,len(res_gene)-1)
-            #rate1=random.random()
-            #if rate1<= mutation_rate:
-            #    gene_mutation(res_gene[index1])
-            #rate1=random.random()
-            #if rate1 <= cross_rate:
-            #    index2=random.randint(0,len(res_gene)-1)
-            #    gene_cross(res_gene[index1],res_gene[index2])
-        #for h in range(len(res_gene)):
-        #    index=random.randint(0,len(gene_list)-1)
-        #    gene_list[index] = res_gene[h]
+
 
         gene_list = res_gene
         res_cost=[]
@@ -573,7 +562,6 @@ def choose_vehicle_index(vehicle_list,station,stations,gene,gene_index):
         i = i-1
 
 
-
 def find_max_vehicle(vehicle_list):
     max=vehicle_list[0]
     res=0
@@ -630,7 +618,7 @@ def cal_cost_and_rate(vehicle,map):
         cur=path[i]
         if cur not in map[start]:
             print("nonono")
-            print i,start,cur,vehicle.id
+            print i,start,cur,vehicle.id,path
         distance = distance + map[start][cur]
         start=cur
     cost = cost +distance * vehicle.perPrice
@@ -669,23 +657,6 @@ if __name__ == '__main__':
     stations, maxLimit = createEntity.createStation(path + "station.json")
     bins = createEntity.createBin(path + "bin.json", stations)
     vehicles = createEntity.createVehicle(path + "vehicle.json")
-    #mts, T = createEntity.createMST(map, time)
-    #createEntity.deleteVehicle(vehicles, maxLimit)
-
-    #map,time = createEntity.floyd(map,time)
-    #print()
-    #print(len(stations["S045"].binList))
-
-    #max_height=skyLine.skyline(vehicles[998],stations["S045"])
-
-    #print()
-    #print(max_height)
-
-    #print()
-    #print(len(vehicles[998].bin_list))
-    #print()
-    #print(len(stations["S012"].binList))
-
 
     print()
     print(len(vehicles[2].bin_list))
@@ -706,20 +677,6 @@ if __name__ == '__main__':
 
     #  createEntity.draw_rect(vehicles[2],tmp_area)
 
-    #gene=create_gene_station(stations)
-    #gene2 = create_gene_station(stations)
-    #gene_cross(gene1,gene2)
-    #gene=["S171","S164", "S104","S087","S008","S200","S003","S188","S099","S167", "S038","S132","S035","S127","S066","S076","S010","S169","S027","S170","S079"]
-    #gene=["S163"]
-    #print gene
-    #print len(gene)
-
-    #list1={}
-    #list2={}
-    #for g in gene1:
-    #    list1[g]=0
-    #for g in gene2:
-    #    list2[g]=0
 
     gene,cost,rate = genetic(vehicles,stations,map,time,200)
     #gene=['S152', 'S209', 'S009', 'S144', 'S098', 'S061', 'S159', 'S163', 'S148', 'S072', 'S211', 'S024', 'S090', 'S172', 'S141', 'S118', 'S170', 'S124', 'S010', 'S044', 'S078', 'S086', 'S075', 'S197', 'S036', 'S122', 'S129', 'S045', 'S160', 'S114', 'S117', 'S115', 'S183', 'S094', 'S033', 'S027', 'S058', 'S203', 'S079', 'S029', 'S005', 'S016', 'S165', 'S088', 'S113', 'S167', 'S212', 'S187', 'S202', 'S133', 'S076', 'S089', 'S096', 'S178', 'S080', 'S207', 'S215', 'S128', 'S155', 'S099', 'S132', 'S018', 'S021', 'S180', 'S173', 'S192', 'S052', 'S151', 'S181', 'S057', 'S164', 'S034', 'S119', 'S140', 'S053', 'S071', 'S109', 'S166', 'S073', 'S006', 'S050', 'S026', 'S111', 'S110', 'S068', 'S014', 'S134', 'S136', 'S013', 'S048', 'S120', 'S116', 'S070', 'S121', 'S054', 'S175', 'S047', 'S008', 'S214', 'S138', 'S001', 'S056', 'S142', 'S156', 'S038', 'S198', 'S082', 'S103', 'S196', 'S060', 'S205', 'S150', 'S022', 'S158', 'S059', 'S064', 'S042', 'S123', 'S139', 'S145', 'S146', 'S025', 'S074', 'S104', 'S051', 'S077', 'S171', 'S101', 'S153', 'S161', 'S062', 'S177', 'S095', 'S210', 'S201', 'S066', 'S179', 'S032', 'S102', 'S204', 'S097', 'S084', 'S135', 'S125', 'S184', 'S182', 'S093', 'S092', 'S067', 'S147', 'S063', 'S168', 'S069', 'S200', 'S169', 'S043', 'S213', 'S185', 'S004', 'S162', 'S041', 'S206', 'S143', 'S188', 'S017', 'S126', 'S193', 'S105', 'S127', 'S083', 'S208', 'S028', 'S003', 'S040', 'S174', 'S130', 'S195', 'S049', 'S191', 'S065', 'S030', 'S081', 'S199', 'S015', 'S108', 'S107', 'S154', 'S011', 'S035', 'S157', 'S002', 'S176', 'S100', 'S137', 'S007', 'S019', 'S023', 'S020', 'S087', 'S046', 'S149', 'S190', 'S112', 'S091', 'S055', 'S085', 'S131', 'S037', 'S189', 'S039', 'S106', 'S194', 'S012', 'S031', 'S186']
