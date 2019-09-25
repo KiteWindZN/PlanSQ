@@ -1,10 +1,16 @@
 # -*- coding:utf-8 -*-
+'''
+此文件为强化学习的实现部分，通过skyline的打分规则，来选取可以放入线段L1的Bin，
+通过探索环境的方式来找出放入L1的最优的Bin的组合
+'''
+
 from process import skyLine
 from entity import entity
 from process import bin_packing
 from process import geneticAlgm
 from process import createEntity
 import sys
+
 #寻找最适合放入选中line的bin的组合
 def find_next_bin_list(vehicle,bins,choose):
     #print ("find the next bin with reinforcement learning method")
@@ -542,7 +548,7 @@ def bin_packing_function(vehicle,station):
     return max_height
 
 
-#合并两个距离很近的站点
+#合并vehicle经过的站点
 def merge_stations(vehicle,stations):
 
     merge_station = entity.Station(stations[vehicle.path[0]].id, stations[vehicle.path[0]].vehicle_limit, 0)
@@ -552,7 +558,7 @@ def merge_stations(vehicle,stations):
 
     return merge_station
 
-
+#合并两个站点
 def merge_two_station(station1,station2):
     merge_station = entity.Station(station1.id, min(station1.vehicle_limit,station2.vehicle_limit), 0)
     for b in station1.binList:
@@ -611,21 +617,21 @@ def cal_path(vehicle,map):
 
     vehicle.path=tmp_path
 
-
+#根据实际装货的情况，得到vehicle的path
 def cal_vehicle_list_path(vehicle_list, map):
     for v in vehicle_list:
         if len(v.path) == 1:
             continue
         cal_path(v, map)
 
-
+#得到全排列
 def get_full_sort(n):
     list=[]
     sub_list=[]
     cal_full_sort(list,sub_list,n)
     return list
 
-
+#得到list的全排列
 def cal_full_sort(list,sub_list,n):
     if len(sub_list) == n:
         tmp_list=[]
@@ -661,7 +667,7 @@ def modify_bin_list(line,bin_list,bin_sort):
             bin_sort[i]=1-bin_sort[i]
             width = width-(l-w)
 
-
+#为站点打上标记
 def label_station(station):
     bin_list = station.binList
     small = 0
@@ -682,7 +688,7 @@ def label_station(station):
     else:
         station.label = 0
 
-
+#通过label将stations分类
 def get_station_id_by_label(stations,list_id):
     list1=[]
     list2=[]
@@ -703,7 +709,7 @@ def label_stations(stations):
     for s in stations:
         label_station(stations[s])
 
-
+#计算小货的个数
 def cal_small_bin(station):
     bin_list=station.binList
     small=0
@@ -712,6 +718,7 @@ def cal_small_bin(station):
             small += 1
     return small
 
+#计算大货的个数
 def cal_large_bin(station):
     bin_list=station.binList
     large=0
@@ -720,7 +727,7 @@ def cal_large_bin(station):
             large += 1
     return large
 
-
+#合并站点，然后进行装箱
 def merge_packing(vehicle,stations):
     geneticAlgm.check_vehicle(vehicle)
     merge_station=merge_stations(vehicle,stations)
@@ -755,7 +762,7 @@ def delete_packedbins(vehicle,stations):
     for p in vehicle.path:
         createEntity.cal_station_area_weight(stations[p])
 
-
+#获得vehicle的真实的路径信息
 def get_real_path(vehicle):
     station_bin = vehicle.station_bin
     path=[]
@@ -800,7 +807,7 @@ def next_station(vehicle,s_id,stations,map,time):
             next_dis.append(tmp_dis)
     return next_s_id, tmp_dis
 
-
+#合并两个站点
 def merge_two_stations(station1,station2):
     merge_station = entity.Station(station1.id, min(station1.vehicle_limit,station2.vehicle_limit), 0)
     for b in station1.binList:
@@ -811,7 +818,7 @@ def merge_two_stations(station1,station2):
         merge_station.binList.append(geneticAlgm.create_new_bin(b))
     return merge_station
 
-# TODO
+# 合并两个距离最近的站点
 def merge_nearest_stations(stations,map):
     for s in stations:
         stations[s].is_merged=0
@@ -842,7 +849,7 @@ def merge_nearest_stations(stations,map):
         res_station_list.append(merge_station)
     return res_station_list
 
-
+#检查路径中的某个站点是否已经为空
 def is_one_empty(path,stations):
 
     for p in path:
@@ -850,7 +857,7 @@ def is_one_empty(path,stations):
             return True
     return False
 
-
+#打印函数
 def print_nearest_stations(map):
     my_set=set()
     for s_1 in map:
@@ -863,7 +870,7 @@ def print_nearest_stations(map):
                 my_set.add(s_2)
     print len(my_set)
 
-
+#根据vehicle_limit得到标签为-1的站点的列表
 def get_large_station_id_list(stations,vehicle_limit):
     large_bin_station = []
     for s in stations:
@@ -872,7 +879,7 @@ def get_large_station_id_list(stations,vehicle_limit):
             large_bin_station.append(s)
     return large_bin_station
 
-
+#根据vehicle_limit得到标签为1的站点的列表
 def get_small_station_id_list(stations,vehicle_limit):
     small_bin_station = []
     for s in stations:
@@ -882,6 +889,7 @@ def get_small_station_id_list(stations,vehicle_limit):
     return small_bin_station
 
 
+#根据vehicle已经装入的货物列表，在合并的虚拟站点中删除货物
 def delete_from_merged_station(merge_list,station,vehicle):
     for s in merge_list:
         if len(s.binList)==0:
