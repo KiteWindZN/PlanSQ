@@ -1,4 +1,7 @@
 # -*- coding:utf-8 -*-
+"""
+此文件为最初设计的用启发式算法去调度车辆，现在除了一些基本的功能性的函数，其余基本弃用
+"""
 from entity import entity
 import createEntity
 import skyLine
@@ -144,7 +147,7 @@ def simulated_annealing(bins,vehicle):
     T=10000
     a=0.9
 
-
+#产生station的基因序列
 def create_gene_station(stations):
     station_id_list=[]
 
@@ -385,103 +388,6 @@ def createBlock(bins):
 #2.初始的选择点是随机的可能会因为初始点的不同而导致结果有较大的变化
 #   根据随机性原理，多跑几遍数据，选择最优的结果
 #3.尽量结合遗传算法和模拟退火算法，跑出合理的车辆调度路径
-
-
-def schedule_vehicle(mst,T,vehicle_list,total_weight,stations,rate,res_vehicle_list):
-    first_weight=total_weight * rate
-    avg_weight=0
-    for vehicle in vehicle_list:
-        avg_weight = avg_weight + vehicle.weight
-    avg_weight = avg_weight / len(vehicle_list)
-    vehicle_first_num = first_weight / avg_weight
-
-
-
-    for i in range(vehicle_first_num):
-        choose_station_num=random.randint(1,len(stations))
-        if choose_station_num<10:
-            choose_station_id="S00"+choose_station_num
-        elif choose_station_num<100:
-            choose_station_id="S0"+choose_station_num
-        else:
-            choose_station_id="S"+choose_station_num
-        choose_station=stations[choose_station_id]
-        station_weight = choose_station.weight
-        choose_vehicle_num=choose_vehicle_index(station_weight,vehicle_list)
-        choose_vehicle = create_new_vehicle(vehicle_list[choose_vehicle_num])
-        res_vehicle_list.append(choose_vehicle)
-
-        #vehicle顺着树跑路
-        while True:
-            choose_vehicle.usedTime= choose_vehicle.usedTime + choose_station.loading_time
-            #choose_vehicle.path.append(choose_station_id)
-            #choose_vehicle.station_bin[choose_station_id]={}
-            max_height=skyLine(choose_vehicle, choose_station)
-            #不需要调度的情况
-            if max_height == choose_vehicle.length and len(choose_station.binList)>0:
-                break
-            else:#随机选择下一个站点
-                #使用时间范围内，可到达的station
-                enable_stations = []
-                next_stations = mst[choose_station]
-                for s in next_stations:
-                    if choose_vehicle.usedTime + T[choose_station_id][s] + stations[s].loading_time <= 600 and stations[s].isEmpty==False:
-                        enable_stations.append(s)
-                if len(enable_stations) == 0:#临近节点都不可用,可能需要补充继续调度节点的操作，直到vehicle的使用率达到一定的比率
-                    break
-
-                choose_station_num=random.randint(0,len(enable_stations)-1)
-                j=0
-                for s in enable_stations:
-                    if j == choose_station_num:
-                        choose_station=stations[s]
-                        choose_vehicle.usedTime = choose_vehicle.usedTime + T[choose_station_id][s]
-                        break
-                    j = j + 1
-    createEntity.update_stations(stations)
-
-#最后一次调度车辆，根据第二次的结果，计算当前节点的状态，一辆一辆的分配车辆，直到全部收集完所有的货物
-def schedule_vehicle_final(mst,T,vehicle_list,stations,res_vehicle_list):
-    for s in stations:
-        if stations[s].isEmpty == False:
-            continue
-
-        choose_station=stations[s]
-        weight=choose_station.weight
-        choose_vehicle_num=choose_vehicle_index(weight,vehicle_list)
-        choose_vehicle=create_new_vehicle(vehicle_list[choose_vehicle_num])
-        res_vehicle_list.append(choose_vehicle)
-
-        max_height=0
-        while True:
-            choose_vehicle.usedTime = choose_vehicle.usedTime + choose_station.loading_time
-            #choose_vehicle.path.append(s)
-            #choose_vehicle.station_bin[s] = {}
-            max_height=skyLine(choose_vehicle, choose_station)
-            if max_height == choose_vehicle.length and len(choose_station.binList) > 0:
-                if is_finashed(stations) == True:
-                    break
-                continue
-            else:#随机选择下一个站点
-                #使用时间范围内，可到达的station
-                enable_stations = []
-                next_stations = mst[choose_station]
-                for n_s in next_stations:
-                    if choose_vehicle.usedTime + T[s][n_s] <= 600 and stations[s].isEmpty is False:
-                        enable_stations.append(s)
-                if len(enable_stations) == 0:#临近节点都不可用,可能需要补充继续调度节点的操作，直到vehicle的使用率达到一定的比率
-                    break
-
-                choose_station_num=random.randint(0,len(enable_stations)-1)
-                j=0
-                for s in enable_stations:
-                    if j== choose_station_num:
-                        choose_station=stations[s]
-                        choose_vehicle.usedTime = choose_vehicle.usedTime + T[s][n]
-                        break
-            createEntity.update_stations(stations)
-            if is_finashed(stations) == True:
-                break
 
 
 def not_empty_stations(stations):

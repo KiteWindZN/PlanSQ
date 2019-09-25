@@ -1,11 +1,15 @@
 # -*- coding:utf-8 -*-
-
+"""
+此文件为skyline算法的实现，包括打分函数，根据分数如何放置货物，
+放置货物后车辆状态的更新，以及线段的合并等等。
+"""
 from entity import entity
 import geneticAlgm
 import sys
 import random
 import bin_packing
 #skyline算法，缺少组合装入和可装入的检测
+#最终采用强化学习解决局部最优到全局的优化的问题
 def skyline(vehicle,station):
     if vehicle.id == u"V681" or vehicle.id == u"V250":
         print ( "11111")
@@ -24,13 +28,14 @@ def skyline(vehicle,station):
     for l in lines:
         l.is_able = True
 
+    #装箱的最大高度小于等于车辆的长度，车辆的已使用重量小于载重，站点还有货物
     while max_height<=vehicle_length and vehicle.used_weight <= vehicle.weight and len(bins)>0:
-
+        #选择高度最低的line
         choose = get_choose_line(vehicle, bins)
 
         if choose == -1:
             break
-
+        #得到可以放入线段lines[choose]的货物的列表，以及得分最高的货物的下标
         bin_list,final_bin,score = cal_score(vehicle,bins,choose)
 
         if len(bin_list) == 0:
@@ -38,21 +43,7 @@ def skyline(vehicle,station):
             continue
 
         line=lines[choose]
-        '''
-        if score < 5.5:
-            bin_waste, res_map, res_sort = bin_packing.waste_area(vehicle, line, bin_list)
-            min_waste=sys.maxsize
-            min_index=-1
-            for h in range(len(bin_waste)):
-                if min_waste> bin_waste[h]:
-                    min_waste=bin_waste[h]
-                    min_index=h
-            compose_list=res_map[min_index]
-            compose_sort = res_sort[min_index]
-
-            bin_packing.add_compose_bins(vehicle,choose,compose_list,compose_sort,bins)
-            continue
-        '''
+        #根据得分情况放入车辆中
         if score == 0:
             # 选择下一个line
             #choose a bin and put it on the line
@@ -65,9 +56,11 @@ def skyline(vehicle,station):
         if bin_list[final_bin].length + line.height > max_height:
             max_height = round(bin_list[final_bin].length + line.height,5)
 
-
+        #计算货物的坐标信息
         cal_point_list(vehicle,bin_list[final_bin],bins,score,choose)
+        #将货物放入车辆
         put_bin2vehicle(vehicle, score, bin_list[final_bin], choose)
+        #更新车辆的状态信息
         cal_lines(vehicle, lines)
 
     #本站点的货物已经装完
@@ -88,6 +81,7 @@ def delete_bin(bins,b):
             bins.remove(bins[i])
             break;
 
+#寻找最低的线段
 def find_lowest_line(lines):
     h=sys.maxsize
     res=-1
@@ -97,7 +91,7 @@ def find_lowest_line(lines):
             res=i
     return res
 
-
+#选择一个列表里宽度小鱼width的货物中最宽的货物，返回其下标
 def find_max_width_2(bins,width,height):
     max=0
     res=-1
@@ -114,6 +108,7 @@ def find_max_width_2(bins,width,height):
                 res=i
     return res
 
+#寻找宽度最大的货物
 def find_max_width(bins):
     max_width=bins[0].width
     res=0
@@ -123,7 +118,7 @@ def find_max_width(bins):
             res=i
     return res
 
-
+#寻找宽度最小的货物
 def find_min_width(bins,vehicle):
     min_width=bins[0].width
     res=0
@@ -138,7 +133,9 @@ def find_min_width(bins,vehicle):
             bins[i].rotate_bin()
     return res
 
-# merge line fragment
+# merge line fragment，合并车辆中的线段，过程写的比较复杂，可以再做简化
+# 思想为：当一条线段的宽度小于货物的最小的宽度时，将该线段与其左右相邻的线段中，高度较低的那条线段合并
+# 同时，将合并线段造成的浪费的空间搜集起来
 def merge_line(lines,min_width,vehicle):
     N=len(lines)
     if N <= 1:
@@ -337,7 +334,7 @@ def merge_line(lines,min_width,vehicle):
     i=len(lines)
     lines[i-1].right_height=round(vehicle.length - lines[i-1].height,5)
 
-
+#计算车辆的线段的信息
 def cal_lines(vehicle,lines):
     for line in lines:
         line.width= round(line.end.x - line.start.x,5)
@@ -369,7 +366,7 @@ def cal_lines(vehicle,lines):
     i=len(lines)
     lines[i-1].right_height=round(vehicle.length - lines[i-1].height,5)
 
-
+#计算浪费的空间
 def cal_waste_area(vehicle,line):
     #tmp_start=entity.Point(line.start.x,line.start.y)
     #tmp_end=entity.Point(line.end.x,line.end.y)
@@ -380,7 +377,7 @@ def cal_waste_area(vehicle,line):
     if tmp_line.width>=0.03 and tmp_line.left_height>=0.03:
         vehicle.waste_area.append(tmp_line)
 
-
+#站点货物序列的随机化，后来没有使用
 def make_new_binList(station,q):
     bin_list=station.binList
     new_list=[]
@@ -395,7 +392,7 @@ def make_new_binList(station,q):
     station.binList=[]
     station.binList=new_list
 
-
+#合并高度最低的线段
 def merge_lowest_line(vehicle,lines,index):
     if len(lines) == 1:
         print(1111)
@@ -430,7 +427,7 @@ def gene_score(line,bin):
     l=bin.length
     w=bin.width
 
-    a=0.2
+    a=0.2 #可调整，对结果有很大的影响
 
 
     if w==line.width and l==line.left_height:
@@ -546,7 +543,7 @@ def add_bin(lines,choose_line,bin,vehicle):
                       entity.Point(leftDown.x, leftDown.y + bin.length))
     merge_line_add(lines) # merge adjacent lines with the same height
 
-
+#合并相邻的且高度相同的两条线段
 def merge_line_add(lines):
     N=len(lines)
     i=0
@@ -574,7 +571,8 @@ def merge_line_add(lines):
     if line.width ==0:
         lines.remove(line)
 
-
+#选取第一块货物后，尝试正放和倒放，选择装载率高的放置方式
+#目前弃用，选择使用强化学习的方法来改进
 def pre_skyline(vehicle,station):
 
     vehicle.path.append(station.id)
@@ -673,7 +671,7 @@ def process_skyline(vehicle,station):
         skyline(vehicle,station)
         return vehicle.max_height ,vehicle, station
 
-
+#弃用
 def compose_skyline(vehicle,station):
     bins = station.binList
     for b in bins:
@@ -747,7 +745,7 @@ def compose_skyline(vehicle,station):
     return max_height
 
 
-
+#得到可以放入指定线段的所有的货物的列表
 def get_available_bin_list(vehicle,bins,choose):
     #if vehicle.id==u'V951':
     #    print("znznzn")
@@ -763,6 +761,7 @@ def get_available_bin_list(vehicle,bins,choose):
     return available_bins
 
 
+#分别计算货物正放和倒放的打分结果，去其中的高分作为最终得分
 def cal_score(vehicle,bins,choose):
     lines=vehicle.lines
     vehicle_length=vehicle.length
@@ -789,7 +788,7 @@ def cal_score(vehicle,bins,choose):
             final_bin = i
     return bin_list,final_bin,score
 
-
+#计算放入货物的坐标
 def cal_point_list(vehicle,bin,bins,score,choose):
     lines=vehicle.lines
 
@@ -820,7 +819,7 @@ def cal_point_list(vehicle,bin,bins,score,choose):
     # 因为bin可能发生旋转，所以根据id在原始的bins中查找，最终删除放入vehicle的bin
     delete_bin(bins, bin)
 
-
+#放入得分为0的货物，并计算坐标值
 def put_score0(vehicle,bins,bin_list,final_bin,max_height,choose):
     lines=vehicle.lines
     line=lines[choose]
@@ -875,6 +874,7 @@ def put_score0(vehicle,bins,bin_list,final_bin,max_height,choose):
         lines.append(tmp_line)
     return max_height
 
+#根据得分情况，更新货物放入车辆后的状态的变化
 def put_bin2vehicle(vehicle,score,bin,choose):
     lines=vehicle.lines
     vehicle_length = vehicle.length
@@ -1076,6 +1076,7 @@ def put_bin2vehicle(vehicle,score,bin,choose):
         lines[choose].width = round(lines[choose].width - bin.width, 5)
 
 
+#得到高度最低的可用的线段
 def get_choose_line(vehicle,bins):
     lines=vehicle.lines
     # merge line fragment

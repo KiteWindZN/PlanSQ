@@ -5,14 +5,14 @@ class Station:
         self.id=id
         self.vehicle_limit=vehicle_limit
         self.loading_time=loading_time
-        self.binList=[]
+        self.binList=[]  #存放货物的列表
         self.isEmpty=True
         self.weight=0.0
         self.area=0.0
-        self.label=0
-        self.is_merged = 0
-        self.small=0
-        self.large=0
+        self.label=0  #标记大货和小货
+        self.is_merged = 0 #是否与其他站点合并过
+        self.small=0  #大货的个数
+        self.large=0  #小货的个数
 
 
 class Vehicle:
@@ -30,9 +30,9 @@ class Vehicle:
         self.lines=[]
         self.max_height=0.0
         self.used_weight=0.0
-        self.station_bin={}
-        self.is_available = True
-        self.waste_area=[]
+        self.station_bin={} #存放经过的站点与装入该站点货物的字典结构
+        self.is_available = True #是否可用
+        self.waste_area=[] #浪费空间的存储，在车辆调度过程中可以进行小货的"塞缝"
         #self.init_lines()
 
     def add_path(self,station):
@@ -54,8 +54,8 @@ class Bin:
         self.length=length
         self.width=width
         self.weight=weight
-        self.pointList=[]
-        self.local_station = s
+        self.pointList=[] #存放四个站点的坐标
+        self.local_station = s #货物所在的位置
 
     def set_pointList(self,leftDown,righhtDown,rightUp,leftUp):
         self.pointList.append(leftDown)

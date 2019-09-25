@@ -1,11 +1,14 @@
 # -*- coding:utf-8 -*-
+"""
+此文件为各种类型的站点聚类的操作，包括距离近的站点的合并和label之和为0的站点的聚类操作
+"""
 from process import geneticAlgm
 from process import createEntity
 import sys
 from reinforcement_learning import  r_learning
 import schedule
 
-
+#距离很近，且vehicle_limit相同的站点的聚类
 def process_merged_station(stations,merged_station_list,vehicles,map,T):
     res_vehicle_list=[]
     for station in merged_station_list:
@@ -57,7 +60,7 @@ def process_merged_station(stations,merged_station_list,vehicles,map,T):
         print "Empty++++++++"
     return res_vehicle_list
 
-
+#距离很近，vehicle_limit不同的站点的聚类
 def merge_diff_size_stations(vehicles, stations, map, T):
     res_vehicle_list = []
     for s in stations:
@@ -95,7 +98,7 @@ def merge_diff_size_stations(vehicles, stations, map, T):
 
     return res_vehicle_list
 
-
+#当一个站点的大货数目大于20，小货数目大于10时，先直接派车装货
 def process_station(stations,vehicles,map,T):
     res_vehicle_list=[]
 
@@ -117,7 +120,7 @@ def process_station(stations,vehicles,map,T):
 
     return res_vehicle_list
 
-
+#label之和为0的站点的合并
 def process_merge_by_label_stations(vehicles,stations,map,T,vehicle_limit):
     res_vehicle_list=[]
     small_bin_list=r_learning.get_small_station_id_list(stations,vehicle_limit)
@@ -210,13 +213,13 @@ def process_merge_by_label_stations(vehicles,stations,map,T,vehicle_limit):
 
     return res_vehicle_list
 
-
+#聚类label之和为0的中站，大货多的中站也可以和小货多的大战合并
 def process_merge_mid_stations(vehicles,stations,map,T):
     res_vehicle_list = []
     vehicle_limit=10
     small_bin_list = r_learning.get_small_station_id_list(stations, vehicle_limit)
     large_bin_list = r_learning.get_large_station_id_list(stations, vehicle_limit)
-
+    #大货多的中站也可以和小货多的大战合并
     small_bin_list_1 = r_learning.get_small_station_id_list(stations, 18)
     #large_bin_list_1 = r_learning.get_large_station_id_list(stations, 18)
     for s in small_bin_list_1:
@@ -277,9 +280,6 @@ def process_merge_mid_stations(vehicles,stations,map,T):
             if choose_vehicle.id == u"V709":
                 print choose_vehicle.path
 
-    #small_bin_list = r_learning.get_small_station_id_list(stations, vehicle_limit)
-    #large_bin_list = r_learning.get_large_station_id_list(stations, vehicle_limit)
-
     for s_id in small_bin_list:
         tmp_dis=sys.maxsize
         choose_id="-1"
@@ -321,7 +321,7 @@ def process_merge_mid_stations(vehicles,stations,map,T):
     return res_vehicle_list
 
 
-
+#车辆装货的最大高度小于车辆高度的90%，继续调度车辆
 def continue_process(choose_vehicle,stations,choose_station,map,T,max_height):
     r_learning.get_real_path(choose_vehicle)
     #s_id = choose_station.id
@@ -352,7 +352,7 @@ def continue_process(choose_vehicle,stations,choose_station,map,T,max_height):
         max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
     return choose_vehicle
 
-
+#弃用
 def go_to_nearest_station(choose_vehicle,stations,choose_station,map,T):
     s_id=choose_station.id
     next_s_id, tmp_dis = schedule.next_station(choose_vehicle, s_id, stations, map, T)
@@ -375,7 +375,7 @@ def go_to_nearest_station(choose_vehicle,stations,choose_station,map,T):
         max_height, choose_vehicle = r_learning.merge_packing(choose_vehicle, stations)
     return choose_vehicle
 
-
+#站点聚类的汇总操作，返回结果为使用的车辆信息
 def many_merge(vehicles,stations,mst,T):
     res_vehicle_list = []
 

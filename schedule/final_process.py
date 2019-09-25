@@ -1,8 +1,12 @@
 # -*- coding:utf-8 -*-
+"""
+此文件的功能为在所有的货物均已经装入车中，检查是否有车辆可以合并，以及是否可以将一些大车换成较小的车
+"""
 from process import geneticAlgm
 from entity import entity
 from reinforcement_learning import r_learning
 
+#如果车辆V1上的货物可以被车辆V2装完，则合并两辆车的货物到V2
 def pick_bins(vehicle_list,stations,map,time):
     for v in vehicle_list:
         if v.max_height < v.length * 0.6:
@@ -56,6 +60,7 @@ def pick_bins(vehicle_list,stations,map,time):
                         print("+++++OK")
                         break
 
+#如果车辆V1上的货物可以用一辆更小的车装完，则换成更小的车
 def change_vehicle(vehicle_list,vehicles):
     for i in range(len(vehicle_list)):
         v=vehicle_list[i]

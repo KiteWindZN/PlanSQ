@@ -1,4 +1,7 @@
 # -*- coding:utf-8 -*-
+"""
+此文件为车辆的调度过程
+"""
 from process import geneticAlgm
 from entity import entity
 from process import createEntity
@@ -7,7 +10,8 @@ import sys
 from reinforcement_learning import  r_learning
 import random
 
-
+#使用强化学习的装箱算法的调度，station_list1，station_list2，station_list3分别为小站，中站和大站的列表
+#返回结果为使用的车辆信息
 def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
     res_vehicle_list=[]
 
@@ -272,6 +276,7 @@ def schedule_mst_r_learning(stations,vehicles,station_list1,station_list2,statio
     return res_vehicle_list
 
 
+#为站点选择合适的vehicle
 def choose_vehicle_index(vehicle_list,station):
     res=-1
     i = len(vehicle_list) - 1
@@ -337,6 +342,7 @@ def avg_height(lines):
 
     return avg_h
 
+#车辆被调度到一个新站点时，对于浪费空间进行塞缝处理
 def add_bin2waste(vehicle,station):
     s_id=station.id
     if s_id not in vehicle.station_bin:
@@ -367,6 +373,7 @@ def add_bin2waste(vehicle,station):
         i=i+1
         N = len(waste_rect)
 
+#为浪费空间选择可以装入的面积最大的货物
 def choose_for_waste(rect,bins):
     bin_list=[]
     width=rect.end.x-rect.start.x
@@ -389,14 +396,14 @@ def choose_for_waste(rect,bins):
         return index
     return bin_list[index]
 
-
+#计算车辆的装载率
 def cal_used_rate(v):
     tmp_area=0
     for b in v.bin_list:
         tmp_area = round(tmp_area + b.length * b.width, 5)
     return tmp_area / (v.length * v.width)
 
-
+#随机化序列
 def random_list(list):
     res_list=[]
     while len(list)>0:
@@ -406,11 +413,11 @@ def random_list(list):
     return res_list
 
 
+#弃用
 def pour_bins(vehicle,stations):
     for b in vehicle.bin_list:
         b.pointList = []
         stations[b.local_station].binList.append(b)
-
 
     merge_station=entity.Station(vehicle.path[0],stations[vehicle.path[0]].vehicle_limit,stations[vehicle.path[0]].loading_time)
     for p in vehicle.path:
@@ -419,7 +426,6 @@ def pour_bins(vehicle,stations):
             tmp_b=geneticAlgm.create_new_bin(b)
             merge_station.binList.append(tmp_b)
             merge_station.isEmpty=False
-
 
     for s in vehicle.path:
         ss = stations[s]
@@ -446,8 +452,7 @@ def pour_bins(vehicle,stations):
 
     return max_height,vehicle
 
-
-
+#弃用
 def schedule_mst(stations,vehicles,station_list1,station_list2,station_list3,mst,T):
     res_vehicle_list=[]
     for i in range(len(station_list1)):
