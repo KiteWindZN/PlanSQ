@@ -11,7 +11,7 @@ from process import geneticAlgm
 from process import createEntity
 import sys
 
-#寻找最适合放入选中line的bin的组合
+#通过对环境的探索,寻找最适合放入选中line的bin的组合
 def find_next_bin_list(vehicle,bins,choose):
     #print ("find the next bin with reinforcement learning method")
     lines=vehicle.lines
@@ -54,7 +54,6 @@ def find_next_bin_list(vehicle,bins,choose):
         bin_sort[i].append(0)
         sum_score=0
         next_line_index,tmp_score = get_next_line(vehicle,available_bins[i],choose,0)#正着放
-
 
         while tmp_score!=-1:
             sum_score += tmp_score
@@ -170,7 +169,6 @@ def find_next_bin_list(vehicle,bins,choose):
     modify_bin_list(vehicle.lines[choose],res_map[res_index],res_sort[res_index])
     return res_map[res_index],res_sort[res_index],res_value[res_index]
 
-
 #此种形状的块是否是第一次出现
 def is_first_shape(bin_list,index):
     for i in range(index):
@@ -179,7 +177,6 @@ def is_first_shape(bin_list,index):
         if bin_list[i].width == bin_list[index].length and bin_list[i].length == bin_list[index].width:
             return False
     return True
-
 
 #尝试将一个bin放入某个line后，得到的车辆的状态
 def get_next_line(vehicle,bin,choose,rotate):
@@ -486,9 +483,6 @@ def is_in_bin_list(bin,bin_list):
             return True
     return False
 
-def cal_value(vehicle,bins,index):
-    print ("avg score subtract waste area")
-
 
 #深拷贝vehicle的lines，保存每一次搜索前的车辆的状态
 def deep_copy_lines(lines):
@@ -499,8 +493,6 @@ def deep_copy_lines(lines):
                                      line.left_height,line.right_height))
 
     return tmp_lines
-
-
 
 #以skyLine和机器学习为基础的的组合装箱算法的调用入口
 def bin_packing_function(vehicle,station):
@@ -546,7 +538,6 @@ def bin_packing_function(vehicle,station):
         station.isEmpty=True
     vehicle.max_height=max_height
     return max_height
-
 
 #合并vehicle经过的站点
 def merge_stations(vehicle,stations):

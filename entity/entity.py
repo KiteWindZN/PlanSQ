@@ -14,9 +14,7 @@ class Station:
         self.small=0  #大货的个数
         self.large=0  #小货的个数
 
-
 class Vehicle:
-
     def __init__(self,id,length,width,weight,sp,pp):
         self.id=id
         self.length=length

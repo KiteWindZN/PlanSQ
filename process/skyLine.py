@@ -426,10 +426,7 @@ def gene_score(line,bin):
 
     l=bin.length
     w=bin.width
-
     a=0.2 #可调整，对结果有很大的影响
-
-
     if w==line.width and l==line.left_height:
         score=12
     elif w==line.width and l==line.right_height:
@@ -446,12 +443,10 @@ def gene_score(line,bin):
         score=6
     elif w==line.width:
         score = 5.5
-
     elif l == line.left_height:
         score = 4.5
     elif l == line.right_height:
         score = 3.5
-
     elif line.width*(1-a) < w < line.width and line.left_height*(1-a) < l < line.left_height*(1+a):
         score=5
     elif line.width*(1-a) < w < line.width and l >= line.left_height*(1+a):

@@ -288,7 +288,7 @@ def choose_vehicle_index(vehicle_list,station):
     return res
 
 
-# a-greedy
+# a-greedy,与label之和为0相结合
 def next_station(vehicle,s_id,stations,map,time):
     label=0
     bin_list=vehicle.bin_list
